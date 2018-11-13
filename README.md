@@ -1,5 +1,5 @@
-# elegia
-Uni Project (frameworks) 
+# Elegia
+Project im Rahmen von Veranstaltung fuer Frameworks bei Prof. Hoeding 
 
 Technologie
 
