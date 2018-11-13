@@ -2,10 +2,13 @@
 Uni Project (frameworks) 
 
 Technologie
-    PHP -> Symphony oder CakePHP/Laravel
+
+    PHP -> Symphony oder CakePHP/Laravel    
     JS -> jQuery, Bootstrap, vlt. ReactJS
     DB -> MySQL, ER, vlt. MongoDB
+    
 Funktionalitaet
+
     Suchen
     Anmelden/Regisitrieren
     Chaten
