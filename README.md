@@ -1,5 +1,4 @@
-# Elegia 
-# [Intro](https://rodchenk.github.io/elegia/)
+# Elegia -> check out the [Intro](https://rodchenk.github.io/elegia/)
 Project im Rahmen von Veranstaltung fuer Frameworks bei Prof. Hoeding 
 
 Technologie
