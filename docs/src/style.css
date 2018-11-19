@@ -21,6 +21,11 @@ body{
 header{
 	padding: 0 !important;
 }
+footer{
+	box-shadow: 0 0 15px #00000080;
+	padding-top: 25px;
+	padding-bottom: 25px
+}
 .custom-block{
 	padding-bottom: 50px;
 	padding-top: 50px;
@@ -40,7 +45,7 @@ header{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 50vw;
+	/*height: 50vw;*/
 	
 }
 .logo{
@@ -70,4 +75,36 @@ header{
 	color: white;
 	font-family: 'MontserratLight', sans-serif;
 	font-size: 5vh;
+}
+.delivered-block{
+	font-family: 'MontserratLight', sans-serif;
+	padding: 20px;
+	font-size: 1.5em;
+}
+.delivered-block>span{
+	line-height: 25px;
+	font-size: 2em;
+}
+.bg-danger-transparent{
+	background-color: #0000008c;
+}
+.git{
+	width: 50px;
+	height: 50px;
+	background-image: url(git.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.custom-bg-cover{
+	position: absolute;
+	z-index: 0;
+	height: 50%;
+	bottom: 0px;
+}
+ul{
+	list-style-type: none;
+}
+.margin-top-15{
+	margin-top: 15px;
 }
