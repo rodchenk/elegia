@@ -2,8 +2,7 @@ body{
 	background-color: #eee;
 }
 ::selection{
-	background-color: var(--orange);
-	color: white;
+	background-color: var(--success);
 }
 @font-face {
     font-family: MontserratExtraBold;
@@ -12,6 +11,23 @@ body{
 @font-face {
     font-family: MontserratLight;
     src: url(Montserrat-Light.ttf);
+}
+.sql::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+.sql::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+.text-orange{
+	color: var(--orange)
+}
+.text-indigo{
+	color: #9570d2;
+}
+.text-cyan{
+	color: var(--cyan);
 }
 .height-20{	height: 20vh;}
 .height-25{	height: 25vh;}
