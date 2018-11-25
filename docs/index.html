@@ -147,6 +147,157 @@
 				</div>
 			</div>
 		</div>
+		<div class="container-fluid bg-dark">
+			<div class="row">
+					<div class="col-md-12 mx-auto sql" style="border-radius: 3px; padding: 15px;padding-left: 50px;max-height: 60vh;overflow-y: scroll;color: #bde2f1">
+						<span class="text-danger">SET</span> <span class="text-orange">SQL_MODE</span>=<span class="text-cyan">"NO_AUTO_VALUE_ON_ZERO"</span>;<br>
+						<span class="text-danger">SET</span> <span class="text-orange">time_zone</span> = <span class="text-cyan">"+00:00"</span>;<br>
+						<br>
+						<span class="text-danger">CREATE DATABASE</span> `elegia` <span class="text-danger">DEFAULT</span> <span class="text-orange">CHARACTER</span> <span class="text-danger">SET</span> <span class="text-cyan">utf8</span> COLLATE <span class="text-cyan">utf8_general_ci</span>;<br>
+						<span class="text-danger">USE</span> `elegia`;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `benutzer` (<br>
+						  &emsp;&emsp;`UID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`email` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`pwd_hash` <span class="text-warning">varchar</span>(96) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`rolle` <span class="text-warning">enum</span>('Lieferant','Kunde') <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`UID`),<br>
+						  &emsp;&emsp;KEY `UID` (`UID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span>  <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span> ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `k_bewertet_l` (<br>
+						  &emsp;&emsp;`KID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`LID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`rating` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`description` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;KEY `LID` (`LID`),<br>
+						  &emsp;&emsp;KEY `KID` (`KID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `kategorie` (<br>
+						  &emsp;&emsp;`KaID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`name` <span class="text-warning">varchar</span>(56) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`description` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`KaID`),<br>
+						  &emsp;&emsp;KEY `KaID` (`KaID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `korb` (<br>
+						  &emsp;&emsp;`KorbID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`created` <span class="text-warning">timestamp</span> <span class="text-danger">NOT NULL</span> <span class="text-danger">DEFAULT</span> CURRENT_<span class="text-warning">TIMESTAMP</span>,<br>
+						  &emsp;&emsp;`KID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`KorbID`),<br>
+						  &emsp;&emsp;KEY `KorbID` (`KorbID`),<br>
+						  &emsp;&emsp;KEY `KID` (`KID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `korb_lieferstatus` (<br>
+						  &emsp;&emsp;`KorbID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`LID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`updated` <span class="text-warning">timestamp</span> <span class="text-danger">NOT NULL</span> <span class="text-danger">DEFAULT</span> CURRENT_<span class="text-warning">TIMESTAMP</span>,<br>
+						  &emsp;&emsp;KEY `KorbID` (`KorbID`),<br>
+						  &emsp;&emsp;KEY `LID` (`LID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `korb_ware` (<br>
+						  &emsp;&emsp;`KorbID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`WID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`added` <span class="text-warning">timestamp</span> <span class="text-danger">NOT NULL</span> <span class="text-danger">DEFAULT</span> CURRENT_<span class="text-warning">TIMESTAMP</span>,<br>
+						  &emsp;&emsp;KEY `KorbID` (`KorbID`),<br>
+						  &emsp;&emsp;KEY `WID` (`WID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `kunde` (<br>
+						  &emsp;&emsp;`KID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`Firmenname` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`Adresse` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;KEY `KID` (`KID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `lieferant` (<br>
+						  &emsp;&emsp;`LID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`Name` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`Adresse` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;KEY `LID` (`LID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `lieferstatus` (<br>
+						  &emsp;&emsp;`SID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`Name` <span class="text-warning">varchar</span>(56) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`description` <span class="text-warning">int</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`SID`),<br>
+						  &emsp;&emsp;KEY `SID` (`SID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `payment_method` (<br>
+						  &emsp;&emsp;`PayID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`name` <span class="text-warning">varchar</span>(56) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`PayID`),<br>
+						  &emsp;&emsp;KEY `PayID` (`PayID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `rechnung` (<br>
+						  &emsp;&emsp;`ReID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`KorbID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`sum` float <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`created` <span class="text-warning">timestamp</span> <span class="text-danger">NOT NULL</span> <span class="text-danger">DEFAULT</span> CURRENT_<span class="text-warning">TIMESTAMP</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`ReID`),<br>
+						  &emsp;&emsp;KEY `ReID` (`ReID`),<br>
+						  &emsp;&emsp;KEY `KorbID` (`KorbID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `rechnung_payment` (<br>
+						  &emsp;&emsp;`ReID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`PayID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`status` <span class="text-warning">enum</span>('Wird bearbeitet','Fehlgeschlagen','Erfolgreich','') <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;KEY `ReID` (`ReID`),<br>
+						  &emsp;&emsp;KEY `PayID` (`PayID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span>;<br>
+						<br>
+						<span class="text-danger">CREATE TABLE</span> <span class="text-success">IF</span> <span class="text-info">NOT EXISTS</span> `ware` (<br>
+						  &emsp;&emsp;`WID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span> <span class="text-info">AUTO_INCREMENT</span>,<br>
+						  &emsp;&emsp;`KaID` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`name` <span class="text-warning">varchar</span>(128) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`price` double <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;`amount` <span class="text-warning">int</span>(11) <span class="text-danger">NOT NULL</span>,<br>
+						  &emsp;&emsp;PRIMARY KEY (`WID`),<br>
+						  &emsp;&emsp;KEY `WID` (`WID`),<br>
+						  &emsp;&emsp;KEY `KaID` (`KaID`)<br>
+						) <span class="text-indigo">ENGINE=InnoDB</span> <span class="text-danger">DEFAULT</span> <span class="text-indigo">CHARSET=utf8</span> <span class="text-info">AUTO_INCREMENT</span>=1 ;<br>
+						<br>
+						<span class="text-danger">ALTER TABLE</span> `k_bewertet_l`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `k_bewertet_l_ibfk_2` <span class="text-indigo">FOREIGN KEY</span> (`KID`) <span class="text-cyan">REFERENCES</span> `benutzer` (`UID`),<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `k_bewertet_l_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`LID`) <span class="text-cyan">REFERENCES</span> `benutzer` (`UID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `korb`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `korb_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KID`) <span class="text-cyan">REFERENCES</span> `kunde` (`KID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `korb_lieferstatus`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `korb_lieferstatus_ibfk_2` <span class="text-indigo">FOREIGN KEY</span> (`LID`) <span class="text-cyan">REFERENCES</span> `lieferstatus` (`SID`),<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `korb_lieferstatus_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KorbID`) <span class="text-cyan">REFERENCES</span> `korb` (`KorbID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `korb_ware`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `korb_ware_ibfk_2` <span class="text-indigo">FOREIGN KEY</span> (`WID`) <span class="text-cyan">REFERENCES</span> `ware` (`WID`),<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `korb_ware_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KorbID`) <span class="text-cyan">REFERENCES</span> `korb` (`KorbID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `kunde`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `kunde_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KID`) <span class="text-cyan">REFERENCES</span> `benutzer` (`UID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `lieferant`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `lieferant_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`LID`) <span class="text-cyan">REFERENCES</span> `benutzer` (`UID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `rechnung`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `rechnung_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KorbID`) <span class="text-cyan">REFERENCES</span> `korb` (`KorbID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `rechnung_payment`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `rechnung_payment_ibfk_2` <span class="text-indigo">FOREIGN KEY</span> (`PayID`) <span class="text-cyan">REFERENCES</span> `payment_method` (`PayID`),<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `rechnung_payment_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`ReID`) <span class="text-cyan">REFERENCES</span> `rechnung` (`ReID`);<br>
+						  <br>
+						<span class="text-danger">ALTER TABLE</span> `ware`<br>
+						  &emsp;&emsp;ADD <span class="text-orange">CONSTRAINT</span> `ware_ibfk_1` <span class="text-indigo">FOREIGN KEY</span> (`KaID`) <span class="text-cyan">REFERENCES</span> `kategorie` (`KaID`);<br>
+					</div>
+				</div>
+		</div>
 		<div class="container-fluid custom-block bg-light" style="border-top:1px gainsboro solid">
 			<div class="container">
 				<div class="row">
@@ -176,7 +327,7 @@
 					<div class="col-md-6">
 						<i class="fab fa-css3 fa-10x text-secondary"></i>
 						<span class="custom-text margin-top-15">
-							Das Styling wird mit Hilfe von CSS und darauf basierten Framework <b>Bootstrap</b> entwickelt. Dies garantiert eine getestete und browserübergreifende Darstellung der Webseite.
+							Das Styling wird mit Hilfe von CSS und darauf basierten Framework <b>Bootstrap</b> entwickelt. Dies garantiert eine getestete und browserübergre<span class="text-success">if</ende Darstellung der Webseite.
 						</span>
 					</div>
 				</div>
