@@ -1,13 +1,13 @@
 # Elegia -> check out the [Intro](https://rodchenk.github.io/elegia/)
 Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding 
 
-Technologie
+**Technologie**
 
     PHP -> Laravel    
     JS -> jQuery, Bootstrap
     DB -> MySQL + json
     
-Funktionalitäten von Kunde
+**Funktionalitäten von Kunde**
 
     Suchen
     Anmelden/Regisitrieren
@@ -16,7 +16,7 @@ Funktionalitäten von Kunde
     Korb bestellen und bezahlen
     Lieferstatus beobachten
  
-Funktionalitäten von Lieferanten
+**Funktionalitäten von Lieferanten**
 
     Anmelden/Regisitrieren
     Ware hinzufügen
