@@ -3,7 +3,7 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding
 
 **Technologie**
 
-    PHP -> Laravel    
+    PHP -> CakePHP   
     JS -> jQuery, Bootstrap
     DB -> MySQL + json
     
