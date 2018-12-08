@@ -19,10 +19,10 @@ SET time_zone = "+01:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `elegia-web`
+-- Datenbank: `elegia`
 --
-CREATE DATABASE IF NOT EXISTS `elegia-web` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `elegia-web`;
+CREATE DATABASE IF NOT EXISTS `elegia` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `elegia`;
 
 -- --------------------------------------------------------
 
@@ -188,13 +188,6 @@ CREATE TABLE `user` (
   `email` varchar(96) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Daten für Tabelle `user`
---
-
-INSERT INTO `user` (`userID`, `pwd_hash`, `email`) VALUES
-(1, 'sdfsdfjhg32biuhsdfsdf', 'mischa@foliage.com'),
-(3, 'sdfsdfjsdfhg32biuhsdfsdf', 'ksusha@foliage.com');
 
 --
 -- Indizes der exportierten Tabellen
