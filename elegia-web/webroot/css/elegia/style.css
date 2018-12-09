@@ -1,0 +1,25 @@
+.main-start{
+	background-image: url(kitchen3.jpg);
+	background-size: cover;
+}
+.bg-coral{
+	background-color: #f16f55;
+}
+::selection{
+	background-color: var(--success);
+}
+@font-face {
+    font-family: MontserratExtraBold;
+    src: url(../about/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+    font-family: MontserratLight;
+    src: url(../about/Montserrat-Light.ttf);
+}
+body{
+	font-family: MontserratLight;
+}
+.border-radius-100{
+	border-radius: 100px;
+}
+.montserat-bold{font-family: MontserratExtraBold;}

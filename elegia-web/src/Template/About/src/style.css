@@ -1,0 +1,133 @@
+body{
+	background-color: #eee;
+}
+::selection{
+	background-color: var(--success);
+}
+@font-face {
+    font-family: MontserratExtraBold;
+    src: url(Montserrat-ExtraBold.ttf);
+}
+@font-face {
+    font-family: MontserratLight;
+    src: url(Montserrat-Light.ttf);
+}
+.sql::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+.sql::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+.text-orange{
+	color: var(--orange)
+}
+.text-indigo{
+	color: #9570d2;
+}
+.text-cyan{
+	color: var(--cyan);
+}
+.height-20{	height: 20vh;}
+.height-25{	height: 25vh;}
+.height-30{	height: 30vh;}
+.height-50{	height: 50vh;}
+.height-75{ height: 75vh;}
+.height-100{ height: 100vh;}
+
+.rollen>div>span:not(h3){
+	font-family: MontserratLight;
+}
+.rollen>div>span{margin-bottom: -35px}
+.rollen{margin-top: 50px}
+header{
+	padding: 0 !important;
+}
+footer{
+	box-shadow: 0 0 15px #00000080;
+	padding-top: 25px;
+	padding-bottom: 25px
+}
+.custom-block{
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+.vertical-align > div {
+  display: flex;
+  align-items: center;     /* Align the flex-items vertically */
+  justify-content: center; /* Optional, to align inner flex-items
+                              horizontally within the column  */
+}
+.custom-text{
+	display: block;
+	text-align: justify;
+}
+.cover{
+	background-image: url(kitchen.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	/*height: 50vw;*/
+	
+}
+.logo{
+	background-image: url(logologo.png);
+	height: 50px;
+	width: 150px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.labels{
+	font-family: 'MontserratExtraBold', sans-serif;
+	color: white;
+}
+.labels>span{
+	display: block;
+	font-size: 100px;
+	font-size: 9vw;
+	line-height: 7vw;
+	filter: drop-shadow(0 0 15px rgba(1,1,1,.5));
+}
+.right-menu{
+	height: 100px;
+	width: 60vw;
+	background-color: #212121;
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+	color: white;
+	font-family: 'MontserratLight', sans-serif;
+	font-size: 5vh;
+}
+.delivered-block{
+	font-family: 'MontserratLight', sans-serif;
+	padding: 20px;
+	font-size: 1.5em;
+}
+.delivered-block>span{
+	line-height: 25px;
+	font-size: 2em;
+}
+.bg-danger-transparent{
+	background-color: #0000008c;
+}
+.git{
+	width: 50px;
+	height: 50px;
+	background-image: url(git.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.custom-bg-cover{
+	position: absolute;
+	z-index: 0;
+	height: 50%;
+	bottom: 0px;
+}
+ul{
+	list-style-type: none;
+}
+.margin-top-15{
+	margin-top: 15px;
+}

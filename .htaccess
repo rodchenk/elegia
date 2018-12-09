@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteBase 	/
+	RewriteRule    ^$ elegia-web/webroot/    [L]
+	RewriteRule    (.*) elegia-web/webroot/$1 [L]
+
+	#Redirect an entire site to a sub folder
+	Redirect 301 /who /docs/index.html
+</IfModule>
