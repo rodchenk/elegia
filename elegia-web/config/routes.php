@@ -79,7 +79,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     /* about page, AboutController, index action*/
     $routes->connect('/about', array('controller' => 'about', 'action' => 'index'));
     /* login page, LoginController, index action*/
-    $routes->connect('/about', array('controller' => 'login', 'action' => 'index'));
+    $routes->connect('/login', array('controller' => 'login', 'action' => 'index'));
 
     $routes->fallbacks(DashedRoute::class);
 });
