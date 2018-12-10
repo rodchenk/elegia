@@ -23,3 +23,24 @@ body{
 	border-radius: 100px;
 }
 .montserat-bold{font-family: MontserratExtraBold;}
+.login-form>input:focus~label{
+	top: -10px;
+	font-weight: bold;
+}
+.login-form>input~label{
+	top: 20px;
+	left: 30px;
+	transition: top 500ms;
+}
+.login-form>input{
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px darkGrey solid;
+	border-radius: 0 !important;
+}
+.login-form>input:focus{
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
