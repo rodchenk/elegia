@@ -47,3 +47,51 @@ body{
 	border-bottom: 1px darkGrey solid;
 	box-shadow: none;
 }
+
+label.switch{
+	width: 60px;
+	height: 15px;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	position: relative;
+	cursor: pointer;
+}
+label.switch>div{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -8px;
+	left: 5px;
+	border-radius: 50%;
+	transition: transform 1s;
+}
+label.switch>input[type=checkbox]{visibility: hidden;}
+label.switch>input[type=checkbox]:checked~div{
+	transform: translateX(20px);
+}
+label.switch>input[type=checkbox]:not(:checked)~div{
+	transform: translateX(0px);
+}
+.selected-text-in-switch{
+	animation: 1s ease-out switch-text;
+
+	-webkit-animation:switch-text ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:switch-text ease-in 1;
+	animation:switch-text ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration: 500ms;
+	-moz-animation-duration: 500ms;
+	animation-duration:500ms;
+}
+@keyframes switch-text{
+	to{
+		filter: drop-shadow(0 0 1px #007bff);
+		font-weight: 900;
+		color: #007bff;
+	}
+}

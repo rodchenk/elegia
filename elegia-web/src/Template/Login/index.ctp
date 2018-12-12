@@ -4,12 +4,12 @@
 	<title>Login</title>
 	<?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']) ?>
 </head>
-<body>
-	<main class="bg-light" style="width: 100%; height: 100vh">
+<body class="bg-light">
+	<main>
 		<div class="container">	
 			<div class="container-fluid">
 				<div class="row">
-					<div class="mx-auto border bg-white" style="margin-top: 25%; width: 400px; padding: 14px; padding-top: 0;">
+					<div class="mx-auto border bg-white" style="margin-top: 100px; width: 400px; padding: 14px; padding-top: 0;">
 						<div class="row">
 							<div class="col-md-12 bg-coral text-center" style="height: 150px;background: linear-gradient(to right bottom, #f8d772, #f16f55)">
 								<span class="text-white d-block" style="padding: 30px;font-size: 1.5em">
