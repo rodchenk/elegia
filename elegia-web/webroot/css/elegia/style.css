@@ -95,3 +95,7 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 		color: #007bff;
 	}
 }
+
+.custom-header-icons>i{
+	cursor: pointer;
+}

@@ -16,11 +16,11 @@
     
     <?= $this->Flash->render() ?>
     <head>
-        <div class="container-fluid row">
-            <div class="col-md-2 mt-3">
+        <div class="container-fluid row position-relative" style="z-index: 99">
+            <div class="col-md-3 mt-3">
                 <?= $this->Html->image('about/logologo.png', ['width'=>'150', 'height'=>'50']) ?>   
             </div>
-            <div class="col-md-7 mx-auto mt-3">
+            <div class="col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active text-dark" href="/">Start</a>
