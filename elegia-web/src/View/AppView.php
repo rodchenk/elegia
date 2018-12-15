@@ -22,8 +22,12 @@ use Cake\View\View;
  *
  * @link https://book.cakephp.org/3.0/en/views.html#the-app-view
  */
-class AppView extends View
-{
+class AppView extends View{
+
+    private $ANONYM =  'role_0'; /*not logged in*/
+    private $CUTOMER = 'role_1'; /*logged in as customer*/
+    private $SUPPLIER ='role_2'; /*logged in as supplier*/
+    private $ADMIN =   'role_3'; /*logged in as admin*/
 
     /**
      * Initialization hook method.
@@ -34,7 +38,7 @@ class AppView extends View
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize(){
+        $this->set('role', 'role_1');
     }
 }

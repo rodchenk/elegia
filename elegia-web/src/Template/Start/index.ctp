@@ -28,7 +28,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 text-white" style="filter: drop-shadow(0 0 30px #191919);">
-						z.B. Berlin, Hamburg, München usw.
+						z.B. Berlin, Hamburg, München usw. 
 					</div>
 					<div class="col-md-6 text-white text-right">
 						<i class="fab fa-cc-visa fa-3x text-white"></i>
