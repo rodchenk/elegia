@@ -2,14 +2,14 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-
-use Cake\Auth\DefaultPasswordHasher; //include this line
+use Cake\Auth\DefaultPasswordHasher;
 /**
  * User Entity
  *
  * @property int $userID
  * @property string $pwd_hash
  * @property string $email
+ * @property string $role
  */
 class User extends Entity
 {
@@ -25,11 +25,11 @@ class User extends Entity
      */
     protected $_accessible = [
         'pwd_hash' => true,
-        'email' => true
+        'email' => true,
+        'role' => true
     ];
 
-    protected function _setPwd_hash($value)
-    {
+    protected function _setPwd_hash($value){
         $hasher = new DefaultPasswordHasher();
         return $hasher->hash($value);
     }

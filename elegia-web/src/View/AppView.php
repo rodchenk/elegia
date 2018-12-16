@@ -39,6 +39,6 @@ class AppView extends View{
      * @return void
      */
     public function initialize(){
-        $this->set('role', 'role_1');
+        $this->set('role', 'role_0');
     }
 }

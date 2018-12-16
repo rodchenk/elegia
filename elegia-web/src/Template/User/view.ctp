@@ -25,6 +25,10 @@
             <td><?= h($user->email) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= h($user->role) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('UserID') ?></th>
             <td><?= $this->Number->format($user->userID) ?></td>
         </tr>

@@ -23,6 +23,7 @@
         <?php
             echo $this->Form->control('pwd_hash');
             echo $this->Form->control('email');
+            echo $this->Form->control('role');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

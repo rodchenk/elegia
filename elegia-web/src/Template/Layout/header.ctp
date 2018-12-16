@@ -20,8 +20,7 @@
    
 </head>
 <body>
-    
-    <?= $this->Flash->render() ?>
+    <!-- <i class="fas fa-bars"></i> -->
     <head>
         <div class="container-fluid row position-relative" style="z-index: 99">
             <div class="col-md-3 mt-3">
@@ -42,46 +41,64 @@
             </div>
             <?php if ($role == 'role_1') /*customer*/ : ?>
             <div class="col-md-3 mt-3">
-                <ul class="nav justify-content-center icon-container">
+                <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
-                        <i class="far fa-user fa-2x"></i>
+                        <a href="/user">
+                            <i class="far fa-user fa-2x"></i>
+                        </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
-                        <i class="fas fa-shopping-basket fa-2x"></i>
+                        <a href="/cart">
+                            <i class="fas fa-shopping-basket fa-2x"></i>
+                        </a>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                        <a href="/logout">
+                            <i class="fas fa-sign-out-alt fa-2x"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
             <?php elseif ($role == 'role_2') /*supplier*/ : ?>
             <div class="col-md-3 mt-3">
-                <ul class="nav justify-content-center icon-container">
+                <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
-                        <i class="far fa-user fa-2x"></i>
+                        <a href="/user">
+                            <i class="far fa-user fa-2x"></i>
+                        </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                        <i class="far fa-bell fa-2x"></i>
+                        <a href="#">
+                            <i class="far fa-bell fa-2x"></i>
+                        </a>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                        <a href="/logout">
+                            <i class="fas fa-sign-out-alt fa-2x"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
             <?php elseif ($role == 'role_3'): ?>
             <div class="col-md-3 mt-3">
-                <ul class="nav justify-content-center icon-container">
+                <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin panel">
-                        <i class="fas fa-sliders-h fa-2x"></i>
+                        <a href="/admin">
+                            <i class="fas fa-sliders-h fa-2x"></i>
+                        </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                        <i class="far fa-bell fa-2x"></i>
+                        <a href="#">
+                            <i class="far fa-bell fa-2x"></i>
+                        </a>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                        <a href="/logout">
+                            <i class="fas fa-sign-out-alt fa-2x"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -106,6 +123,7 @@
         </div>
     </head>
     <main>
+        <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </main>
     <footer>

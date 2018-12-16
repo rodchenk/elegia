@@ -11,13 +11,14 @@
     </ul>
 </nav>
 <div class="user index large-9 medium-8 columns content">
-    <h3>Users</h3>
+    <h3><?= __('User') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Password') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('E-mail') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('userID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('pwd_hash') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
                 <td><?= $this->Number->format($user->userID) ?></td>
                 <td><?= h($user->pwd_hash) ?></td>
                 <td><?= h($user->email) ?></td>
+                <td><?= h($user->role) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->userID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->userID]) ?>

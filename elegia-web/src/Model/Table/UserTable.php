@@ -60,6 +60,11 @@ class UserTable extends Table
             ->notEmpty('email')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
+        $validator
+            ->scalar('role')
+            ->requirePresence('role', 'create')
+            ->notEmpty('role');
+
         return $validator;
     }
 
