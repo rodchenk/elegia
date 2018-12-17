@@ -4,6 +4,10 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $user
  */
 ?>
+
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']) ?>
+    
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>

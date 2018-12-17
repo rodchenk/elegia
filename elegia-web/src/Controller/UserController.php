@@ -23,6 +23,7 @@ class UserController extends AppController
         $user = $this->paginate($this->User);
 
         $this->set(compact('user'));
+        $this->viewBuilder()->layout('header');
     }
 
     /**
@@ -34,6 +35,8 @@ class UserController extends AppController
      */
     public function view($id = null)
     {
+
+        
         $user = $this->User->get($id, [
             'contain' => []
         ]);

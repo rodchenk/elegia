@@ -88,7 +88,7 @@
 							</div>
 							<div class="col text-center mt-1">
 								<label class="switch d-inline-block" style="background-color: #c2c7cc" for="switch-checkbox-signup">
-									<input onchange="fun(this)" type="checkbox" name="user_role" id="switch-checkbox-signup">
+									<input onchange="fun(this)" type="checkbox" name="user_role" id="switch-checkbox-signup" value="false">
 									<div class="bg-primary"></div>
 								</label>
 							</div>
@@ -108,6 +108,7 @@
 								customer.classList.add('selected-text-in-switch');
 								supplier.classList.remove('selected-text-in-switch');
 							}
+							e.value = e.checked;
 						}
 					</script>
 					<div class="col-md-12 mt-4">
