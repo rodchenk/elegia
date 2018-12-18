@@ -28,6 +28,7 @@ class SupplierFixture extends TestFixture
         'name' => ['type' => 'string', 'length' => 96, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'city' => ['type' => 'string', 'length' => 96, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['supplierID'], 'length' => []],
             'supplierID' => ['type' => 'unique', 'columns' => ['supplierID'], 'length' => []],
             'supplier_ibfk_1' => ['type' => 'foreign', 'columns' => ['supplierID'], 'references' => ['user', 'userID'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],

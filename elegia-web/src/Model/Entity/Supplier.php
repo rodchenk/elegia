@@ -23,7 +23,6 @@ class Supplier extends Entity
      * @var array
      */
     protected $_accessible = [
-        'supplierID' => true,
         'name' => true,
         'city' => true
     ];

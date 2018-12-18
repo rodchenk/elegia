@@ -88,7 +88,7 @@
 							</div>
 							<div class="col text-center mt-1">
 								<label class="switch d-inline-block" style="background-color: #c2c7cc" for="switch-checkbox-signup">
-									<input onchange="fun(this)" type="checkbox" name="user_role" id="switch-checkbox-signup" value="false">
+									<input onchange="fun(this)" onload="this.value = false" type="checkbox" name="user_role" id="switch-checkbox-signup">
 									<div class="bg-primary"></div>
 								</label>
 							</div>

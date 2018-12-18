@@ -29,13 +29,14 @@ class SignupController extends AppController {
     			return $this->redirect(['action' => 'index']);
     		}
 
-    		if(!empty($request_data['user_role'])){
-    			$role = $request_data['user_role'] == true ? 'supplier' : 'customer'; //when das Checkbox angekreuzt ist, wird der Lieferant ausgewaehlt
+    		if(array_key_exists('user_role', $request_data)){
+    			//when das Checkbox angekreuzt ist oder, wird der Lieferant ausgewaehlt
+    			$role = $request_data['user_role'] ? 'supplier' : 'customer';
     		}else{
-    			$this->Flash->error(__('You have to choose a role. Please, try again'));
-    			return $this->redirect(['action' => 'index']);
+    			//when nicht angefasst, dann customer
+    			$role = 'customer';
     		}
-
+    		    		
     		$data = array(
     			'User' => array(
 	        		'email' => $request_data['user_email'],
@@ -47,9 +48,39 @@ class SignupController extends AppController {
 			$user = $this->User->patchEntity($user, $data);
 
 			if ($this->User->save($user)){
+				/*--NOT CHECKED--*/
+				/*if($role == 'supplier'){
+	    			$this->loadModel('Supplier');
+	    			$supplier = $this->Supplier->newEntity();
+	    			$supplier_data = array(
+	    				'Supplier' => array(
+	    					'id' => $user->id,
+	    					'name' => $request_data['user_name'],
+	    					'city' => $request_data['user_city']
+	    				)
+	    			);
+
+	    			$supplier = $this->Supplier->patchEntity($supplier, $supplier_data);
+	    			$this->Supplier->save($supplier);
+
+	    		}elseif($role == 'customer'){
+	    			$this->loadModel('Customer');
+	    			$customer = $this->Supplier->newEntity();
+	    			$customer_data = array(
+	    				'Customer' => array(
+	    					'id' => $user->id,
+	    					'name' => $request_data['user_name'],
+	    					'city' => $request_data['user_city']
+	    				)
+	    			);
+
+	    			$customer = $this->Customer->patchEntity($customer, $customer_data);
+	    			$this->Customer->save($customer);
+	    		}*/
+	    		/*----*/
 				$this->Flash->success(__('The user has been saved'));
 			}else{
-				$this->Flash->error(__('The user could not be saved. Please, try again'));
+				$this->Flash->error(__('The user could not be saved. Please, try again '.$role));
 			}
     	}
     	return $this->redirect(['action' => 'index']);

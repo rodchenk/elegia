@@ -33,6 +33,7 @@ class SupplierTable extends Table
 
         $this->setTable('supplier');
         $this->setDisplayField('name');
+        $this->setPrimaryKey('supplierID');
     }
 
     /**
@@ -45,8 +46,7 @@ class SupplierTable extends Table
     {
         $validator
             ->integer('supplierID')
-            ->requirePresence('supplierID', 'create')
-            ->notEmpty('supplierID')
+            ->allowEmpty('supplierID', 'create')
             ->add('supplierID', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
