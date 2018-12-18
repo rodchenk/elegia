@@ -54,7 +54,7 @@ class SignupController extends AppController {
 	    			$supplier = $this->Supplier->newEntity();
 	    			$supplier_data = array(
 	    				'Supplier' => array(
-	    					'id' => $user->id,
+	    					'id' => $this->User->id,
 	    					'name' => $request_data['user_name'],
 	    					'city' => $request_data['user_city']
 	    				)
@@ -68,7 +68,7 @@ class SignupController extends AppController {
 	    			$customer = $this->Supplier->newEntity();
 	    			$customer_data = array(
 	    				'Customer' => array(
-	    					'id' => $user->id,
+	    					'id' => $this->User->id,
 	    					'name' => $request_data['user_name'],
 	    					'city' => $request_data['user_city']
 	    				)
