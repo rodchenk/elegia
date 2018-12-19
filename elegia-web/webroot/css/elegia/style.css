@@ -43,7 +43,6 @@ body{
 	border-radius: 0 !important;
 }
 .login-form>input:focus{
-	/*border: none;*/
 	border-bottom: 1px darkGrey solid;
 	box-shadow: none;
 }
@@ -76,11 +75,11 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 .selected-text-in-switch{
 	animation: 1s ease-out switch-text;
 
-	-webkit-animation:switch-text ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-webkit-animation:switch-text ease-in 1;
 	-moz-animation:switch-text ease-in 1;
 	animation:switch-text ease-in 1;
 
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-webkit-animation-fill-mode:forwards;
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 
@@ -101,12 +100,13 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 	padding: 15px;
 	transition: color 500ms;
 }
+.message-error{ background: linear-gradient(to right, #F44336, #9C27B0) }
+.message-success{ background: linear-gradient(to right, #28a745, #2867a7) }
 .custom-header-icons>i.fa-facebook:hover{color: #3f51b5 !important}
 .custom-header-icons>i.fa-twitter:hover{color: #03a9f4 !important}
 .custom-header-icons>i.fa-google:hover{color: #b9194f !important}
-.icon-container>li>a{
-	color: inherit;
-}
+.icon-container>li>a{ color: inherit }
+
 .icon-container>li{
 	padding-left: 15px;
 	padding-right: 15px;
@@ -147,11 +147,11 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 .hidden{
 	animation: 1s ease-out hide-flash;
 
-	-webkit-animation:hide-flash ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-webkit-animation:hide-flash ease-in 1;
 	-moz-animation:hide-flash ease-in 1;
 	animation:hide-flash ease-in 1;
 
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-webkit-animation-fill-mode:forwards;
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 
@@ -171,10 +171,4 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 	top: 0;
 	width: 100vw;
 	z-index: 9999;
-}
-.message-error{
-	background: linear-gradient(to right, #F44336, #9C27B0)
-}
-.message-success{
-	background: linear-gradient(to right, #28a745, #2867a7)
 }
