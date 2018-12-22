@@ -4,13 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Supplier Entity
+ * Customer Entity
  *
- * @property int $supplierID
+ * @property int $customerID
  * @property string $name
  * @property string $city
+ * @property string|null $street
+ * @property string|null $house_nr
+ * @property string|null $description
+ * @property string|null $image
  */
-class Supplier extends Entity
+class Customer extends Entity
 {
 
     /**
@@ -23,8 +27,12 @@ class Supplier extends Entity
      * @var array
      */
     protected $_accessible = [
-        'supplierID' => true,
+        'customerID' => true,
         'name' => true,
-        'city' => true
+        'city' => true,
+        'street' => true,
+        'house_nr' => true,
+        'description' => true,
+        'image' => true
     ];
 }

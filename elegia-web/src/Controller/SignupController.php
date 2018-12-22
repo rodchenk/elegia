@@ -24,6 +24,7 @@ class SignupController extends AppController {
 
     		$pwd = $request_data['user_password'];
 
+            //if the password does not match to the repeated password
     		if($request_data['user_password'] != $request_data['user_password_repeat']){
     			$this->Flash->error(__('The passwords doesnt match. Please, try again'));
     			return $this->redirect(['action' => 'index']);
@@ -46,17 +47,20 @@ class SignupController extends AppController {
 			);
 
 			$user = $this->User->patchEntity($user, $data);
+            $saved_user = $this->User->save($user);
+            
+			if ($saved_user){
+                $id = $saved_user->userID;
 
-			if ($this->User->save($user)){
 				/*--NOT CHECKED--*/
-				/*if($role == 'supplier'){
+				if($role == 'supplier'){
 	    			$this->loadModel('Supplier');
 	    			$supplier = $this->Supplier->newEntity();
 	    			$supplier_data = array(
 	    				'Supplier' => array(
-	    					'id' => $this->User->id,
-	    					'name' => $request_data['user_name'],
-	    					'city' => $request_data['user_city']
+	    					'supplierID' =>   $id,
+	    					'name' =>         $request_data['user_name'],
+	    					'city' =>         $request_data['user_city']
 	    				)
 	    			);
 
@@ -65,22 +69,22 @@ class SignupController extends AppController {
 
 	    		}elseif($role == 'customer'){
 	    			$this->loadModel('Customer');
-	    			$customer = $this->Supplier->newEntity();
+	    			$customer = $this->Customer->newEntity();
 	    			$customer_data = array(
 	    				'Customer' => array(
-	    					'id' => $this->User->id,
-	    					'name' => $request_data['user_name'],
-	    					'city' => $request_data['user_city']
+	    					'customerID' =>   $id,
+	    					'name' =>         $request_data['user_name'],
+	    					'city' =>         $request_data['user_city']
 	    				)
 	    			);
 
 	    			$customer = $this->Customer->patchEntity($customer, $customer_data);
 	    			$this->Customer->save($customer);
-	    		}*/
+	    		}
 	    		/*----*/
 				$this->Flash->success(__('The user has been saved'));
 			}else{
-				$this->Flash->error(__('The user could not be saved. Please, try again '.$role));
+				$this->Flash->error(__('The user could not be saved. Please, try again '));
 			}
     	}
     	return $this->redirect(['action' => 'index']);

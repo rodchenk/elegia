@@ -32,5 +32,9 @@
             <th scope="row"><?= __('UserID') ?></th>
             <td><?= $this->Number->format($user->userID) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Created') ?></th>
+            <td><?= h($user->created) ?></td>
+        </tr>
     </table>
 </div>

@@ -4,10 +4,6 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $user
  */
 ?>
-
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']) ?>
-    
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -23,6 +19,7 @@
                 <th scope="col"><?= $this->Paginator->sort('pwd_hash') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('role') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,6 +30,7 @@
                 <td><?= h($user->pwd_hash) ?></td>
                 <td><?= h($user->email) ?></td>
                 <td><?= h($user->role) ?></td>
+                <td><?= h($user->created) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->userID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->userID]) ?>

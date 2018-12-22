@@ -1,8 +1,9 @@
 <?php
 namespace App\Model\Entity;
 
-use Cake\ORM\Entity;
 use Cake\Auth\DefaultPasswordHasher;
+use Cake\ORM\Entity;
+
 /**
  * User Entity
  *
@@ -10,9 +11,15 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $pwd_hash
  * @property string $email
  * @property string $role
+ * @property \Cake\I18n\FrozenTime $created
  */
 class User extends Entity
 {
+
+    protected function _setPwd_hash($value){
+        $hasher = new DefaultPasswordHasher();
+        return $hasher->hash($value);
+    }
 
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -26,11 +33,7 @@ class User extends Entity
     protected $_accessible = [
         'pwd_hash' => true,
         'email' => true,
-        'role' => true
+        'role' => true,
+        'created' => false
     ];
-
-    protected function _setPwd_hash($value){
-        $hasher = new DefaultPasswordHasher();
-        return $hasher->hash($value);
-    }
 }

@@ -46,7 +46,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
 	  						</div>
-					  		<input type="text" class="form-control" name="user_name" placeholder="Name" required>
+					  		<input type="text" autocomplete="off" class="form-control" name="user_name" placeholder="Name" required>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -54,7 +54,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 	  						</div>
-					  		<input type="text" class="form-control" name="user_city" placeholder="City" required>
+					  		<input type="text" autocomplete="off" class="form-control" name="user_city" placeholder="City" required>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -62,7 +62,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="far fa-envelope-open"></i></span>
 	  						</div>
-					  		<input type="text" class="form-control" name="user_email" placeholder="E-Mail" required>
+					  		<input type="text" autocomplete="off" class="form-control" name="user_email" placeholder="E-Mail" required>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -70,7 +70,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
 	  						</div>
-					  		<input type="password" name="user_password" class="form-control" placeholder="Password" required>
+					  		<input type="password" autocomplete="off" name="user_password" class="form-control" placeholder="Password" required>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -78,7 +78,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-glasses"></i></span>
 	  						</div>
-					  		<input name="user_password_repeat" type="password" class="form-control" placeholder="Repeat Password" required>
+					  		<input name="user_password_repeat" autocomplete="off" type="password" class="form-control" placeholder="Repeat Password" required>
 						</div>
 					</div>
 					<div class="col-md-12 mt-5">

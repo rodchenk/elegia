@@ -17,6 +17,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class UserTable extends Table
 {
@@ -34,6 +36,8 @@ class UserTable extends Table
         $this->setTable('user');
         $this->setDisplayField('userID');
         $this->setPrimaryKey('userID');
+
+        $this->addBehavior('Timestamp');
     }
 
     /**

@@ -28,6 +28,7 @@ class UserFixture extends TestFixture
         'pwd_hash' => ['type' => 'string', 'length' => 96, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'email' => ['type' => 'string', 'length' => 96, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'role' => ['type' => 'string', 'length' => null, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'created' => ['type' => 'timestamp', 'length' => null, 'null' => false, 'default' => 'CURRENT_TIMESTAMP', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['userID'], 'length' => []],
             'email' => ['type' => 'unique', 'columns' => ['email'], 'length' => []],
@@ -51,7 +52,8 @@ class UserFixture extends TestFixture
                 'userID' => 1,
                 'pwd_hash' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
-                'role' => 'Lorem ipsum dolor sit amet'
+                'role' => 'Lorem ipsum dolor sit amet',
+                'created' => 1545484648
             ],
         ];
         parent::init();
