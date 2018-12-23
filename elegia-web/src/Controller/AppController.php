@@ -38,7 +38,6 @@ class AppController extends Controller{
         $this->loadComponent('Auth', [
             'Authenticate' => [
                 'Form' => [
-                    'passwordHasher' => 'Default',
                     'userModel' => 'User',
                     'Fields' => [
                         'username' => 'email',
@@ -63,7 +62,7 @@ class AppController extends Controller{
         //         'controller' => 'Start',
         //         'action' => 'index'
         //     ]
-        
+
         // ]);
 
         $this->loadComponent('Security');

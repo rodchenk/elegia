@@ -40,7 +40,7 @@ class LoginController extends AppController {
     	}else{
     		$this->Flash->error(__('Your request could not be checked'));
     	}
-        
+
 		return $this->redirect(['action' => 'index']);
     }
 }

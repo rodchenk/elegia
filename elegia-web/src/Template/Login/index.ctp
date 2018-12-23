@@ -31,7 +31,7 @@
 							</div>
 							<div class="col-md-12 mt-3 login-form">
 								<div class="col-md-12 input-group-lg login-form">
-									<?= $this->Form->input('password', ['name' => 'pwd_hash', 'placeholder' => " ", 'type' => 'password', 'class' => 'form-control', 'label' => false]); ?>
+									<?= $this->Form->input('pwd_hash', ['name' => 'pwd_hash', 'placeholder' => " ", 'type' => 'password', 'class' => 'form-control', 'label' => false]); ?>
 	  								<label style="z-index: 100;position: absolute;">Password</label>
 								</div>
 							</div>
