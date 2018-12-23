@@ -25,13 +25,13 @@
 						<?= $this->Form->create('user', array('action'=>'auth', 'class'=>'row')) ?>
 							<div class="col-md-12 mt-5">
 								<div class="col-md-12 input-group-lg login-form">
-									<?= $this->Form->input('email', ['type' => 'text', 'placeholder' => " ", 'name' => 'email', 'type' => 'text', 'class' => 'form-control', 'label' => false]); ?>
+									<?= $this->Form->input('User.email', ['type' => 'text', 'placeholder' => " ", 'name' => 'email', 'type' => 'text', 'class' => 'form-control', 'label' => false]); ?>
 	  								<label style="z-index: 100;position: absolute;">E-Mail</label>
 								</div>
 							</div>
 							<div class="col-md-12 mt-3 login-form">
 								<div class="col-md-12 input-group-lg login-form">
-									<?= $this->Form->input('pwd_hash', ['name' => 'pwd_hash', 'placeholder' => " ", 'type' => 'password', 'class' => 'form-control', 'label' => false]); ?>
+									<?= $this->Form->input('User.pwd_hash', ['name' => 'pwd_hash', 'placeholder' => " ", 'type' => 'password', 'class' => 'form-control', 'label' => false]); ?>
 	  								<label style="z-index: 100;position: absolute;">Password</label>
 								</div>
 							</div>
@@ -43,7 +43,10 @@
 							<div class="col-md-12 mt-3 mt-5 mb-3">
 								<div class="row" style="margin-right: 1px; margin-left: 1px;">
 									<div class="col-md-3 text-left">
-										<button class="btn btn-primary border-radius-100" style="padding: 15px;padding-right: 25px; padding-left: 25px">Log In</button>
+										<?= $this->Form->submit(__('Log in'), [
+											'class' => 'btn btn-primary border-radius-100', 
+											'style' => 'padding: 15px;padding-right: 25px; padding-left: 25px'
+										]); ?>
 									</div>
 									<div class="col-md-9 mt-1 text-right">
 										<span>
