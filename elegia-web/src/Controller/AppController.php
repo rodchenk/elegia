@@ -17,54 +17,38 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @link https://book.cakephp.org/3.0/en/controllers.html#the-app-controller
- */
 class AppController extends Controller{
 
+    private $ANONYM =  'role_0'; /*not logged in*/
+    private $CUTOMER = 'role_1'; /*logged in as customer*/
+    private $SUPPLIER ='role_2'; /*logged in as supplier*/
+    private $ADMIN =   'role_3'; /*logged in as admin*/
+
+
     public function initialize(){
+
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
-        $this->loadComponent('Flash');
+        $this->set('role', 'role_0');
 
+        $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
+        $this->loadComponent('Flash');
+        $this->loadComponent('Security');
         $this->loadComponent('Auth', [
             'Authenticate' => [
                 'Form' => [
+                    'finder' => 'auth',
+                    'passwordHasher' => 'Default',
                     'userModel' => 'User',
-                    'Fields' => [
-                        'username' => 'email',
-                        'password' => 'pwd_hash'
-                    ],
+                    'Fields'    => ['username' => 'email','password' => 'pwd_hash'],
                 ]
             ],
-            'loginAction' => [
-                'controller' => 'Login',
-                'action' => 'index',
-            ]
+            'authError'     => ':)',
+            'storage'       => 'Session',
+            'loginAction'       => ['controller' => 'Login','action' => 'index'],
+            'loginRedirect'     => ['controller' => 'Start','action' => 'index'],
+            'logoutRedirect'    => ['controller' => 'Start','action' => 'index']
         ]);
 
-        // $this->loadComponent('Auth', [
-        //     'authorize' => ['Controller'],
-
-        //     'loginRedirect' => [
-        //         'controller' => 'Start',
-        //         'action' => 'index'
-        //     ],
-        //     'logoutRedirect' => [
-        //         'controller' => 'Start',
-        //         'action' => 'index'
-        //     ]
-
-        // ]);
-
-        $this->loadComponent('Security');
     }
 }

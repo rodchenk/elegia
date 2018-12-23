@@ -22,7 +22,10 @@
 								</div>
 							</div>
 						</div>
-						<?= $this->Form->create('user', array('action'=>'auth', 'class'=>'row')) ?>
+						<?= $this->Form->create('User', [
+							'action'=>'auth', 
+							'class'=>'row'
+						]) ?>
 							<div class="col-md-12 mt-5">
 								<div class="col-md-12 input-group-lg login-form">
 									<?= $this->Form->input('User.email', ['type' => 'text', 'placeholder' => " ", 'name' => 'email', 'type' => 'text', 'class' => 'form-control', 'label' => false]); ?>

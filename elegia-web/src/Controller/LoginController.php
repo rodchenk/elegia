@@ -9,26 +9,17 @@ class LoginController extends AppController {
     public function initialize(){
         parent::initialize();
         $this->Auth->allow(['auth', 'index']);
-
+        $this->loadModel('User');
     }
 
     public function index() {
         $this->layout = 'header';
-        $this->set(compact('login'));
         $this->viewBuilder()->template('index');
+        $this->set(compact($this->User));
     }
 
     public function auth(){
-    	$this->loadModel('User');
-
     	if($this->request->is('post')){
-   //  		$request_data = $this->request->getData();
-   //  		$data = array(
-   //  			'User' => array(
-   //  				'email' =>  $request_data['user_email'],
-   //  				'pwd_hash' => $request_data['user_password']
-   //  			)
-			// );
 
             $user = $this->Auth->identify();
             if ($user) {

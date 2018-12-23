@@ -54,7 +54,7 @@ class UserTable extends Table
 
         $validator
             ->scalar('pwd_hash')
-            ->maxLength('pwd_hash', 96)
+            ->maxLength('pwd_hash', 256)
             ->requirePresence('pwd_hash', 'create')
             ->notEmpty('pwd_hash');
 
@@ -84,5 +84,11 @@ class UserTable extends Table
         $rules->add($rules->isUnique(['email']));
 
         return $rules;
+    }
+
+    public function findAuth(\Cake\ORM\Query $query, array $options){
+        $query->select('all');
+
+        return $query;
     }
 }
