@@ -6,6 +6,40 @@ use App\Controller\AppController;
 
 class SignupController extends AppController {
 
+    var $components = array("RequestHandler");
+
+    public function initialize(){
+        parent::initialize();
+        //$this->loadComponent('RequestHandler');
+        $this->Auth->allow(['search', 'index', 'add']);
+    }
+
+    public function isAuthorized($user){
+        return true;
+    }
+
+
+    public function search(){
+        $this->request->allowMethod('ajax');
+        $keyword = $this->request->query('keyword');
+        $this->loadModel('Geo');
+        $this->paginate = ['limit' => 5];
+
+        $query = $this->Geo->find('all', [
+            'conditions' => 
+                ['Geo.city LIKE' => ''.$keyword.'%'], 
+            'group' => 'Geo.city'
+        ]);
+
+        $this->RequestHandler->prefers('json');
+        $cities = $this->paginate($query);
+        foreach ($cities as $city) {
+            echo '<option value="'.$city->city.', '.$city->bundesland.'"></option>';
+        }
+
+        $this->render(false);
+    }
+
     public function index() {
         $this->viewBuilder()->layout('header');
         $this->set(compact('user'));
@@ -16,10 +50,12 @@ class SignupController extends AppController {
 	* TODO refactoring
     */
     public function add(){
+
     	$this->loadModel('User');
     	$user = $this->User->newEntity();
 
     	if($this->request->is('post')){
+
     		$request_data = $this->request->getData();
 
     		$pwd = $request_data['user_password'];
@@ -37,6 +73,20 @@ class SignupController extends AppController {
     			//when nicht angefasst, dann customer
     			$role = 'customer';
     		}
+
+            if(array_key_exists('user_city', $request_data)){
+                $cities = explode(", ", $request_data['user_city']);//array of input field with city (and bundesland?) 'Berlin, Berlin' -> ['Berlin', 'Berlin'] ->pop = ['Berlin'] -> impolde Berlin
+                if(sizeof($cities) >= 2){
+                    //$bundesland = $cities[sizeof($cities)-1];
+                    array_pop($cities);//remove last element from array (it should be the bundesland)
+                    $city = implode(", ", $cities);//array to string
+                }else{
+                    $city = $cities[0];
+                }
+            }else{
+                $this->Flash->error(__('Please fill all required fields'));
+                return $this->redirect(['action' => 'index']);
+            }
     		    		
     		$data = array(
     			'User' => array(
@@ -60,12 +110,17 @@ class SignupController extends AppController {
 	    				'Supplier' => array(
 	    					'supplierID' =>   $id,
 	    					'name' =>         $request_data['user_name'],
-	    					'city' =>         $request_data['user_city']
+	    					'city' =>         $city
 	    				)
 	    			);
 
 	    			$supplier = $this->Supplier->patchEntity($supplier, $supplier_data);
-	    			$this->Supplier->save($supplier);
+	    			
+                    if($this->Supplier->save($supplier)){
+                        $this->Flash->success(__('The user has been saved'));
+                    }else{
+                        $this->Flash->error(__('The user could not be saved. Please, try again '));
+                    }
 
 	    		}elseif($role == 'customer'){
 	    			$this->loadModel('Customer');
@@ -74,12 +129,16 @@ class SignupController extends AppController {
 	    				'Customer' => array(
 	    					'customerID' =>   $id,
 	    					'name' =>         $request_data['user_name'],
-	    					'city' =>         $request_data['user_city']
+	    					'city' =>         $city
 	    				)
 	    			);
 
 	    			$customer = $this->Customer->patchEntity($customer, $customer_data);
-	    			$this->Customer->save($customer);
+	    			if($this->Customer->save($customer)){
+                        $this->Flash->success(__('The user has been saved'));
+                    }else{
+                        $this->Flash->error(__('The user could not be saved. Please, try again '));
+                    }
 	    		}
 	    		/*----*/
 				$this->Flash->success(__('The user has been saved'));

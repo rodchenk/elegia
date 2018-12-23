@@ -9,5 +9,10 @@ class SearchController extends AppController {
         $this->layout = 'header';
         $this->viewBuilder()->template('index');
     }
+
+    public function search(){
+    	$this->layout = 'header';
+        $this->viewBuilder()->template('index');
+    }
 }
 ?>

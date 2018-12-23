@@ -27,12 +27,13 @@ body{
 .login-form>input:focus~label{
 	top: -10px;
 	font-weight: bold;
+	font-size: 10px;
 }
 
 .login-form>input~label{
 	top: 20px;
 	left: 30px;
-	transition: top 500ms;
+	transition: top 500ms, font-size 500ms;
 	pointer-events: none;
 }
 .login-form>input{
@@ -171,4 +172,7 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 	top: 0;
 	width: 100vw;
 	z-index: 9999;
+}
+input::-webkit-calendar-picker-indicator {
+  display: none;
 }

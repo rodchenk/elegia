@@ -40,5 +40,13 @@ class AppView extends View{
      */
     public function initialize(){
         $this->set('role', 'role_0');
+        $this->Form->templates(['inputContainer' => '{{content}}']);
     }
 }
+/*
+
+public function logout() {
+    return $this->redirect($this->Auth->logout());
+}
+
+*/

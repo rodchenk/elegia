@@ -46,7 +46,15 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
 	  						</div>
-					  		<input type="text" autocomplete="off" class="form-control" name="user_name" placeholder="Name" required>
+					  		<?= $this->Form->input('name', [
+					  			'name' => 'user_name', 
+					  			'autocomplete' => 'off', 
+					  			'required', 
+					  			'placeholder' => "Name", 
+					  			'type' => 'text', 
+					  			'class' => 'form-control', 
+					  			'label' => false
+					  		]); ?>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -54,15 +62,44 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 	  						</div>
-					  		<input type="text" autocomplete="off" class="form-control" name="user_city" placeholder="City" required>
+	  						<datalist id="cities"></datalist>
+	  						<?= $this->Form->input('city', [
+	  							'name' => 'user_city', 
+	  							'onkeyup' => 'search(this.value)', 
+	  							'list' => 'cities', 
+	  							'autocomplete' => 'off', 
+	  							'required', 
+	  							'placeholder' => 'City', 
+	  							'class' => 'form-control', 
+	  							'label' => false
+	  						]); ?>
 						</div>
 					</div>
+					<script type="text/javascript">
+						function search(keyword){
+							let search = keyword;
+							$.ajax({
+								method: 'GET',
+								url: "<?= $this->Url->build(['controller' => 'Signup', 'action' => 'search']) ?>",
+								type: 'json',
+								data: {keyword:search},
+								success: function(e){$('#cities').html(e);}
+							});
+						}
+					</script>
 					<div class="col-md-12 mt-3">
 						<div class="col input-group">
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="far fa-envelope-open"></i></span>
 	  						</div>
-					  		<input type="text" autocomplete="off" class="form-control" name="user_email" placeholder="E-Mail" required>
+					  		<?= $this->Form->input('city', [
+	  							'name' => 'user_email',  
+	  							'autocomplete' => 'off', 
+	  							'required', 
+	  							'placeholder' => 'E-Mail', 
+	  							'class' => 'form-control', 
+	  							'label' => false
+	  						]); ?>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -70,7 +107,15 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
 	  						</div>
-					  		<input type="password" autocomplete="off" name="user_password" class="form-control" placeholder="Password" required>
+					  		<?= $this->Form->input('city', [
+	  							'name' => 'user_password',  
+	  							'autocomplete' => 'off', 
+	  							'required', 
+	  							'type' => 'password',
+	  							'placeholder' => 'Password', 
+	  							'class' => 'form-control', 
+	  							'label' => false
+	  						]); ?>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3">
@@ -78,7 +123,15 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-glasses"></i></span>
 	  						</div>
-					  		<input name="user_password_repeat" autocomplete="off" type="password" class="form-control" placeholder="Repeat Password" required>
+					  		<?= $this->Form->input('city', [
+	  							'name' => 'user_password_repeat',  
+	  							'autocomplete' => 'off', 
+	  							'required', 
+	  							'type' => 'password',
+	  							'placeholder' => 'Repeat password', 
+	  							'class' => 'form-control', 
+	  							'label' => false
+	  						]); ?>
 						</div>
 					</div>
 					<div class="col-md-12 mt-5">
@@ -88,7 +141,13 @@
 							</div>
 							<div class="col text-center mt-1">
 								<label class="switch d-inline-block" style="background-color: #c2c7cc" for="switch-checkbox-signup">
-									<input onchange="fun(this)" onload="this.value = false" type="checkbox" name="user_role" id="switch-checkbox-signup">
+									<?= $this->Form->input('city', [
+			  							'name' => 'user_role',
+			  							'type' => 'checkbox',
+			  							'id' => 'switch-checkbox-signup',
+			  							'onchange' => 'fun(this)',
+			  							'label' => false
+			  						]); ?>
 									<div class="bg-primary"></div>
 								</label>
 							</div>
@@ -113,7 +172,13 @@
 					</script>
 					<div class="col-md-12 mt-4">
 						<div style="margin-left: 20px" class="custom-control custom-checkbox mr-sm-2">
-							<input type="checkbox" class="custom-control-input" id="term-and-condition-checkbox" name="user_accepts_terms">
+							<?= $this->Form->input('city', [
+	  							'name' => 'user_accepts_terms',
+	  							'class' => 'custom-control-input',
+	  							'type' => 'checkbox',
+	  							'id' => 'term-and-condition-checkbox',
+	  							'label' => false
+	  						]); ?>
 							<label class="ml-3 custom-control-label" for="term-and-condition-checkbox">I accept <a href="#">the Terms and Conditions</a></label>
 						</div>
 					</div>

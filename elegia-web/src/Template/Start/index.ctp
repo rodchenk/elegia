@@ -13,19 +13,34 @@
 						<span style="background-color: #0000008a; color: white; padding: 12px; font-size: 30px; border-radius: 4px; display: inline-block; font-family: MontserratExtraBold">Erfreuen Sie Ihre Mitarbeiter</span>
 					</div>
 				</div>
-				<div class="input-group mb-3" style="margin-bottom: 5px !important; margin-top: 7px;">
-							
-					<input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="form-control" placeholder="Tippe deine Stadt oder PLZ" aria-label="Tippe deine Stadt oder PLZ" aria-describedby="basic-addon2" style="padding: 16px">
-					<div class="input-group-append">
-						<button class="btn btn-outline-success bg-success text-white" 
-								type="button" 
-								onclick="window.location = '/search'" 
-								style="padding-right: 25px;padding-left: 25px">
-							<i class="fas fa-search"></i> Suchen
-						</button>
+				<?= $this->Form->create(null, ['url' => ['controller' => 'Search', 'action' => 'search'], 'type' => 'GET']) ?>
+
+					<div class="input-group mb-3" style="margin-bottom: 5px !important; margin-top: 7px;">
+						<input onkeyup="search(this.value)" list="cities" autocomplete="off" autocorrect="off" autocapitalize="off" name="q" spellcheck="false" type="text" class="form-control" placeholder="Tippe deine Stadt oder PLZ" aria-label="Tippe deine Stadt oder PLZ" aria-describedby="basic-addon2" style="padding: 16px">
+
+						<datalist id="cities"></datalist>
+
+						<div class="input-group-append">
+							<button class="btn btn-outline-success bg-success text-white" 
+									type="button" 
+									style="padding-right: 25px;padding-left: 25px">
+								<i class="fas fa-search"></i> Suchen
+							</button>
+						</div>
+						<script type="text/javascript">
+							function search(keyword){
+								let search = keyword;
+								$.ajax({
+									method: 'GET',
+									url: "<?= $this->Url->build(['controller' => 'Start', 'action' => 'search']) ?>",
+									type: 'json',
+									data: {keyword:search},
+									success: function(e){$('#cities').html(e);}
+								});
+							}
+						</script>
 					</div>
-						
-				</div>
+				<?= $this->Form->end() ?>
 				<div class="row">
 					<div class="col-md-6 text-white" style="filter: drop-shadow(0 0 30px #191919);">
 						z.B. Berlin, Hamburg, München usw. 

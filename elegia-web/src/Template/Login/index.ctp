@@ -25,13 +25,13 @@
 						<?= $this->Form->create('user', array('action'=>'auth', 'class'=>'row')) ?>
 							<div class="col-md-12 mt-5">
 								<div class="col-md-12 input-group-lg login-form">
-	  								<input placeholder=" " type="text" class="form-control" aria-label="Sizing example input" name="user_email" aria-describedby="inputGroup-sizing-lg">
+									<?= $this->Form->input('email', ['type' => 'text', 'placeholder' => " ", 'name' => 'email', 'type' => 'text', 'class' => 'form-control', 'label' => false]); ?>
 	  								<label style="z-index: 100;position: absolute;">E-Mail</label>
 								</div>
 							</div>
 							<div class="col-md-12 mt-3 login-form">
 								<div class="col-md-12 input-group-lg login-form">
-	  								<input placeholder=" " type="password" class="form-control" aria-label="Sizing example input" name="user_password" aria-describedby="inputGroup-sizing-lg">
+									<?= $this->Form->input('password', ['name' => 'pwd_hash', 'placeholder' => " ", 'type' => 'password', 'class' => 'form-control', 'label' => false]); ?>
 	  								<label style="z-index: 100;position: absolute;">Password</label>
 								</div>
 							</div>
