@@ -9,5 +9,10 @@ class AboutController extends AppController {
         $this->layout = false;
         $this->viewBuilder()->template('index');
     }
+
+    public function initialize(){
+        parent::initialize();
+        $this->Auth->allow(['index']);
+    }
 }
 ?>

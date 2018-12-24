@@ -17,14 +17,14 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-   
+
 </head>
 <body>
     <!-- <i class="fas fa-bars"></i> -->
     <head>
         <div class="container-fluid row position-relative" style="z-index: 99">
             <div class="col-md-3 mt-3">
-                <?= $this->Html->image('about/logo_avacado.png', ['width'=>'150', 'height'=>'50']) ?>   
+                <?= $this->Html->image('about/logo_avacado.png', ['width'=>'150', 'height'=>'50']) ?>
             </div>
             <div class="col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
@@ -39,11 +39,11 @@
                     </li>
                 </ul>
             </div>
-            <?php if ($role == 'role_1') /*customer*/ : ?>
+            <?php if ($user->role == 'customer') /*customer*/ : ?>
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
-                        <a href="/user">
+                        <a href="/user/view/<?= $user->userID ?>">
                             <i class="far fa-user fa-2x"></i>
                         </a>
                     </li>
@@ -54,13 +54,13 @@
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <a href="/logout">
+                        <a href="/user/logout">
                             <i class="fas fa-sign-out-alt fa-2x"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <?php elseif ($role == 'role_2') /*supplier*/ : ?>
+          <?php elseif ($user->role == 'supplier') /*supplier*/ : ?>
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
@@ -75,13 +75,13 @@
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <a href="/logout">
+                        <a href="/user/logout">
                             <i class="fas fa-sign-out-alt fa-2x"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <?php elseif ($role == 'role_3'): ?>
+          <?php elseif ($user->role == 'admin'): ?>
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin panel">
@@ -96,7 +96,8 @@
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <a href="/logout">
+
+                        <a href="/user/logout">
                             <i class="fas fa-sign-out-alt fa-2x"></i>
                         </a>
                     </li>
@@ -106,13 +107,13 @@
             <div class="col-md-3 mt-3">
                 <ul class="nav justify-content-center float-right">
                     <li class="nav-item" style="border-radius: 100px">
-                        <a class="nav-link active text-dark" 
+                        <a class="nav-link active text-dark"
                             href="/login" >
                             Log in
                         </a>
                     </li>
                     <li class="nav-item bg-coral" style="border-radius: 100px">
-                        <a class="nav-link active text-white"  
+                        <a class="nav-link active text-white"
                             href="/signup" ><i class="fas fa-sign-in-alt">
                             </i> Sign up
                         </a>

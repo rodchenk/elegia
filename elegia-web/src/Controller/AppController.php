@@ -26,29 +26,33 @@ class AppController extends Controller{
 
 
     public function initialize(){
-
         parent::initialize();
-
-        $this->set('role', 'role_0');
 
         $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
         $this->loadComponent('Security');
         $this->loadComponent('Auth', [
-            'Authenticate' => [
+            'storage'      => 'Session',
+            'authenticate' => [
                 'Form' => [
-                    'finder' => 'auth',
                     'passwordHasher' => 'Default',
                     'userModel' => 'User',
-                    'Fields'    => ['username' => 'email','password' => 'pwd_hash'],
+                    'Fields'    => ['username' => 'email', 'password' => 'password'],
                 ]
             ],
             'authError'     => ':)',
-            'storage'       => 'Session',
             'loginAction'       => ['controller' => 'Login','action' => 'index'],
-            'loginRedirect'     => ['controller' => 'Start','action' => 'index'],
+            //'loginRedirect'     => ['controller' => 'Start','action' => 'index'],
             'logoutRedirect'    => ['controller' => 'Start','action' => 'index']
         ]);
+        $user = $this->Auth->User();
+        //TODO
+        if(empty($user)){
+          $this->loadModel('User');
+          $user = $this->User->newEntity();
+          $user->role = 'anonym';
+        }
 
+        $this->set('user', $user);
     }
 }

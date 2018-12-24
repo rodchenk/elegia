@@ -8,7 +8,7 @@ use Cake\ORM\Entity;
  * User Entity
  *
  * @property int $userID
- * @property string $pwd_hash
+ * @property string $password
  * @property string $email
  * @property string $role
  * @property \Cake\I18n\FrozenTime $created
@@ -16,9 +16,9 @@ use Cake\ORM\Entity;
 class User extends Entity
 {
 
-    protected function _setPwd_hash($value){
-        $hasher = new DefaultPasswordHasher();
-        return $hasher->hash($value);
+    protected function _setPassword($value){
+      $hasher = new DefaultPasswordHasher();
+      return $hasher->hash($value);
     }
 
     /**
@@ -31,9 +31,7 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
-        'pwd_hash' => true,
-        'email' => true,
-        'role' => true,
-        'created' => false
+        '*' => true,
+        'password' => false
     ];
 }

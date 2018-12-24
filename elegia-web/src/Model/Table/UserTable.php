@@ -53,10 +53,10 @@ class UserTable extends Table
             ->allowEmpty('userID', 'create');
 
         $validator
-            ->scalar('pwd_hash')
-            ->maxLength('pwd_hash', 256)
-            ->requirePresence('pwd_hash', 'create')
-            ->notEmpty('pwd_hash');
+            ->scalar('password')
+            ->maxLength('password', 256)
+            ->requirePresence('password', 'create')
+            ->notEmpty('password');
 
         $validator
             ->email('email')
@@ -86,9 +86,9 @@ class UserTable extends Table
         return $rules;
     }
 
-    public function findAuth(\Cake\ORM\Query $query, array $options){
-        $query->select('all');
-
-        return $query;
-    }
+    // public function findAuth(\Cake\ORM\Query $query, array $options){
+    //     $query->select('all');
+    //
+    //     return $query;
+    // }
 }

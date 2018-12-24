@@ -26,8 +26,8 @@ class SignupController extends AppController {
         $this->paginate = ['limit' => 5];
 
         $query = $this->Geo->find('all', [
-            'conditions' => 
-                ['Geo.city LIKE' => ''.$keyword.'%'], 
+            'conditions' =>
+                ['Geo.city LIKE' => ''.$keyword.'%'],
             'group' => 'Geo.city'
         ]);
 
@@ -58,7 +58,7 @@ class SignupController extends AppController {
 
     		$request_data = $this->request->getData();
 
-    		$pwd = $request_data['user_password'];
+    		//$pwd = $request_data['user_password'];
 
             //if the password does not match to the repeated password
     		if($request_data['user_password'] != $request_data['user_password_repeat']){
@@ -87,18 +87,18 @@ class SignupController extends AppController {
                 $this->Flash->error(__('Please fill all required fields'));
                 return $this->redirect(['action' => 'index']);
             }
-    		    		
+
     		$data = array(
     			'User' => array(
 	        		'email' => $request_data['user_email'],
-	        		'pwd_hash' => $request_data['user_password'],
+	        		'password' => $request_data['user_password'],
 	        		'role' => $role
     			)
 			);
 
 			$user = $this->User->patchEntity($user, $data);
-            $saved_user = $this->User->save($user);
-            
+      $saved_user = $this->User->save($user);
+
 			if ($saved_user){
                 $id = $saved_user->userID;
 
@@ -115,7 +115,7 @@ class SignupController extends AppController {
 	    			);
 
 	    			$supplier = $this->Supplier->patchEntity($supplier, $supplier_data);
-	    			
+
                     if($this->Supplier->save($supplier)){
                         $this->Flash->success(__('The user has been saved'));
                     }else{

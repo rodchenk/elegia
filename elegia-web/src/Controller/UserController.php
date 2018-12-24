@@ -10,8 +10,12 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class UserController extends AppController
-{
+class UserController extends AppController{
+
+  public function initialize(){
+      parent::initialize();
+      $this->Auth->allow(['view', 'index', 'logout']);
+  }
 
     /**
      * Index method
@@ -23,6 +27,10 @@ class UserController extends AppController
         $user = $this->paginate($this->User);
 
         $this->set(compact('user'));
+    }
+
+    public function logout(){
+      return $this->redirect($this->Auth->logout());
     }
 
     /**
@@ -46,8 +54,7 @@ class UserController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add(){
         $user = $this->User->newEntity();
         if ($this->request->is('post')) {
             $user = $this->User->patchEntity($user, $this->request->getData());

@@ -111,10 +111,10 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 .icon-container>li{
 	padding-left: 15px;
 	padding-right: 15px;
-	transition: color 500ms;
+	transition: color 500ms, opacity 500ms;
 	cursor: pointer;
 	color: #444;
-	opacity: .7;
+	opacity: .8;
 	position: relative;
 }
 .icon-container>li>span{
@@ -131,10 +131,11 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 }
 .link-container a:hover,
 .icon-container>li:hover{
-	color: #f16f55 !important;
+	color: black !important;
+	opacity: 1;
 }
 .link-container a{
-	transition: color 500ms; 
+	transition: color 500ms;
 	color: #444 !important;
 }
 .rounded-input input.form-control {
