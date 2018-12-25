@@ -19,40 +19,72 @@ use Cake\Event\Event;
 
 class AppController extends Controller{
 
-    private $ANONYM =  'role_0'; /*not logged in*/
-    private $CUTOMER = 'role_1'; /*logged in as customer*/
-    private $SUPPLIER ='role_2'; /*logged in as supplier*/
-    private $ADMIN =   'role_3'; /*logged in as admin*/
+    /**
+     * @author mischa
+     * @property obere methode für das Prüfen von Rechten. Admin darf alle Actions machen
+     * @return true if admin, else false
+     */
+    public function isAuthorized($user){
+        if (isset($user->role) && $user->role === 'admin') {
+            return true;
+        }
+        return false;
+    }
 
+    /**
+     * @author mischa
+     * @property die alternative Methode zu initialize() ?
+     */
+    function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+    }
 
+    /**
+     * @author mischa
+     * @property initialisiert alle masken, hier werden Komponente geladen und ggf. konfiguriert
+     */
     public function initialize(){
         parent::initialize();
+        $this->loadComponents();
+        
+        $user = $this->Auth->User();
+
+        if(empty($user)){
+            $this->loadModel('User');
+            $user = $this->User->newEntity();
+            $user->role = 'anonym';
+        }      
+
+        $this->set('user', $user);
+    }
+
+    /**
+     * @author mischa
+     * @property method is used in child classes in isAuthorized
+     * @return if user is logged in
+     */
+    public function isLoggedIn($user){
+        return isset($user->userID);
+    }
+
+    public function loadComponents(){
+        $this->loadComponent('Auth', [
+            'Authenticate'  => [
+                'Form'      => [
+                    'passwordHasher' => 'Default',
+                    'userModel' => 'User',
+                    'Fields'    => ['username' => 'email', 
+                                    'password' => 'password']
+                ]
+            ],
+            'authError'         => 'You do not have enough permission for this action',
+            'loginAction'       => ['controller' => 'Login','action' => 'index'],
+            'logoutRedirect'    => ['controller' => 'Start','action' => 'index'],
+            'authorize'         => ['Controller']
+        ]);
 
         $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
-        $this->loadComponent('Security');
-        $this->loadComponent('Auth', [
-            'storage'      => 'Session',
-            'authenticate' => [
-                'Form' => [
-                    'passwordHasher' => 'Default',
-                    'userModel' => 'User',
-                    'Fields'    => ['username' => 'email', 'password' => 'password'],
-                ]
-            ],
-            'authError'     => ':)',
-            'loginAction'       => ['controller' => 'Login','action' => 'index'],
-            //'loginRedirect'     => ['controller' => 'Start','action' => 'index'],
-            'logoutRedirect'    => ['controller' => 'Start','action' => 'index']
-        ]);
-        $user = $this->Auth->User();
-        //TODO
-        if(empty($user)){
-          $this->loadModel('User');
-          $user = $this->User->newEntity();
-          $user->role = 'anonym';
-        }
-
-        $this->set('user', $user);
+        //$this->loadComponent('Security');
     }
 }

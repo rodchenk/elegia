@@ -23,7 +23,7 @@
 							</div>
 						</div>
 						<?= $this->Form->create('User', [
-							'action'=>'auth',
+							'action'=>'login',
 							'class'=>'row'
 						]) ?>
 							<div class="col-md-12 mt-5">

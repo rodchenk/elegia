@@ -29,55 +29,79 @@
             <div class="col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Start site">
-                        <a class="nav-link active text-dark" href="/">Start</a>
+                        <?= $this->Html->link(
+                            __('Start'),
+                            ['controller' => 'Start', 'action' => 'index', '_full' => true],
+                            ['class' => 'nav-link active text-dark']
+                        ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Out Github">
-                        <a class="nav-link text-dark" href="https://github.com/rodchenk/elegia">Github</a>
+                        <?= $this->Html->link(
+                            'Github',
+                            'https://github.com/rodchenk/elegia',
+                            ['class' => 'nav-link text-dark', 'target' => '_blanc']
+                        ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="About elegia">
-                        <a class="nav-link text-dark" href="/about"><?= __('About') ?></a>
+                        <?= $this->Html->link(
+                            __('About'),
+                            ['controller' => 'About', 'action' => 'index', '_full' => true],
+                            ['class' => 'nav-link text-dark']
+                        ); ?>
                     </li>
                 </ul>
             </div>
-            <?php if ($user->role == 'customer') /*customer*/ : ?>
+            <?php if ($user->role == 'customer'): ?>
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
-                        <a href="/user/view/<?= $user->userID ?>">
-                            <i class="far fa-user fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="far fa-user fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
-                        <a href="/cart">
-                            <i class="fas fa-shopping-basket fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-shopping-basket fa-2x"></i>',
+                            ['controller' => 'Cart', 'action' => 'index', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <a href="/user/logout">
-                            <i class="fas fa-sign-out-alt fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'logout', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                 </ul>
             </div>
-          <?php elseif ($user->role == 'supplier') /*supplier*/ : ?>
+          <?php elseif ($user->role == 'supplier'): ?>
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
-                        <a href="/user">
-                            <i class="far fa-user fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="far fa-user fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                        <a href="#">
-                            <i class="far fa-bell fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="far fa-bell fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'notifications', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-                        <a href="/user/logout">
-                            <i class="fas fa-sign-out-alt fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'logout', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                 </ul>
             </div>
@@ -85,21 +109,26 @@
             <div class="col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin panel">
-                        <a href="/admin">
-                            <i class="fas fa-sliders-h fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-sliders-h fa-2x"></i>',
+                            ['controller' => 'Admin', 'action' => 'index', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                        <a href="#">
-                            <i class="far fa-bell fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="far fa-bell fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'notifications', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                         <span class="icon-counter">5</span>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
-
-                        <a href="/user/logout">
-                            <i class="fas fa-sign-out-alt fa-2x"></i>
-                        </a>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            ['controller' => 'User', 'action' => 'logout', '_full' => true],
+                            ['escape' => false]
+                        ); ?>
                     </li>
                 </ul>
             </div>

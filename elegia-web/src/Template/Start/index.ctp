@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']); ?>
+	<?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']); ?>
 </head>
 <body>
 	<div class="container-fluid bg-dark main-start" style="height: 100vh;position: fixed;top: 0;left: 0">
@@ -21,11 +21,20 @@
 						<datalist id="cities"></datalist>
 
 						<div class="input-group-append">
-							<button class="btn btn-outline-success bg-success text-white" 
+							<?= $this->Form->button(
+								'<i class="fas fa-search"></i>'.__('Search'), [
+								'class' => 'btn btn-outline-success bg-success text-white',
+								'style' => 'padding-right: 25px;padding-left: 25px;border-bottom-right-radius:.25rem;border-top-right-radius:.25rem'],
+								['role' => 'button'],
+								['escape' => false]
+							); ?>
+
+							<!-- <button class="btn btn-outline-success bg-success text-white" 
 									type="button" 
 									style="padding-right: 25px;padding-left: 25px">
 								<i class="fas fa-search"></i> Suchen
-							</button>
+							</button> -->
+
 						</div>
 						<script type="text/javascript">
 							function search(keyword){

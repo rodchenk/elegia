@@ -92,7 +92,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="far fa-envelope-open"></i></span>
 	  						</div>
-					  		<?= $this->Form->input('city', [
+					  		<?= $this->Form->input('email', [
 	  							'name' => 'user_email',  
 	  							'autocomplete' => 'off', 
 	  							'required', 
@@ -107,7 +107,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
 	  						</div>
-					  		<?= $this->Form->input('city', [
+					  		<?= $this->Form->input('password', [
 	  							'name' => 'user_password',  
 	  							'autocomplete' => 'off', 
 	  							'required', 
@@ -123,7 +123,7 @@
 							<div class="input-group-prepend">
 	    						<span class="input-group-text" id="basic-addon1"><i class="fas fa-glasses"></i></span>
 	  						</div>
-					  		<?= $this->Form->input('city', [
+					  		<?= $this->Form->input('password_repeat', [
 	  							'name' => 'user_password_repeat',  
 	  							'autocomplete' => 'off', 
 	  							'required', 

@@ -18,7 +18,7 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Pwd Hash') ?></th>
-            <td><?= h($user->pwd_hash) ?></td>
+            <td><?= h($user->password) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>

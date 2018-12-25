@@ -34,13 +34,6 @@ class AppView extends View{
      * @return void
      */
     public function initialize(){
-        $this->Form->setTemplates(['inputContainer' => '{{content}}']);
+        $this->Form->setTemplates(['inputContainer' => '{{content}}', 'submitContainer' => '{{content}}']);
     }
 }
-/*
-
-public function logout() {
-    return $this->redirect($this->Auth->logout());
-}
-
-*/

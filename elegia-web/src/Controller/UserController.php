@@ -12,36 +12,43 @@ use App\Controller\AppController;
  */
 class UserController extends AppController{
 
-  public function initialize(){
-      parent::initialize();
-      $this->Auth->allow(['view', 'index', 'logout']);
-  }
+    /**
+     * @author mischa
+     * @property wird beim aufruf User Maske ausgefuehrt. Jeder Nutzer darf ausloggen und index seite anschaeun
+     */
+    public function initialize(){
+        parent::initialize();
+        $this->Auth->allow(['index', 'logout']);
+    }
 
     /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
+     * @author mischa
+     * @property Hier werden die Rechte ueberprueft, ob der User fuer das ausgefuehrte Action authorized ist
+     * @return boolean true if authorized, false if not
      */
-    public function index()
-    {
-        $user = $this->paginate($this->User);
+    public function isAuthorized($user){
+        if ($this->request->getParam('action') === 'add') {//TODO
+            return true;
+        }
 
+        if (in_array($this->request->getParam('action'), ['edit', 'delete', 'view'])) {
+            return (int)$this->request->getParam('pass.0') === $user['userID'];
+        }
+
+        return parent::isAuthorized($user);
+    }
+
+    public function index(){
+        $user = $this->paginate($this->User);
         $this->set(compact('user'));
     }
 
     public function logout(){
-      return $this->redirect($this->Auth->logout());
+        return $this->redirect($this->Auth->logout());
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
+
+    public function view($id = null){
         $user = $this->User->get($id, [
             'contain' => []
         ]);
@@ -49,11 +56,6 @@ class UserController extends AppController{
         $this->set('user', $user);
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
     public function add(){
         $user = $this->User->newEntity();
         if ($this->request->is('post')) {
@@ -68,15 +70,7 @@ class UserController extends AppController{
         $this->set(compact('user'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
+    public function edit($id = null){
         $user = $this->User->get($id, [
             'contain' => []
         ]);
