@@ -5,16 +5,22 @@
 	<?php echo $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style', 'starability-checkmark.min']); ?>
 </head>
 <body>
-	<div class="container-fluid mx-auto mt-5 row">
+	<div class="container-fluid mt-1 top-map">
+	</div>
+	<div class="container-fluid mx-auto mt-3 row">
 		<div class="col-md-3">
 			<?= $this->Form->create(null, [
 				'action' => 'index',
 				'type' => 'get'
 			]) ?>
-				<div class="col-md-12 mb-2">
-					<?= $this->Html->image('map.png', ['class'=>'img-fluid']) ?>		
-				</div>
-				<div class="col-md-12 mb-3">
+				<!-- <div class="col-md-12 mb-2">
+					<?php /* $this->Html->image('map.png', ['class'=>'img-fluid']) */ ?>
+					https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Clabel:C%7C40.718217,-73.998284
+&key=AIzaSyC0LTeqhT5V07BRGa1Xl33z8BpI21jgNKQ	 	
+				</div>-->
+				<div class="col-md-12 mb-3 mt-2">
 					<span class="font-weight-bold">City:</span>
 	  				<input type="text" class="form-control mt-1 mb-2 ml-1" name="q" placeholder="Type your City" style="text-transform: capitalize;" value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
 				</div>

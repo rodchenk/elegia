@@ -24,7 +24,7 @@
     <head>
         <div class="container-fluid row position-relative" style="z-index: 99">
             <div class="col-md-3 mt-3">
-                <?= $this->Html->image('about/logo_avacado.png', ['width'=>'150', 'height'=>'50']) ?>
+                <?= $this->Html->image('about/logo_avacado.png', ['width'=>'120', 'height'=>'40']) ?>
             </div>
             <div class="col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
@@ -53,7 +53,7 @@
             </div>
             <?php if ($user->role == 'customer'): ?>
             <div class="col-md-3 mt-3">
-                <ul class="nav float-right icon-container">
+                <ul class="nav float-right icon-container mt-2">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
                             '<i class="far fa-user fa-lg"></i>',
