@@ -19,7 +19,7 @@
     </script>
 
 </head>
-<body>
+<body class="bg-light">
     <!-- <i class="fas fa-bars"></i> -->
     <head>
         <div class="container-fluid row position-relative" style="z-index: 99">
@@ -56,14 +56,14 @@
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
-                            '<i class="far fa-user fa-2x"></i>',
+                            '<i class="far fa-user fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
                         <?= $this->Html->link(
-                            '<i class="fas fa-shopping-basket fa-2x"></i>',
+                            '<i class="fas fa-shopping-basket fa-lg"></i>',
                             ['controller' => 'Cart', 'action' => 'index', '_full' => true],
                             ['escape' => false]
                         ); ?>
@@ -71,7 +71,7 @@
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
                         <?= $this->Html->link(
-                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
                             ['escape' => false]
                         ); ?>
@@ -83,14 +83,14 @@
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
-                            '<i class="far fa-user fa-2x"></i>',
+                            '<i class="far fa-user fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
                         <?= $this->Html->link(
-                            '<i class="far fa-bell fa-2x"></i>',
+                            '<i class="far fa-bell fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'notifications', '_full' => true],
                             ['escape' => false]
                         ); ?>
@@ -98,7 +98,7 @@
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
                         <?= $this->Html->link(
-                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
                             ['escape' => false]
                         ); ?>
@@ -110,14 +110,14 @@
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin panel">
                         <?= $this->Html->link(
-                            '<i class="fas fa-sliders-h fa-2x"></i>',
+                            '<i class="fas fa-sliders-h fa-lg"></i>',
                             ['controller' => 'Admin', 'action' => 'index', '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
                         <?= $this->Html->link(
-                            '<i class="far fa-bell fa-2x"></i>',
+                            '<i class="far fa-bell fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'notifications', '_full' => true],
                             ['escape' => false]
                         ); ?>
@@ -125,7 +125,7 @@
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
                         <?= $this->Html->link(
-                            '<i class="fas fa-sign-out-alt fa-2x"></i>',
+                            '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
                             ['escape' => false]
                         ); ?>

@@ -13,7 +13,7 @@
 						<span style="background-color: #0000008a; color: white; padding: 12px; font-size: 30px; border-radius: 4px; display: inline-block; font-family: MontserratExtraBold">Erfreuen Sie Ihre Mitarbeiter</span>
 					</div>
 				</div>
-				<?= $this->Form->create(null, ['url' => ['controller' => 'Search', 'action' => 'search'], 'type' => 'GET']) ?>
+				<?= $this->Form->create(null, ['url' => ['controller' => 'Search', 'action' => 'index'], 'type' => 'GET']) ?>
 
 					<div class="input-group mb-3" style="margin-bottom: 5px !important; margin-top: 7px;">
 						<input onkeyup="search(this.value)" list="cities" autocomplete="off" autocorrect="off" autocapitalize="off" name="q" spellcheck="false" type="text" class="form-control" placeholder="Tippe deine Stadt oder PLZ" aria-label="Tippe deine Stadt oder PLZ" aria-describedby="basic-addon2" style="padding: 16px">
@@ -28,13 +28,6 @@
 								['role' => 'button'],
 								['escape' => false]
 							); ?>
-
-							<!-- <button class="btn btn-outline-success bg-success text-white" 
-									type="button" 
-									style="padding-right: 25px;padding-left: 25px">
-								<i class="fas fa-search"></i> Suchen
-							</button> -->
-
 						</div>
 						<script type="text/javascript">
 							function search(keyword){

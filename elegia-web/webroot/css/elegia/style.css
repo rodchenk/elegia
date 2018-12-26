@@ -177,3 +177,21 @@ label.switch>input[type=checkbox]:not(:checked)~div{
 input::-webkit-calendar-picker-indicator {
   display: none;
 }
+.bg-orange{
+	background-color: #f16f55;
+}
+.aktion-label>label{
+	cursor: pointer;
+	background-color: #e6e6e6;
+	transition: background-color 250ms, color 500ms;
+}
+.aktion-label>label:hover{
+	background-color: #cecece;
+}
+.aktion-label>input[type=checkbox]{
+	display: none;
+}
+.aktion-label>input[type=checkbox]:checked~label{
+	background-color: #f16f55;
+	color: white
+}

@@ -8,8 +8,9 @@ class SearchController extends AppController {
 
 	public function initialize(){
         parent::initialize();
-        $this->loadModel('User');
-        $this->layout = 'header';
+        $this->loadModel('Supplier');
+        $this->viewBuilder()->setLayout('header');
+        $this->viewBuilder()->template('index');
         //$this->Auth->allow(['search']);
     }
 
@@ -18,11 +19,13 @@ class SearchController extends AppController {
     }
 
     public function index() {
-        $this->viewBuilder()->template('index');
-    }
-
-    public function search(){
-        $this->viewBuilder()->template('index');
+    	$kriteria = $this->request->getQuery('q');
+    	$this->paginate = ['limit' => 5];
+    	$query =$kriteria ? 
+    			$this->Supplier->find('all', ['conditions' => ['city' => $kriteria]]) : 
+    			$this->Supplier->find('all');
+    	$supplier = $this->paginate($query);
+        $this->set(compact('supplier'));
     }
 }
 ?>
