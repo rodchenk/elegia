@@ -22,12 +22,12 @@ class User extends Entity
     }
 
     public function isOwnedBy(){
-        
+
     }
 
     protected $_accessible = [
         '*' => true,
-        'password' => false,
+        'password' => true,
         'id' => false
     ];
 }
