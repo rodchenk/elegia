@@ -20,7 +20,7 @@ class SearchController extends AppController {
 
     public function index() {
     	$kriteria = $this->request->getQuery('q');
-    	$this->paginate = ['limit' => 4];
+    	$this->paginate = ['limit' => 5];
     	$query =$kriteria ?
     	$this->Supplier->find('all', ['conditions' => ['city' => $kriteria]]) :	$this->Supplier->find('all');
     	$supplier = $this->paginate($query);
