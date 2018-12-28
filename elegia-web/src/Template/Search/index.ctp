@@ -53,8 +53,7 @@
 					    <label for="rate3"
 					    		title="Average"
 					    		data-toggle="tooltip"
-					    		data-placement="top"
-					    		title="Terrible">3 stars</label>
+					    		data-placement="top">3 stars</label>
 					    <input type="radio"
 					    		id="rate4"
 					    		<?= isset($_GET['rating']) && $_GET['rating'] == 4 ? 'checked' : '' ?>
@@ -63,8 +62,7 @@
 					    <label for="rate4"
 					    		title="Very good"
 					    		data-toggle="tooltip"
-					    		data-placement="top"
-					    		title="Terrible">4 stars</label>
+					    		data-placement="top">4 stars</label>
 						<input type="radio"
 								id="rate5"
 								name="rating"
@@ -73,8 +71,7 @@
 					    <label for="rate5"
 					    		title="Amazing"
 					    		data-toggle="tooltip"
-					    		data-placement="top"
-					    		title="Terrible">5 stars</label>
+					    		data-placement="top">5 stars</label>
 					</div>
 				</div>
 				<div class="col-md-12 mb-3 aktion-label">
@@ -106,33 +103,58 @@
 					<span class="m-2 d-block"><?= $this->Paginator->counter(['format' => __('Showing {{current}} record(s) out of {{count}} total')]) ?></span>
 				</div>
 				<?php foreach($supplier as $entry): /*supplier start TODO*/?>
+					<!-- START -->
 					<div class="col-md-12 border bg-white mb-2 rounded">
-						<div class="row">
-							<div class="col-static-100 pl-0">
-								 <?= $this->Html->image('about/logo.png', ['class'=>'img-fluid rounded-left', 'style' => 'margin-left: -1px']) ?>
+						<div class="row p-3">
+							<div class="col-4 col-sm-6 col-md-2 col-lg-2 pl-0">
+								<?= $this->Html->image('supplier/rewe.jpg', ['class'=>'img-fluid d-block mx-auto', 'style' => 'max-height: 100px']) ?>
 							</div>
-							<div class="col row">
-								<div class="col-md-6">
+							<div class="col-8 col-sm-6 col-md-4 col-lg-3">
+								<div class="col-md-12">
+									<h4 class="font-weight-bold">
+										<?= $this->Html->link(
+											$entry->name,
+											['controller' => 'user', 'action' => 'view', $entry->supplierID, '_full' => true],
+											['class' => 'text-dark',
+											'style' => 'text-decoration: none',
+											'escape' => false
+										]); ?>
+										<i class="fas fa-check fa-xs" style="color: #ffcbba"></i>
+									</h4>
+									
+								</div>
+								<div class="col-md-12 text-nowrap"><?= $entry->city ?></div>
+								<div class="col-md-12 text-warning text-nowrap">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+								</div>
+							</div>
+							<div class="d-none d-lg-block col-8 col-sm-8 col-md-5 col-lg-5 text-justify" style="overflow: hidden;max-height: 70px">
+								<kbd class="text-dark font-weight-bold" style="background-color: #eaeaea"><?= __('About').' '.$entry->name ?></kbd> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+							</div>
+							<div class="col-12 col-sm-12 col-md-6 col-lg-2">
+								<div class="col-md-12 mt-2 p-0">
 									<?= $this->Html->link(
-										'<h2>'.$entry->name.'</h2>',
+										__('More info'),
 										['controller' => 'user', 'action' => 'view', $entry->supplierID, '_full' => true],
-										['class' => 'text-dark p-2',
+										['class' => 'col-sm-12 btn btn-danger btn-md active',
+										'role' => 'button',
+										'aria-pressed' => 'true',
 										'escape' => false
 									]); ?>
 								</div>
-								<div class="col-md-6 text-right">
-									<span class="p-2 d-block"><?= $entry->city ?></span>
+								<div class="d-none d-md-block col-md-12 mt-3 text-right text-dark text-nowrap text-center">
+									<i class="fas fa-mortar-pestle fa-lg ml-2" data-toggle="tooltip" data-placement="top" title="Fruits"></i>
+									<i class="fas fa-utensils fa-lg ml-2" data-toggle="tooltip" data-placement="top" title="Snacks"></i>
+									<i class="fas fa-wine-glass fa-lg ml-2" data-toggle="tooltip" data-placement="top" title="Drinks"></i>
 								</div>
-								<div class="col-md-12">
-									<span class="d-block text-justify" style="max-height: 75px; overflow: hidden">
-										Strukturierte, detaillierte und vollständige Erfassung aller wesentlichen Risiken bzw. Schadensgefahren und Verlustpotentiale unternehmerischer Aktivitäten einschließlich ihrer Wirkungszusammenhänge
-									</span>
-								</div>
-
 							</div>
 						</div>
-
 					</div>
+					<!-- END -->
 				<?php endforeach; /*supplier end*/?>
 
 				<div class="col-md-12 text-center">
