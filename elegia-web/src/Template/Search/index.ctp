@@ -81,7 +81,7 @@
 	  					<i class="fas fa-tag"></i> Aktion
 	  				</label>
 				</div>
-				<hr class="d-sm-none d-md-block col-md-12">
+				<hr class="d-sm-none d-md-block col-md-8">
 				<div class="col-md-12 mb-2">
 					<?= $this->Form->submit(__('Click to refresh'), [
 						'class' => 'btn btn-primary col-md-12 border-radius-100'
