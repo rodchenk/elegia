@@ -104,7 +104,7 @@
 				</div>
 				<?php foreach($supplier as $entry): /*supplier start TODO*/?>
 					<!-- START -->
-					<div class="col-md-12 border bg-white mb-2 rounded">
+					<div class="col-md-12 border bg-white mb-2 rounded supplier-block">
 						<div class="row p-3">
 							<div class="col-4 col-sm-6 col-md-2 col-lg-2 pl-0">
 								<?= $this->Html->image('supplier/rewe.jpg', ['class'=>'img-fluid d-block mx-auto', 'style' => 'max-height: 100px']) ?>
