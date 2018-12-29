@@ -13,15 +13,18 @@ use App\Controller\AppController;
 class SupplierController extends AppController
 {
 
+    public function initialize(){
+        parent::initialize();
+        $this->viewBuilder()->setLayout('header');
+        $this->Auth->allow(['index', 'view']);
+    }
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index(){
         $supplier = $this->paginate($this->Supplier);
-
         $this->set(compact('supplier'));
     }
 
@@ -37,7 +40,7 @@ class SupplierController extends AppController
         $supplier = $this->Supplier->get($id, [
             'contain' => []
         ]);
-
+        $this->ViewBuilder()->setTemplate('supplier');
         $this->set('supplier', $supplier);
     }
 

@@ -82,8 +82,8 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     /* about page, AboutController, index action*/
     $routes->connect('/about', array('controller' => 'about', 'action' => 'index'));
-    /* login page, LoginController, index action*/
-    $routes->connect('/login', array('controller' => 'login', 'action' => 'index'));
+    $routes->connect('/logout', array('controller' => 'User', 'action' => 'logout'));
+    $routes->connect('/view/:id', ['controller' => 'Supplier', 'action' => 'view'], ['id' => '\d+', 'pass' => ['id']]);
 
     $routes->fallbacks(DashedRoute::class);
 });

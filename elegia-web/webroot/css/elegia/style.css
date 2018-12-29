@@ -207,9 +207,7 @@ input::-webkit-calendar-picker-indicator {
 /*CakePHP Pagination*/
 ul.pagination{display:block;margin-left:-0.3125rem;min-height:1.5rem}ul.pagination li{color:#222;font-size:0.875rem;height:1.5rem;margin-left:0.3125rem}ul.pagination li a,ul.pagination li button{border-radius:3px;transition:background-color 300ms ease-out;background:none;color:#999;display:block;font-size:1em;font-weight:normal;line-height:inherit;padding:0.0625rem 0.625rem 0.0625rem}ul.pagination li:hover a,ul.pagination li a:focus,ul.pagination li:hover button,ul.pagination li button:focus{background:#e6e6e6}ul.pagination li.unavailable a,ul.pagination li.unavailable button{cursor:default;color:#999}ul.pagination li.unavailable:hover a,ul.pagination li.unavailable a:focus,ul.pagination li.unavailable:hover button,ul.pagination li.unavailable button:focus{background:transparent}ul.pagination li.current a,ul.pagination li.current button{background:#008CBA;color:#fff;cursor:default;font-weight:bold}ul.pagination li.current a:hover,ul.pagination li.current a:focus,ul.pagination li.current button:hover,ul.pagination li.current button:focus{background:#008CBA}ul.pagination li{display:block;float:left}.pagination-centered{text-align:center}.pagination-centered ul.pagination li{display:inline-block;float:none}
 
-ul.pagination li a {
-    color: rgba(0, 0 ,0 , 0.54);
-}
+ul.pagination li a {color: rgba(0, 0 ,0 , 0.54);}
 
 ul.pagination li.active a {
     background-color: #495057;
@@ -219,11 +217,11 @@ ul.pagination li.active a {
 }
 ul.pagination .disabled:hover a {
     background: none;
+    pointer-events: none;
 }
+.paginator>.pagination>li>a{text-decoration: none;}
 
-.paginator {
-    text-align: center;
-}
+.paginator { text-align: center;}
 
 .paginator ul.pagination li {
     float: none;
@@ -245,7 +243,24 @@ ul.pagination .disabled:hover a {
   }
 }
 .supplier-block{  
-	box-shadow: 0 0 18px #cecece;
+	box-shadow: 0 0 18px #e0e0e0;
   	animation: slideIn linear .7s;
 	animation-iteration-count: 1;
 }
+.width-30{
+	width: 30px;
+}
+div.bg-dark>a.dropdown-item{ transition: background-color 150ms }
+div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #FFC107 solid}
+
+.scalable{
+	transition: transform 500ms;
+}
+.scalable:hover{
+	transform: scale(1.05);
+}
+.opacity-block{
+	background-color: #a3b2ce !important;
+	transition: background-color 400ms;
+}
+.opacity-block:hover{ background-color: #404f6b !important;}

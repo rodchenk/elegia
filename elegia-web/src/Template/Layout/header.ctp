@@ -20,13 +20,12 @@
 
 </head>
 <body class="bg-light">
-    <!-- <i class="fas fa-bars"></i> -->
     <head>
-        <div class="container-fluid row position-relative" style="z-index: 99">
-            <div class="col-md-3 mt-3">
+        <div class="container-fluid row position-relative mx-auto" style="z-index: 99">
+            <div class="col-6 col-sm-6 col-md-3 mt-3">
                 <?= $this->Html->image('about/logo_avacado.png', ['width'=>'120', 'height'=>'40']) ?>
             </div>
-            <div class="col-md-6 mx-auto mt-3 text-center">
+            <div class="d-none d-md-block col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Start site">
                         <?= $this->Html->link(
@@ -51,8 +50,54 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-6 col-sm-6 d-md-none d-lg-none d-sm-block text-right p-3">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bars fa-lg"></i> Menu
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right bg-dark text-white" style="box-shadow: 0 0 25px #676767">
+                        <?= $this->Html->link(
+                            '<i class="fas fa-star-of-life width-30"></i>'.__('Start').'</a>',
+                            ['controller' => 'Start', 'action' => 'index', '_full' => true],
+                            ['escape' => false, 'class' => 'p-1 pl-3 pr-3 text-warning dropdown-item']
+                        )
+                        .$this->Html->link(
+                            '<i class="fab fa-github width-30"></i>Github</a>',
+                            'https://github.com/rodchenk/elegia',
+                            ['class' => 'p-1 pl-3 pr-3 text-warning dropdown-item', 'target' => '_blanc', '_full' => true, 'escape' => false]
+                        )
+                        .$this->Html->link(
+                            '<i class="fas fa-question width-30"></i>'.__('About'),
+                            ['controller' => 'About', 'action' => 'index', '_full' => true],
+                            ['escape' => false, 'class' => 'p-1 pl-3 pr-3 text-warning dropdown-item']
+                        ); ?>
+                        <hr class="bg-secondary m-2">
+                        <?php if($user->role != 'anonym'): ?>
+                            <a class="p-1 pl-3 pr-3 text-white dropdown-item" href="#"><i class="fas fa-user width-30"></i>User account</a>
+                            <a class="p-1 pl-3 pr-3 text-white dropdown-item" href="#"><i class="fas fa-shopping-cart width-30"></i>Shopping cart</a>
+                            <hr class="bg-secondary m-2">
+                            <?= $this->Html->link(
+                                '<i class="fas fa-power-off width-30"></i>'.__('Logout'),
+                                ['controller' => 'User', 'action' => 'logout'],
+                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-danger font-weight-bold dropdown-item', 'escape' => false]
+                            ); ?>
+                        <?php else: ?>
+                            <?= $this->Html->link(
+                                '<i class="fas fa-sign-in-alt width-30"></i>'.__('Log in'),
+                                ['controller' => 'Login', 'action' => 'index'],
+                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                            )
+                            .$this->Html->link(
+                                '<i class="fas fa-plus width-30"></i>'.__('Sign up'),
+                                ['controller' => 'Signup', 'action' => 'index'],
+                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                            ); ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
             <?php if ($user->role == 'customer'): ?>
-            <div class="col-md-3 mt-3">
+            <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav float-right icon-container mt-2">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
@@ -79,7 +124,7 @@
                 </ul>
             </div>
           <?php elseif ($user->role == 'supplier'): ?>
-            <div class="col-md-3 mt-3">
+            <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
@@ -106,7 +151,7 @@
                 </ul>
             </div>
           <?php elseif ($user->role == 'admin'): ?>
-            <div class="col-md-3 mt-3">
+            <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin panel">
                         <?= $this->Html->link(
@@ -133,7 +178,7 @@
                 </ul>
             </div>
             <?php else : ?>
-            <div class="col-md-3 mt-3">
+            <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav justify-content-center float-right">
                     <li class="nav-item" style="border-radius: 100px">
                         <a class="nav-link active text-dark"
