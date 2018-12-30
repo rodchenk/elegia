@@ -4,24 +4,35 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * Customer Controller
- *
- * @property \App\Model\Table\CustomerTable $Customer
- *
+ * Elegia (-web), Lieferservice
+ * @author mischa
+ * @license https://github.com/rodchenk/elegia/blob/master/LICENSE
+ * @since 1.0
  * @method \App\Model\Entity\Customer[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class CustomerController extends AppController
-{
+class CustomerController extends AppController{
 
+    /**
+     * @author mischa
+     * @property wird beim aufruf User Maske ausgefuehrt. Jeder Nutzer darf ausloggen und index seite anschaeun
+     */
     public function initialize(){
         parent::initialize();
         $this->viewBuilder()->setLayout('header');
         $this->Auth->allow(['index', 'view']);
+
+        
     }
 
+    /**
+     * @author mischa
+     * @param $user -> der aktuell angemeldete Benutzer
+     * @property steuert die Zugriffsrechte (nur der Besitzer kann die Cart/Edit/History Actions ausführen) 
+     * @return boolean true (when erlaubt), false (when verboten)
+     */
     public function isAuthorized($user){
         if (in_array($this->request->getParam('action'), ['cart', 'edit', 'history'])) {
-                return (int)$this->request->getParam('pass.0') === $user['userID'];
+            return (int)$this->request->getParam('pass.0') === $user['userID'];
         }
 
         if($this->request->getParam('action') == 'index'){
@@ -30,6 +41,21 @@ class CustomerController extends AppController
 
         return false;
     }   
+
+    /**
+     * @author mischa
+     * @property Warenkorb
+     * @param $id von user, dessen Warenkorb angeschaut wird
+     * @return \Cake\Http\Response|void
+     */
+    public function cart($id = null){
+        $customer = $this->Customer->get($id, [
+            'contain' => []
+        ]);
+        $this->viewBuilder()->setTemplate('cart');
+        $this->set('customer', $customer);
+    }
+
     /**
      * Index method
      *
@@ -51,29 +77,8 @@ class CustomerController extends AppController
         $customer = $this->Customer->get($id, [
             'contain' => []
         ]);
-        $this->viewBuilder()->setTemplate('customer');
-
-        $this->set('customer', $customer);
-    }
-
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
-    public function add()
-    {
-        $customer = $this->Customer->newEntity();
-        if ($this->request->is('post')) {
-            $customer = $this->Customer->patchEntity($customer, $this->request->getData());
-            if ($this->Customer->save($customer)) {
-                $this->Flash->success(__('The customer has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The customer could not be saved. Please, try again.'));
-        }
-        $this->set(compact('customer'));
+        $this->viewBuilder()->setTemplate('customer');   
+        $this->set('customer', $customer);     
     }
 
     /**

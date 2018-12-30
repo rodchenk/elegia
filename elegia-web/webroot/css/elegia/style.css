@@ -267,3 +267,7 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	transition: background-color 400ms;
 }
 .opacity-block:hover{ background-color: #404f6b !important;}
+.table-centered td,.table-centered th{
+	vertical-align: middle;
+	/*text-align: center;*/
+}

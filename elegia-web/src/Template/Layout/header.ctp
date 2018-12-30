@@ -73,8 +73,16 @@
                         ); ?>
                         <hr class="bg-secondary m-2">
                         <?php if($user->role != 'anonym'): ?>
-                            <a class="p-1 pl-3 pr-3 text-white dropdown-item" href="#"><i class="fas fa-user width-30"></i>User account</a>
-                            <a class="p-1 pl-3 pr-3 text-white dropdown-item" href="#"><i class="fas fa-shopping-cart width-30"></i>Shopping cart</a>
+                            <?= $this->Html->link(
+                                '<i class="fas fa-user width-30"></i>'.__('User account'),
+                                ['controller' => 'Customer', 'action' => 'view', $user->userID],
+                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                            ); ?>
+                             <?= $this->Html->link(
+                                '<i class="fas fa-shopping-cart width-30"></i>'.__('Shopping cart'),
+                                ['controller' => 'Customer', 'action' => 'cart', $user->userID],
+                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                            ); ?>
                             <hr class="bg-secondary m-2">
                             <?= $this->Html->link(
                                 '<i class="fas fa-power-off width-30"></i>'.__('Logout'),
@@ -109,7 +117,7 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
                         <?= $this->Html->link(
                             '<i class="fas fa-shopping-basket fa-lg"></i>',
-                            ['controller' => 'Cart', 'action' => 'index', '_full' => true],
+                            ['controller' => 'Customer', 'action' => 'cart', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                         <span class="icon-counter">5</span>
