@@ -5,8 +5,8 @@
 </head>
 <body class="bg-light">
 	<main>
-		<div class="container-fluid mx-auto p-3 pt-4 row" style="background-color: #dae0e6;">
-			<div class="col-md-3">
+		<div class="container-fluid mx-auto p-3 pt-4 row" style="background: linear-gradient(to right top, #dae0e6, #e6dade);">
+			<div class="col-12 col-md-7 col-lg-3 mb-3">
 				<div class="list-group">
 					<?= $this->Html->link(
                         'Profile<i class="far fa-user float-right p-1"></i>',
@@ -30,7 +30,7 @@
                     ); ?>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="col-md-12">
 					<h3 class="montserat-bold text-dark"><?= $customer->name ?></h3>
 				</div>
@@ -63,14 +63,14 @@
 
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-3">
 				<?= $this->Html->image('customer/31.jpg', 
-					['class'=>'p-2 img-fluid d-block float-right mt-4 mb-4 rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
+					['class'=>'p-2 img-fluid d-block mx-auto mt-4 mb-4 rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
 			</div>
 		</div>
 		<div class="container-fluid row mx-auto">
 			<div class="col-md-12 mx-auto mt-4">
-				<h3 class="text-center text-secondary"><?= __('Find. Buy. Enjoy.') ?>
+				<h3 class="text-center text-secondary mb-2"><?= __('Find. Buy. Enjoy.') ?>
 					 <?= $this->Html->link(
                         __("Let's go").' <i class="fas fa-search"></i>',
                         ['controller' => 'Search', 'action' => 'index', '_full' => true],
