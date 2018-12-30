@@ -67,7 +67,10 @@
 									<div class="col-md-9 mt-1 text-right">
 										<span>
 											Don't have an account?<br>
-											<a href="/signup" class="text-dark"><b>Sign up</b></a>
+											<?= $this->Html->link(
+												__('Sign up'),
+												['controller' => 'Signup', 'action' => 'index', '_full' => true],
+												['class' => 'font-weight-bold']); ?>
 										</span>
 									</div>
 								</div>

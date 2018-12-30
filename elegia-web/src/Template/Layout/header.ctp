@@ -102,7 +102,7 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
                             '<i class="far fa-user fa-lg"></i>',
-                            ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
+                            ['controller' => 'Customer', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>

@@ -13,15 +13,30 @@ use App\Controller\AppController;
 class CustomerController extends AppController
 {
 
+    public function initialize(){
+        parent::initialize();
+        $this->viewBuilder()->setLayout('header');
+        $this->Auth->allow(['index', 'view']);
+    }
+
+    public function isAuthorized($user){
+        if (in_array($this->request->getParam('action'), ['cart', 'edit', 'history'])) {
+                return (int)$this->request->getParam('pass.0') === $user['userID'];
+        }
+
+        if($this->request->getParam('action') == 'index'){
+            return parent::isLoggedIn($user);
+        }
+
+        return false;
+    }   
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index(){
         $customer = $this->paginate($this->Customer);
-
         $this->set(compact('customer'));
     }
 
@@ -32,11 +47,11 @@ class CustomerController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null){
         $customer = $this->Customer->get($id, [
             'contain' => []
         ]);
+        $this->viewBuilder()->setTemplate('customer');
 
         $this->set('customer', $customer);
     }

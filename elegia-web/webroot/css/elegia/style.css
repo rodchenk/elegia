@@ -6,7 +6,7 @@
 	background-color: #f16f55;
 }
 ::selection{
-	background-color: var(--success);
+	background-color: #d1d1f3;
 }
 @font-face {
     font-family: MontserratExtraBold;
@@ -179,6 +179,9 @@ input::-webkit-calendar-picker-indicator {
 }
 .bg-orange{
 	background-color: #f16f55;
+}
+.bg-coral{
+	background-color: #db6767;
 }
 .aktion-label>label{
 	cursor: pointer;

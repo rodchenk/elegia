@@ -104,7 +104,7 @@
 				</div>
 				<?php foreach($supplier as $entry): /*supplier start TODO*/?>
 					<!-- START -->
-					<div class="col-md-12 p-2 bg-white mb-2 rounded supplier-block">
+					<div class="col-md-12 p-2 bg-white mb-3 rounded supplier-block">
 						<div class="row p-3">
 							<div class="col-4 col-sm-6 col-md-2 col-lg-2 pl-0">
 								<?= $this->Html->image('supplier/rewe.jpg', ['class'=>'img-fluid d-block mx-auto', 'style' => 'max-height: 100px']) ?>
@@ -138,7 +138,7 @@
 							<div class="col-12 col-sm-12 col-md-6 col-lg-2">
 								<div class="col-md-12 mt-2 p-0">
 									<?= $this->Html->link(
-										__('More info'),
+										__('Check'),
 										['controller' => 'supplier', 'action' => 'view', $entry->supplierID, '_full' => true],
 										['class' => 'col-sm-12 btn btn-danger btn-md active',
 										'role' => 'button',

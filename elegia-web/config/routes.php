@@ -83,7 +83,15 @@ Router::scope('/', function (RouteBuilder $routes) {
     /* about page, AboutController, index action*/
     $routes->connect('/about', array('controller' => 'about', 'action' => 'index'));
     $routes->connect('/logout', array('controller' => 'User', 'action' => 'logout'));
+
+    //supplier
     $routes->connect('/view/:id', ['controller' => 'Supplier', 'action' => 'view'], ['id' => '\d+', 'pass' => ['id']]);
+
+    //user site
+    $routes->connect('/customer:id',    ['controller' => 'Customer', 'action' => 'view'],      ['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/cart:id',        ['controller' => 'Customer', 'action' => 'cart'],      ['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/history:id',     ['controller' => 'Customer', 'action' => 'history'],   ['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/edit:id',        ['controller' => 'Customer', 'action' => 'edit'],      ['id' => '\d+', 'pass' => ['id']]);
 
     $routes->fallbacks(DashedRoute::class);
 });
