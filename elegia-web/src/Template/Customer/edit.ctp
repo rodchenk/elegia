@@ -72,7 +72,6 @@
                 <div class="col-md-12 row">
                     <div class="col-md-12">
                         <?= $this->Form->button(__('Save'), ['class' => 'border-radius-100 btn btn-warning pr-5 pl-5 mt-3 float-right']) ?>
-                        
                     </div>
                 </div>
             <?= $this->Form->end() ?>
