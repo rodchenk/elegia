@@ -235,6 +235,7 @@ ul.pagination .disabled:hover a {
     text-align: right;
     color: rgba(0, 0 ,0 , 0.54);
 }
+/*CakePHP Pagination END*/
 @keyframes slideIn {
   0% {
     opacity:0;
@@ -269,7 +270,6 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 .opacity-block:hover{ background-color: #404f6b !important;}
 .table-centered td,.table-centered th{
 	vertical-align: middle;
-	/*text-align: center;*/
 }
 #image~label.custom-file-label::after{
 	background-color: #dc3545 !important;
