@@ -80,7 +80,7 @@
     </div>
 </div>
 <div class="col-md-12 text-center">
-    <h4 class="text-dark">We keep your data safe
+    <h4 class="text-dark">We keep your data <b class="text-info">safe</b>
         <?= $this->Html->link(
             __('Explore'),
             ['controller' => 'About', 'action' => 'index', '_full' => true],
