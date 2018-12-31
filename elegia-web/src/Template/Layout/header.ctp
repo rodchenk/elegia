@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +10,7 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']) ?>
     <?= $this->Html->script(['jquery.js', 'bootstrap.bundle.min.js']); ?>
     <script type="text/javascript">
         $(function () {
