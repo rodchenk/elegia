@@ -271,3 +271,10 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	vertical-align: middle;
 	/*text-align: center;*/
 }
+#image~label.custom-file-label::after{
+	background-color: #dc3545 !important;
+	border: 1px solid #dc3545 !important;
+	color: white;
+	margin: -1px;
+	height: unset;
+}

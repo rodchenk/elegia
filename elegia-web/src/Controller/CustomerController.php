@@ -57,6 +57,20 @@ class CustomerController extends AppController{
     }
 
     /**
+     * @author mischa
+     * @property Warenkorb
+     * @param $id von user, dessen Warenkorb angeschaut wird
+     * @return \Cake\Http\Response|void
+     */
+    public function history($id = null){
+        $customer = $this->Customer->get($id, [
+            'contain' => []
+        ]);
+        $this->viewBuilder()->setTemplate('history');
+        $this->set('customer', $customer);
+    }
+
+    /**
      * Index method
      *
      * @return \Cake\Http\Response|void
