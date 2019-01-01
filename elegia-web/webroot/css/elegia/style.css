@@ -278,3 +278,10 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	margin: -1px;
 	height: unset;
 }
+.name-badge{
+	width: 200px; 
+	height: 200px;
+	border-radius: 50%;
+	font-size: 4rem; 
+	background: linear-gradient(to right bottom, #9C27B0, #3F51B5);
+}

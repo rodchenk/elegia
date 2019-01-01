@@ -73,16 +73,32 @@
                         ); ?>
                         <hr class="bg-secondary m-2">
                         <?php if($user->role != 'anonym'): ?>
-                            <?= $this->Html->link(
-                                '<i class="fas fa-user width-30"></i>'.__('User account'),
-                                ['controller' => 'Customer', 'action' => 'view', $user->userID],
-                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
-                            ); ?>
-                             <?= $this->Html->link(
-                                '<i class="fas fa-shopping-cart width-30"></i>'.__('Shopping cart'),
-                                ['controller' => 'Customer', 'action' => 'cart', $user->userID],
-                                ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
-                            ); ?>
+                            <?php if($user->role == 'customer'): ?>
+                                <?= $this->Html->link(
+                                    '<i class="fas fa-user width-30"></i>'.__('User account'),
+                                    ['controller' => 'Customer', 'action' => 'view', $user->userID],
+                                    ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                                ); ?>
+                                 <?= $this->Html->link(
+                                    '<i class="fas fa-shopping-cart width-30"></i>'.__('Shopping cart'),
+                                    ['controller' => 'Customer', 'action' => 'cart', $user->userID],
+                                    ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                                ); ?>
+                            <?php elseif($user->role == 'supplier'): ?>
+                            <!-- TODO FOR SUPPLIER -->
+                                <?= $this->Html->link(
+                                    '<i class="fas fa-user width-30"></i>'.__('Your shop'),
+                                    ['controller' => 'Supplier', 'action' => 'view', $user->userID],
+                                    ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                                ); ?>
+                                 <?= $this->Html->link(
+                                    '<i class="fas fa-bell width-30"></i>'.__('Notifications'),
+                                    ['controller' => 'Supplier', 'action' => 'notification', $user->userID],
+                                    ['_full' => true, 'class' => 'p-1 pl-3 pr-3 text-white dropdown-item', 'escape' => false]
+                                ); ?>
+                            <?php endif; ?>
+                            <!-- -->
+
                             <hr class="bg-secondary m-2">
                             <?= $this->Html->link(
                                 '<i class="fas fa-power-off width-30"></i>'.__('Logout'),
@@ -137,14 +153,14 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
                         <?= $this->Html->link(
                             '<i class="far fa-user fa-lg"></i>',
-                            ['controller' => 'User', 'action' => 'view', $user->userID, '_full' => true],
+                            ['controller' => 'Supplier', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
                         <?= $this->Html->link(
                             '<i class="far fa-bell fa-lg"></i>',
-                            ['controller' => 'User', 'action' => 'notifications', '_full' => true],
+                            ['controller' => 'Supplier', 'action' => 'notifications', '_full' => true],
                             ['escape' => false]
                         ); ?>
                         <span class="icon-counter">5</span>

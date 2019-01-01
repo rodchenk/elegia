@@ -58,8 +58,14 @@
 		</div>
 	</div>
 	<div class="col-12 col-sm-12 col-md-6 col-lg-3">
+		<?php if(!empty($customer->image)): ?>
 		<?= $this->Html->image('upload/u/'.$customer->image, 
-			['class'=>'p-2 img-fluid d-block mx-auto rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
+			['class'=>'p-2 img-fluid d-block mx-auto rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?> 
+		<?php else: ?>
+			<div class="name-badge text-white mx-auto p-5 text-center">
+				<span><?= $customer->name[0] ?></span>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
 <div class="container-fluid row mx-auto">

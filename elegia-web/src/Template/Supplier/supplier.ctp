@@ -23,6 +23,47 @@
 		</div>
 	</div>
 </div>
+<?php if($supplier->supplierID == $user->userID): ?>
+<div class="container-fluid mx-auto p-2 mb-2 bg-dark">
+	<ul class="nav nav-pills nav-fill" style="font-size: 0.9rem">
+		<li class="nav-item">
+			<?= $this->Html->link(
+                __('Shop').'<i class="fas fa-shopping-bag ml-2"></i>',
+                ['controller' => 'Supplier', 'action' => 'view', $supplier->supplierID, '_full' => true],
+                ['escape' => false, 'class' => 'nav-link text-white active bg-danger']
+            ); ?>
+		</li>
+		<li class="nav-item">
+			<?= $this->Html->link(
+                __('Edit info').'<i class="fas fa-cog ml-2"></i>',
+                ['controller' => 'Supplier', 'action' => 'edit', $supplier->supplierID, '_full' => true],
+                ['escape' => false, 'class' => 'nav-link text-white']
+            ); ?>
+		</li>
+		<li class="nav-item">
+			<?= $this->Html->link(
+                __('Add product').'<i class="fas fa-plus ml-2"></i>',
+                ['controller' => 'Product', 'action' => 'add', '_full' => true],
+                ['escape' => false, 'class' => 'nav-link text-white']
+            ); ?>
+		</li>
+		<li class="nav-item">
+			<?= $this->Html->link(
+                __('Orders').'<i class="fas fa-folder-open ml-2 mr-2"></i><span class="badge badge-danger" style="vertical-align:text-top">0</span>',
+                ['controller' => 'Supplier', 'action' => 'orders', $supplier->supplierID, '_full' => true],
+                ['escape' => false, 'class' => 'nav-link text-white']
+            ); ?>
+		</li>
+		<li class="nav-item">
+			<?= $this->Html->link(
+                __('Notifications').'<i class="fas fa-bell ml-2 mr-2"></i><span class="badge badge-danger" style="vertical-align:text-top">4</span>',
+                ['controller' => 'Supplier', 'action' => 'notification', $supplier->supplierID, '_full' => true],
+                ['escape' => false, 'class' => 'nav-link text-white']
+            ); ?>
+		</li>
+	</ul>	
+</div>
+<?php endif; ?>
 <div class="container-fluid row mx-auto mt-4">
 	<div class="mx-auto col-md-12 row">
 		<?php for($i=0;$i<0;$i++): ?>
