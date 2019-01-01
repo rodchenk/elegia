@@ -104,8 +104,7 @@ class CustomerController extends AppController{
     }
 
     /**
-     * Edit method
-     *
+     * @author mischa
      * @param string|null $id Customer id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
@@ -116,11 +115,26 @@ class CustomerController extends AppController{
             'contain' => ['User']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $customer = $this->Customer->patchEntity($customer, $this->request->getData());
+            $data = $this->request->getData();
+            if(!empty($this->request->getData('image'))){
+               
+                $file = $this->request->getData('image');
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1);
+
+                if (in_array($ext, ['jpg', 'jpeg', 'gif','png'])) {
+                    $file_name = hash('ripemd160', $file['name']).'.'.$ext;
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/upload/u/'.$file_name);
+                    $data['image'] = $file_name;
+                }else{
+                    $this->Flash->error(__('It seems not to be an image. Please, try again.'));
+                }
+            }
+
+            $customer = $this->Customer->patchEntity($customer, $data);
             if ($this->Customer->save($customer)) {
                 $this->Flash->success(__('The customer has been saved.'));
 
-                return $this->redirect(['action' => 'view', $id]);
+                return $this->redirect(['action' => 'edit', $id]);
             }
             $this->Flash->error(__('The customer could not be saved. Please, try again.'));
         }

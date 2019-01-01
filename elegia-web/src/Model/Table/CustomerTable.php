@@ -34,12 +34,19 @@ class CustomerTable extends Table{
         $this->setDisplayField('name');
         $this->setPrimaryKey('customerID');
 
-        $this->hasOne('User',[
-                'className' => 'User'
-                ]
-            )->setDependent(true)
-            ->setForeignKey('userID');
+        $this->hasOne('User',['className' => 'User'])
+                ->setDependent(true)
+                ->setForeignKey('userID');
 
+        // $this->addBehavior('Xety/Cake3Upload.Upload', [
+        //         'fields' => [
+        //             'image' => [
+        //                 'path' => 'upload/u/:md5',
+        //                 'overwrite' => false
+        //             ]
+        //         ]
+        //     ]
+        // );
     }    
 
     /**
@@ -84,7 +91,7 @@ class CustomerTable extends Table{
 
         $validator
             ->scalar('image')
-            ->maxLength('image', 96)
+            ->maxLength('image', 256)
             ->allowEmpty('image');
 
         return $validator;

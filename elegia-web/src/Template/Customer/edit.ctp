@@ -28,7 +28,7 @@
             <h2 class="text-light ml-2 montserat-bold"><?= $customer->name ?></h2>
         </div>
         <div class="col-md-12">
-            <?= $this->Form->create($customer) ?>
+            <?= $this->Form->create($customer, ['type' => 'file']) ?>
                 <div class="col-md-12 row">
                     <div class="col-md-6 p-2 input-group">
                         <div class="input-group-prepend">
@@ -64,7 +64,12 @@
                 <div class="col-md-12 row">
                     <div class="col-md-12 m-2 pl-0 input-group">
                         <div class="custom-file">
-                            <?= $this->Form->control('image', ['type' => 'file', 'label' => false, 'class' => 'custom-file-input', 'onchange' => "$(this).siblings().eq(0).text($(this).val().split('fakepath').pop())"]) ?>
+                            <?= $this->Form->input('image', [
+                                'type' => 'file', 
+                                'label' => false, 
+                                'class' => 'custom-file-input', 
+                                'onchange' => "$(this).siblings().eq(0).text($(this).val().split('fakepath').pop());"
+                            ]) ?>
                             <label class="custom-file-label" for="image"></label>
                         </div>
                     </div>

@@ -58,8 +58,8 @@
 		</div>
 	</div>
 	<div class="col-12 col-sm-12 col-md-6 col-lg-3">
-		<?= $this->Html->image('customer/31.jpg', 
-			['class'=>'p-2 img-fluid d-block mx-auto mt-4 mb-4 rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
+		<?= $this->Html->image('upload/u/'.$customer->image, 
+			['class'=>'p-2 img-fluid d-block mx-auto rounded', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
 	</div>
 </div>
 <div class="container-fluid row mx-auto">
