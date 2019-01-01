@@ -29,10 +29,10 @@
 			<h3 class="montserat-bold text-dark"><?= $customer->name ?></h3>
 		</div>
 		<div class="col-md-12">
-			<span>Kunde seit <?= date('d.F, Y', strtotime($customer->created))?></span>
+			<span>Kunde seit <?= date('d.F, Y', strtotime($customer->user->created))?></span>
 		</div>
 		<div class="col-md-12 mt-1">
-			<kbd class="p-2 bg-dark"><?= $user->email ?></kbd>
+			<kbd class="p-2 bg-dark"><?= $customer->user->email ?></kbd>
 		</div>
 		<div class="col-md-12 mt-4">
 			<div class="col-md-12 pl-0">
@@ -41,7 +41,7 @@
 						<span class="input-group-text text-white bg-danger border-danger" id="basic-addon3" style="width: 120px"><i class="fas fa-city mr-3"></i>City</span>
 						</div>
 						<input type="text" class="form-control bg-white" value="<?= $customer->city ?>" readonly>
-						<input type="text" class="form-control bg-white col-md-3 text-center" value="14770" readonly>
+						<input type="text" class="form-control bg-white col-md-3 text-center" value="<?= $plz==null?'':$plz->zip ?>" readonly>
 				</div>
 			</div>
 

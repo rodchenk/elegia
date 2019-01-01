@@ -81,18 +81,26 @@ class CustomerController extends AppController{
     }
 
     /**
-     * View method
-     *
+     * @author mischa
      * @param string|null $id Customer id.
-     * @return \Cake\Http\Response|void
+     * @return void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null){
-        $customer = $this->Customer->get($id, [
-            'contain' => []
-        ]);
+        $this->loadModel('Geo');
+        $customer = $this->Customer->get($id, ['contain' => 'User']);
+
+        if(isset($customer->city))
+            $plz = $this->Geo->find('all', 
+                ['conditions' => [
+                    'city LIKE' => '%'.$customer->city.'%'
+                ],
+                'fields' => 'zip'
+            ])->first(); /* TODO -> Adresse Machanismus komplett umbauen */
+
         $this->viewBuilder()->setTemplate('customer');   
         $this->set('customer', $customer);     
+        $this->set('plz', $plz);
     }
 
     /**
@@ -105,14 +113,14 @@ class CustomerController extends AppController{
     public function edit($id = null)
     {
         $customer = $this->Customer->get($id, [
-            'contain' => []
+            'contain' => ['User']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customer = $this->Customer->patchEntity($customer, $this->request->getData());
             if ($this->Customer->save($customer)) {
                 $this->Flash->success(__('The customer has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $id]);
             }
             $this->Flash->error(__('The customer could not be saved. Please, try again.'));
         }

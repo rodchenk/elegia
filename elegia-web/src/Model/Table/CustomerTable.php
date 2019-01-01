@@ -18,8 +18,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Customer[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Customer findOrCreate($search, callable $callback = null, $options = [])
  */
-class CustomerTable extends Table
-{
+class CustomerTable extends Table{
 
     /**
      * Initialize method
@@ -34,7 +33,14 @@ class CustomerTable extends Table
         $this->setTable('customer');
         $this->setDisplayField('name');
         $this->setPrimaryKey('customerID');
-    }
+
+        $this->hasOne('User',[
+                'className' => 'User'
+                ]
+            )->setDependent(true)
+            ->setForeignKey('userID');
+
+    }    
 
     /**
      * Default validation rules.
@@ -42,8 +48,8 @@ class CustomerTable extends Table
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
+    public function validationDefault(Validator $validator){
+
         $validator
             ->integer('customerID')
             ->allowEmpty('customerID', 'create')
