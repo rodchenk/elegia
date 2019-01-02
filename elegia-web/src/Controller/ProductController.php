@@ -10,8 +10,32 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class ProductController extends AppController
-{
+class ProductController extends AppController{
+
+    public function initialize(){
+        parent::initialize();
+        $this->layout = 'header';
+        $this->Auth->allow(['index', 'overview', 'add']); /* TODO*/
+    }
+
+    public function overview($id = null){
+        $this->paginate = ['limit' => 5];
+        $products = $this->paginate(
+            $this->Product->find('all', [
+                'condition' => ['supplierID' => $id],
+                'contain' => ['category']
+            ]), ['limit' => 5]
+        );
+
+        $this->loadModel('Supplier');
+        $supplier = $this->Supplier->get($id, [
+            'contain' => []
+        ]);
+        $this->set('supplier', $supplier);
+
+        $this->set(compact('products'));
+        $this->viewBuilder()->setTemplate('overview');
+    }
 
     /**
      * Index method
@@ -32,8 +56,7 @@ class ProductController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null){
         $product = $this->Product->get($id, [
             'contain' => []
         ]);
@@ -46,19 +69,31 @@ class ProductController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add($id = null){
+        $this->loadModel('Supplier');
+        $supplier = $this->Supplier->get($id, [
+            'contain' => []
+        ]);
+        $this->set('supplier', $supplier);
+
         $product = $this->Product->newEntity();
+
         if ($this->request->is('post')) {
-            $product = $this->Product->patchEntity($product, $this->request->getData());
+            $data = $this->request->getData();
+            $data['supplierID'] = $id;
+            $product = $this->Product->patchEntity($product, $data);
+            $product->categoryID = $data['categoryID'];
+
             if ($this->Product->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'add', $id]);
             }
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $this->set(compact('product'));
+        $this->loadModel('Category');
+        $category = $this->Category->find('list');
+        $this->set('category',$category);
     }
 
     /**

@@ -285,3 +285,6 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	font-size: 4rem; 
 	background: linear-gradient(to right bottom, #9C27B0, #3F51B5);
 }
+.bg-dark th>a, 
+.bg-dark .paginator li>a{
+	color: #6692cb !important}

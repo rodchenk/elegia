@@ -34,6 +34,10 @@ class ProductTable extends Table
         $this->setTable('product');
         $this->setDisplayField('name');
         $this->setPrimaryKey('productID');
+
+        $this->belongsTo('Category',['className' => 'Category', 'propertyName' => 'categoryID'])
+                ->setDependent(true)
+                ->setForeignKey('categoryID');
     }
 
     /**

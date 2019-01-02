@@ -45,7 +45,6 @@ use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 
 
-Plugin::load('Xety/Cake3Upload');
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
  * You should copy `config/.env.default to `config/.env` and set/modify the
