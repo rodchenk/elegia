@@ -84,7 +84,7 @@
 		<?= $this->Form->end() ?>
 	</div>
 	<div class="col-md-9">
-		<?php if(sizeof($supplier)): /*TODO seems terrible*/?>
+		<?php if(iterator_count($supplier)): /*TODO seems terrible*/?>
 			<div class="text-center">
 				<span class="m-2 d-block"><?= $this->Paginator->counter(['format' => __('Showing {{current}} record(s) out of {{count}} total')]) ?></span>
 			</div>
@@ -93,7 +93,13 @@
 				<div class="col-md-12 p-2 bg-white mb-3 rounded supplier-block">
 					<div class="row p-3">
 						<div class="col-4 col-sm-6 col-md-2 col-lg-2 pl-0">
-							<?= $this->Html->image('supplier/rewe.jpg', ['class'=>'img-fluid d-block mx-auto', 'style' => 'max-height: 100px']) ?>
+							<?php if(($entry->image)): ?>
+								<?= $this->Html->image('upload/s/'.$entry->image, ['class'=>'img-fluid d-block mx-auto', 'style' => 'max-height: 100px']) ?>
+							<?php else: ?>
+								<div class="name-badge text-white mx-auto text-center" style="height: 100px !important; width: 100px !important">
+									<span><?= $entry->name[0] ?></span>
+								</div>
+							<?php endif; ?>
 						</div>
 						<div class="col-8 col-sm-6 col-md-4 col-lg-3">
 							<div class="col-md-12">

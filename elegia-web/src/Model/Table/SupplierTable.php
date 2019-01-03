@@ -27,13 +27,16 @@ class SupplierTable extends Table
      * @param array $config The configuration for the Table.
      * @return void
      */
-    public function initialize(array $config)
-    {
+    public function initialize(array $config){
         parent::initialize($config);
 
         $this->setTable('supplier');
         $this->setDisplayField('name');
         $this->setPrimaryKey('supplierID');
+
+        $this->hasOne('User',['className' => 'User'])
+                ->setDependent(true)
+                ->setForeignKey('userID');
     }
 
     /**
@@ -60,6 +63,10 @@ class SupplierTable extends Table
             ->maxLength('city', 96)
             ->requirePresence('city', 'create')
             ->notEmpty('city');
+        $validator
+            ->scalar('image')
+            ->maxLength('image', 128)
+            ->allowEmpty('image');
 
         return $validator;
     }

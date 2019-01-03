@@ -37,16 +37,6 @@ class CustomerTable extends Table{
         $this->hasOne('User',['className' => 'User'])
                 ->setDependent(true)
                 ->setForeignKey('userID');
-
-        // $this->addBehavior('Xety/Cake3Upload.Upload', [
-        //         'fields' => [
-        //             'image' => [
-        //                 'path' => 'upload/u/:md5',
-        //                 'overwrite' => false
-        //             ]
-        //         ]
-        //     ]
-        // );
     }    
 
     /**

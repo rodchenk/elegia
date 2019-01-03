@@ -4,11 +4,10 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * User Controller
- *
- * @property \App\Model\Table\UserTable $User
- *
- * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * Elegia (-web), Lieferservice
+ * @author mischa
+ * @license https://github.com/rodchenk/elegia/blob/master/LICENSE
+ * @since 1.0
  */
 class UserController extends AppController{
 

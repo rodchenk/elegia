@@ -25,6 +25,7 @@ class Supplier extends Entity
     protected $_accessible = [
         'supplierID' => true,
         'name' => true,
-        'city' => true
+        'city' => true,
+        'image' => true
     ];
 }

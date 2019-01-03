@@ -204,17 +204,19 @@
             <?php else : ?>
             <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav justify-content-center float-right">
-                    <li class="nav-item" style="border-radius: 100px">
-                        <a class="nav-link active text-dark"
-                            href="/login" >
-                            Log in
-                        </a>
+                    <li class="nav-item">
+                        <?= $this->Html->link(
+                            'Log in',
+                            ['controller' => 'Login', 'action' => 'index', '_full' => true],
+                            ['escape' => false, 'class' => 'nav-link active text-dark']
+                        ); ?>
                     </li>
-                    <li class="nav-item bg-coral" style="border-radius: 100px">
-                        <a class="nav-link active text-white"
-                            href="/signup" ><i class="fas fa-sign-in-alt">
-                            </i> Sign up
-                        </a>
+                    <li class="nav-item bg-coral border-radius-100">
+                        <?= $this->Html->link(
+                            '<i class="fas fa-sign-in-alt"></i> Sign up',
+                            ['controller' => 'Signup', 'action' => 'index', '_full' => true],
+                            ['escape' => false, 'class' => 'nav-link text-white']
+                        ); ?>
                     </li>
                 </ul>
             </div>
@@ -226,6 +228,7 @@
         <?= $this->fetch('content') ?>
     </main>
     <footer>
+        
     </footer>
 </body>
 </html>
