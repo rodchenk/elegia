@@ -111,7 +111,6 @@
 										'style' => 'text-decoration: none',
 										'escape' => false
 									]); ?>
-									<i class="fas fa-check fa-xs" style="color: #ffcbba"></i>
 								</h4>
 								
 							</div>
@@ -125,14 +124,14 @@
 							</div>
 						</div>
 						<div class="d-none d-lg-block col-8 col-sm-8 col-md-5 col-lg-5 text-justify" style="overflow: hidden;max-height: 70px">
-							<kbd class="text-dark font-weight-bold" style="background-color: #eaeaea"><?= __('About').' '.$entry->name ?></kbd> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+							<kbd class="text-dark font-weight-bold" style="background-color: #eaeaea"><?= __('About').' '.$entry->name ?></kbd> <?= $entry->description ?>
 						</div>
 						<div class="col-12 col-sm-12 col-md-6 col-lg-2">
 							<div class="col-md-12 mt-2 p-0">
 								<?= $this->Html->link(
 									__('Check'),
 									['controller' => 'supplier', 'action' => 'view', $entry->supplierID, '_full' => true],
-									['class' => 'col-sm-12 btn btn-danger btn-md active',
+									['class' => 'col-sm-12 btn btn-danger btn-md border-radius-100',
 									'role' => 'button',
 									'aria-pressed' => 'true',
 									'escape' => false
