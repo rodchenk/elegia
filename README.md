@@ -1,25 +1,26 @@
 # Elegia -> check out the [Intro](https://rodchenk.github.io/elegia/)
-Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding 
+Project im Rahmen von Veranstaltung fÃ¼r Frameworks bei Prof. HÃ¶ding 
 
 **Technologie**
 
     PHP -> CakePHP   
     JS -> jQuery, Bootstrap
-    DB -> MySQL + json
+    DB -> MySQL
+    CSS -> Bootstrap, Fontawesome
     
-**Funktionalitäten von Kunde**
+**FunktionalitÃ¤ten von Kunde**
 
     Suchen
     Anmelden/Regisitrieren
-    Warenbilder anschauen
-    Ware in Korb hinzufügen
+    Ware aussuchen
+    Ware in Korb hinzufÃ¼gen
     Korb bestellen und bezahlen
     Lieferstatus beobachten
  
-**Funktionalitäten von Lieferanten**
+**FunktionalitÃ¤ten von Lieferanten**
 
     Anmelden/Regisitrieren
-    Ware hinzufügen
+    Ware hinzufÃ¼gen
     Ware aktualisieren
     Lagerbestand aktuell halten
     Liste von Bestellungen anschauen
