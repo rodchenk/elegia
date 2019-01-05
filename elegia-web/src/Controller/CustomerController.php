@@ -54,7 +54,18 @@ class CustomerController extends AppController{
         ]);
         $this->viewBuilder()->setTemplate('cart');
         $this->set('customer', $customer);
-    }
+
+        //TODO
+        $this->loadModel('Orders');
+        $orders = $this->Orders->find('all', [
+            'conditions' => [
+                'customerID' => $id,
+                'status' => 'not bought'
+            ],
+            'contain' => ['product']
+        ]);
+        $this->set('orders', $orders);
+    }             
 
     /**
      * @author mischa
@@ -67,6 +78,17 @@ class CustomerController extends AppController{
             'contain' => []
         ]);
         $this->viewBuilder()->setTemplate('history');
+
+        $this->loadModel('Orders');
+        $orders = $this->Orders->find('all',[
+            'conditions' => [
+                'status !=' => 'not bought',
+                'customerID' => $id
+            ],
+            'contain' => 'product'
+        ]);
+
+        $this->set('orders', $orders);
         $this->set('customer', $customer);
     }
 

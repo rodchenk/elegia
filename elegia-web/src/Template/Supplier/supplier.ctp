@@ -58,27 +58,42 @@
 					<div class="mx-auto col-md-12 pb-2 border-bottom">
 						<span><b><?= $product->name ?></b>, <?= $product->description ?></span>
 					</div>
-					<div class="mx-auto col-md-12 row mt-3 mb-4">
-						<div class="col-md-6 text-left">
-							<span class="montserat-bold p-1 btn btn-light" onclick="changePrice(this)">+</span>
-							<input value="1" 
-									max="99" 
-									min="1" 
-									maxlength="2" 
-									name="product-count" 
-									class="p-1 rounded text-center border" 
-									style="width: 40px;" 
-									readonly>
-							<span class="montserat-bold p-1 btn btn-light" onclick="changePrice(this)">-</span>
-						</div>
-						<script type="text/javascript">
-							function changePrice(e){var t=e.parentNode.getElementsByTagName("input")[0].value,a=e.parentNode.parentNode.getElementsByTagName("label")[0].getAttribute("data-price");if("+"===e.innerHTML){if(t>99)return;e.parentNode.getElementsByTagName("input")[0].value++}else{if(t<=1)return;e.parentNode.getElementsByTagName("input")[0].value--}e.parentNode.parentNode.getElementsByTagName("label")[0].innerHTML=(a*e.parentNode.getElementsByTagName("input")[0].value).toFixed(2)}
-						</script>
-						<div class="col-md-6 text-right p-0">
-							<a href="#" class="btn btn-dark active" role="button" aria-pressed="true">
-								$<label class="m-0 p-0" data-price="<?= $product->price ?>"><?= $product->price ?></label><i class="fas fa-plus ml-3"></i>
-							</a>
-						</div>
+					<div class="mx-auto col-md-12 row mt-3 mb-4 p-0">
+						<?= $this->Form->create('Orders', [
+							'url' => [
+								'controller' => 'Orders', 
+								'action' => 'add', 
+								$user->userID, 
+								$product->productID,
+								$supplier->supplierID], 
+							'class' => 'mx-auto row', 
+							'style' => 'width: 100%']
+						)?>
+							<div class="col-md-6 text-left">
+								<span class="montserat-bold p-1 btn btn-light" onclick="changePrice(this)">+</span>
+								<input value="1" 
+										max="99" 
+										min="1" 
+										maxlength="2" 
+										name="amount" 
+										name="product-count" 
+										class="p-1 rounded text-center border" 
+										style="width: 40px;" 
+										readonly>
+								<span class="montserat-bold p-1 btn btn-light" onclick="changePrice(this)">-</span>
+							</div>
+							<script type="text/javascript">
+								function changePrice(e){var t=e.parentNode.getElementsByTagName("input")[0].value,a=e.parentNode.parentNode.getElementsByTagName("label")[0].getAttribute("data-price");if("+"===e.innerHTML){if(t>99)return;e.parentNode.getElementsByTagName("input")[0].value++}else{if(t<=1)return;e.parentNode.getElementsByTagName("input")[0].value--}e.parentNode.parentNode.getElementsByTagName("label")[0].innerHTML=(a*e.parentNode.getElementsByTagName("input")[0].value).toFixed(2)}
+							</script>
+							<div class="col-md-6 text-right p-0">
+								<?= $this->Form->button(
+					                '$<label class="m-0 p-0" data-price="'.$product->price.'">'.$product->price.'</label><i class="fas fa-plus ml-3"></i>',
+					                ['escape' => false, 
+					                'class' => 'btn btn-dark', 
+					                'role' => 'button']
+					            ); ?>
+							</div>
+						<?= $this->Form->end() ?>
 					</div>
 					
 				</div>

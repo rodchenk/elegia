@@ -48,14 +48,20 @@ class SupplierController extends AppController{
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null){
+        $waiting = 'waiting';
         $supplier = $this->Supplier->get($id, [
             'contain' => []
         ]);
         $this->ViewBuilder()->setTemplate('supplier');
-
+        $this->loadModel('Orders');
         $this->loadModel('Product');
-        $products = $this->Product->find('all', ['conditions' => ['supplierID' => $id]]);
-        
+        $products = $this->Product->find('all', [
+            'conditions' => [
+                'supplierID' => $id
+            ]
+        ]);
+
+        $this->set('orders', $this->Orders->newEntity());
         $this->set('products', $products);
         $this->set('supplier', $supplier);
     }

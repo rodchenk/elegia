@@ -136,7 +136,7 @@
                             ['controller' => 'Customer', 'action' => 'cart', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
-                        <span class="icon-counter">5</span>
+                        <?= $notification > 0 ? '<span class="icon-counter">'.$notification.'</span>' : '' ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
                         <?= $this->Html->link(
@@ -163,7 +163,7 @@
                             ['controller' => 'Supplier', 'action' => 'notifications', '_full' => true],
                             ['escape' => false]
                         ); ?>
-                        <span class="icon-counter">5</span>
+                        <?= $notification > 0 ? '<span class="icon-counter">'.$notification.'</span>' : '' ?>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
                         <?= $this->Html->link(
