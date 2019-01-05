@@ -160,7 +160,7 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
                         <?= $this->Html->link(
                             '<i class="far fa-bell fa-lg"></i>',
-                            ['controller' => 'Supplier', 'action' => 'notifications', '_full' => true],
+                            ['controller' => 'Supplier', 'action' => 'notification', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                         <?= $notification > 0 ? '<span class="icon-counter">'.$notification.'</span>' : '' ?>

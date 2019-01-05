@@ -40,7 +40,7 @@
 		</li>
 		<li class="nav-item">
 			<?= $this->Html->link(
-                __('Notifications').'<i class="fas fa-bell ml-2 mr-2"></i><span class="badge badge-danger" style="vertical-align:text-top">4</span>',
+                __('Notifications').'<i class="fas fa-bell ml-2 mr-2"></i><span class="badge badge-danger" style="vertical-align:text-top">'.$notification.'</span>',
                 ['controller' => 'Supplier', 'action' => 'notification', $supplier->supplierID, '_full' => true],
                 ['escape' => false, 'class' => 'nav-link text-white']
             ); ?>

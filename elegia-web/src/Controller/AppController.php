@@ -54,19 +54,27 @@ class AppController extends Controller{
             $user = $this->User->newEntity();
             $user->role = 'anonym';
         }else{
+            $this->loadModel('Orders');
+
             if($user['role'] === 'customer'){
-                $this->loadModel('Orders');
                 $notification = $this->Orders->find('all', [
                     'conditions' => [
                         'customerID' => $user['userID'],
                         'status' => 'not bought'
                     ]
                 ])->count();
+
             }elseif($user['role'] === 'supplier'){
-                $notification = 0;
-                // TODO for supplier
+                $notification = $this->Orders->find('all', [
+                    'conditions' => [
+                        'Product.supplierID' => $user['userID'],
+                        'status' => 'waiting'
+                    ],
+                    'contain' => 'Product'
+                ])->count();
+
             }else{
-                //TODO for admin
+                $notification = 0;//TODO for admin
             }
 
             $this->set('notification', $notification);

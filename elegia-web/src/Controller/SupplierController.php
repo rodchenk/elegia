@@ -26,7 +26,7 @@ class SupplierController extends AppController{
      * @return boolean true (when erlaubt), false (when verboten)
      */
     public function isAuthorized($user){
-        if (in_array($this->request->getParam('action'), ['edit', 'orders'])) {
+        if (in_array($this->request->getParam('action'), ['edit', 'orders', 'notification'])) {
             return (int)$this->request->getParam('pass.0') === $user['userID'];
         }
 
@@ -64,6 +64,26 @@ class SupplierController extends AppController{
         $this->set('orders', $this->Orders->newEntity());
         $this->set('products', $products);
         $this->set('supplier', $supplier);
+    }
+
+    public function notification($id = null){
+        $supplier = $this->Supplier->get($id, [
+            'contain' => []
+        ]);
+
+        $this->loadModel('Orders');
+
+        $notifications = $this->Orders->find('all',[
+            'conditions' => [
+                'Product.supplierID' => $id,
+                'Orders.status' => 'waiting'], 
+            'contain' => [
+                'Product']
+        ]);
+
+        $this->set('supplier', $supplier);
+        $this->set('notifications', $this->paginate($notifications));
+        $this->viewBuilder()->setTemplate('notification');
     }
 
     public function orders($id = null){
