@@ -50,16 +50,28 @@
     <?php if(iterator_count($notifications)): ?>
         <div class="container mx-auto mt-3">
             <div class="row">
-                <?php for ($i=0; $i < 12; $i++): ?>
+                <?php foreach ($notifications as $order): ?>
                     <div class="col-12 p-2">
-                        <div class="bg-white border border-radius-100 row" style="height: 60px">
-                            <div class="col"></div>
+                        <div class="bg-white border-radius-100 row supplier-block" style="height: 60px;">
+                            <div class="col">
+                                <span class="d-block p-3 pl-4" style="letter-spacing: .1rem">
+                                    <?= $this->Html->link(
+                                        $order->customerID['name'],
+                                        ['controller' => 'Customer', 'action' => 'view', $order->customerID['customerID'], '_full' => true],
+                                        ['escape' => false, 'class' => 'text-dark font-weight-bold']
+                                    ).' hat am <span class="text-info">'.date( 'd. F H:i', strtotime($order->updated)).'</span> <b>'.$order->amount.' '.$order->productID['name'].'('.$order->productID['description'].')</b>'.' bestellt'?>
+                                </span>
+                            </div>
                             <div class="pr-0" style="width: 200px;">
-                                <button class="col-12 btn custom-btn" style="height: 100%"><i class="far fa-eye mr-2"></i>Seen</button>
+                                <?= $this->Html->link(
+                                    '<i class="far fa-eye mr-2"></i>'.__('Seen'),
+                                    ['controller' => 'Orders', 'action' => 'changestatus', $supplier->supplierID, $order->orderID, 'in progress', '_full' => true],
+                                    ['escape' => false, 'class' => 'col-12 btn custom-btn p-3', 'style' => 'height: 100%']
+                                ); ?>
                             </div>
                         </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>            
         </div>
     <?php else: ?>

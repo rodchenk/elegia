@@ -78,7 +78,8 @@ class SupplierController extends AppController{
                 'Product.supplierID' => $id,
                 'Orders.status' => 'waiting'], 
             'contain' => [
-                'Product']
+                'Product', 
+                'Customer']
         ]);
 
         $this->set('supplier', $supplier);
