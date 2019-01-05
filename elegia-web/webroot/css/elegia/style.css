@@ -284,8 +284,34 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	height: 200px;
 	border-radius: 50%;
 	font-size: 4rem; 
-	background: linear-gradient(to right bottom, #9C27B0, #3F51B5);
+	/*background: linear-gradient(to right bottom, #9C27B0, #3F51B5);*/
+	background: linear-gradient(to right bottom, #ed719b, #a73665);
 }
 .bg-dark th>a, 
 .bg-dark .paginator li>a{
 	color: #6692cb !important}
+
+.custom-btn{
+	flex: 1 1 auto;
+	text-align: center;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+  	background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+
+  	border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.custom-btn:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    color: white;
+}

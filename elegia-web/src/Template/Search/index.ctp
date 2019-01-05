@@ -129,9 +129,9 @@
 						<div class="col-12 col-sm-12 col-md-6 col-lg-2">
 							<div class="col-md-12 mt-2 p-0">
 								<?= $this->Html->link(
-									__('Check'),
+									'<i class="fas fa-location-arrow pr-2"></i>'.__('Go'),
 									['controller' => 'supplier', 'action' => 'view', $entry->supplierID, '_full' => true],
-									['class' => 'col-sm-12 btn btn-danger btn-md border-radius-100',
+									['class' => 'col-sm-12 btn custom-btn border-radius-100',
 									'role' => 'button',
 									'aria-pressed' => 'true',
 									'escape' => false
