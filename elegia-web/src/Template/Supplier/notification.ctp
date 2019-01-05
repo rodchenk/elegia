@@ -54,7 +54,7 @@
                     <div class="col-12 p-2">
                         <div class="bg-white border-radius-100 row supplier-block" style="height: 60px;">
                             <div class="col">
-                                <span class="d-block p-3 pl-4" style="letter-spacing: .1rem">
+                                <span class="d-block p-3 pl-5" style="letter-spacing: .1rem">
                                     <?= $this->Html->link(
                                         $order->customerID['name'],
                                         ['controller' => 'Customer', 'action' => 'view', $order->customerID['customerID'], '_full' => true],
