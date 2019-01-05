@@ -279,13 +279,13 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
 	height: unset;
 }
 .name-badge{
-	border: 3px #e07c85 solid;
+	/*border: 3px #e07c85 solid;*/
 	width: 200px; 
 	height: 200px;
 	border-radius: 50%;
 	font-size: 4rem; 
 	/*background: linear-gradient(to right bottom, #9C27B0, #3F51B5);*/
-	background: linear-gradient(to right bottom, #ed719b, #a73665);
+	background: linear-gradient(to right bottom, #7193ed, #f05c93);
 }
 .bg-dark th>a, 
 .bg-dark .paginator li>a{

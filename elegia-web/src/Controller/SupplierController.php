@@ -26,20 +26,20 @@ class SupplierController extends AppController{
      * @return boolean true (when erlaubt), false (when verboten)
      */
     public function isAuthorized($user){
-        if (in_array($this->request->getParam('action'), ['edit'])) {
+        if (in_array($this->request->getParam('action'), ['edit', 'orders'])) {
             return (int)$this->request->getParam('pass.0') === $user['userID'];
         }
 
         return parent::isAuthorized($user);
     }
-    /**
-     * @property unused 
-     * @return \Cake\Http\Response|void
-     */
-    public function index(){
-        $supplier = $this->paginate($this->Supplier);
-        $this->set(compact('supplier'));
-    }
+    // /**
+    //  * @property unused 
+    //  * @return \Cake\Http\Response|void
+    //  */
+    // public function index(){
+    //     $supplier = $this->paginate($this->Supplier);
+    //     $this->set(compact('supplier'));
+    // }
 
     /**
      * @author mischa
@@ -66,27 +66,27 @@ class SupplierController extends AppController{
         $this->set('supplier', $supplier);
     }
 
-    /**
-     * @property unused
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
-    public function add(){
-        $supplier = $this->Supplier->newEntity();
-        if ($this->request->is('post')) {
-            $supplier = $this->Supplier->patchEntity($supplier, $this->request->getData());
-            if ($this->Supplier->save($supplier)) {
-                $this->Flash->success(__('The supplier has been saved.'));
+    public function orders($id = null){
+        $supplier = $this->Supplier->get($id, [
+            'contain' => []
+        ]);
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The supplier could not be saved. Please, try again.'));
-        }
-        $this->set(compact('supplier'));
+        $this->loadModel('Orders');
+
+        $orders = $this->Orders->find('all',[
+            'conditions' => [
+                'Product.supplierID' => $id,
+                'Orders.status !=' => 'waiting'], 
+            'contain' => 'Product'
+        ]);
+
+        $this->set('supplier', $supplier);
+        $this->set('orders', $this->paginate($orders));
+        $this->viewBuilder()->setTemplate('orders');
     }
 
     /**
      * @author
-     * TODO
      * @param string|null $id Supplier id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.

@@ -124,7 +124,7 @@
 							</div>
 						</div>
 						<div class="d-none d-lg-block col-8 col-sm-8 col-md-5 col-lg-5 text-justify" style="overflow: hidden;max-height: 70px">
-							<kbd class="text-dark font-weight-bold" style="background-color: #eaeaea"><?= __('About').' '.$entry->name ?></kbd> <?= $entry->description ?>
+							<?= $entry->description ?>
 						</div>
 						<div class="col-12 col-sm-12 col-md-6 col-lg-2">
 							<div class="col-md-12 mt-2 p-0">
