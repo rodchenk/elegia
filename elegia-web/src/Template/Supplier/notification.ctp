@@ -64,7 +64,7 @@
                             </div>
                             <div class="pr-0" style="width: 200px;">
                                 <?= $this->Html->link(
-                                    '<i class="far fa-eye mr-2"></i>'.__('Seen'),
+                                    '<i class="fas fa-check mr-2"></i>'.__('Seen'),
                                     ['controller' => 'Orders', 'action' => 'changestatus', $supplier->supplierID, $order->orderID, 'in progress', '_full' => true],
                                     ['escape' => false, 'class' => 'col-12 btn custom-btn p-3', 'style' => 'height: 100%']
                                 ); ?>
