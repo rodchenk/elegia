@@ -77,7 +77,9 @@ class SupplierController extends AppController{
             'conditions' => [
                 'Product.supplierID' => $id,
                 'Orders.status !=' => 'waiting'], 
-            'contain' => 'Product'
+            'contain' => [
+                'Product', 
+                'Customer']
         ]);
 
         $this->set('supplier', $supplier);

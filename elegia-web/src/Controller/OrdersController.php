@@ -49,18 +49,30 @@ class OrdersController extends AppController{
 
     /**
      * View method
-     *
+     * unused
      * @param string|null $id Order id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null){
         $order = $this->Orders->get($id, [
             'contain' => []
         ]);
 
         $this->set('order', $order);
+    }
+
+    public function changestatus($userID = null, $orderID = null, $status = 'in progress'){
+        $order = $this->Orders->get($orderID);
+        $order->status = $status;
+        $order->updated = date('Y-m-d H:i:s');
+        if($this->Orders->save($order)){
+            $this->Flash->success(__('The status has been changedd.'));
+        }else{
+            $this->Flash->error(__('The status could not be changed. Please, try again.'));
+        }
+
+        return $this->redirect(['controller' => 'supplier', 'action' => 'orders', $userID]);
     }
 
     /**

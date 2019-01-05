@@ -50,6 +50,18 @@
 <div class="container-fluid mx-auto mt-3">
     <?php if(iterator_count($orders)): ?>
     <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="border-0" scope="col"></th>
+                <th class="border-0" scope="col">Product</th>
+                <th class="border-0" scope="col">Price</th>
+                <th class="border-0" scope="col">Amount</th>
+                <th class="border-0" scope="col">Customer</th>
+                <th class="border-0" scope="col">Status</th>
+                <th class="border-0" scope="col">Updated</th>
+                <th class="border-0" scope="col"></th>
+            </tr>
+        </thead>
         <tbody class="table-centered">
             <?php foreach ($orders as $order): ?>
                 <tr>
@@ -58,47 +70,56 @@
                     <td>€<?= $order->productID['price'] ?></td>
                     <td><?= $order->amount ?> Stk.</td>
                     <td>
+                        <?= $this->Html->link(
+                            $order->customerID['name'],
+                            ['controller' => 'Customer', 'action' => 'view', $order->customerID['customerID'], '_full' => true],
+                            ['escape' => false, 'class' => 'text-dark font-weight-bold']
+                        ) ?>
+                    </td>
+                    <td>
                         <?php switch ($order->status) {
-                            case 'waiting':     $color = 'warning'; $icon = '<i class="fas fa-clock pl-3"></i>'; break;
-                            case 'canceled':    $color = 'danger';  $icon = '<i class="fas fa-times pl-3"></i>'; break;
-                            case 'delivering':  $color = 'info';    $icon = '<i class="fas fa-truck pl-3"></i>'; break;
-                            case 'delivered':   $color = 'success'; $icon = '<i class="fas fa-check pl-3"></i>'; break;
-                            default:            $color = 'dark';   $icon = '<i class="fas fa-clock pl-3"></i>'; break;
+                            case 'in progress': $color = 'secondary';   $icon = '<i class="fas fa-clock pl-3"></i>'; break;
+                            case 'canceled':    $color = 'danger';      $icon = '<i class="fas fa-times pl-3"></i>'; break;
+                            case 'delivering':  $color = 'info';        $icon = '<i class="fas fa-truck pl-3"></i>'; break;
+                            case 'delivered':   $color = 'success';     $icon = '<i class="fas fa-check pl-3"></i>'; break;
+                            default:            $color = 'dark';        $icon = '<i class="fas fa-clock pl-3"></i>'; break;
                         }?>
                         <span class="text-right text-<?= $color ?> "><?= $order->status ?><?= $icon ?></span>
                     </td>
                     <td class="text-left">
                         <?=date( 'd. F H:i', strtotime($order->updated)) ?>
                     </td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-align-right pr-2"></i>Change status
-                            </button>
-                            <div class="dropdown-menu">
-                                <?= $this->Form->postLink(
-                                    __('In progress').'<i class="fas fa-terminal float-right ml-2 mt-1 text-secondary"></i>',
-                                    ['controller' => 'Order', 'action' => 'changeStatus', $order->orderID, 'progress', '_full' => true],
-                                    ['escape' => false, 'class' => 'dropdown-item']
-                                ); ?>
-                                <?= $this->Form->postLink(
-                                    __('Delivering').'<i class="fas fa-truck-moving float-right ml-2 mt-1 text-secondary"></i>',
-                                    ['controller' => 'Order', 'action' => 'changeStatus', $order->orderID, 'delivering', '_full' => true],
-                                    ['escape' => false, 'class' => 'dropdown-item']
-                                ); ?>
-                                <?= $this->Form->postLink(
-                                    __('Delivered').'<i class="fas fa-check float-right ml-2 mt-1 text-secondary"></i>',
-                                    ['controller' => 'Order', 'action' => 'changeStatus', $order->orderID, 'delivered', '_full' => true],
-                                    ['escape' => false, 'class' => 'dropdown-item']
-                                ); ?>
-                                <div class="dropdown-divider"></div>
-                                <?= $this->Form->postLink(
-                                    __('Cancel order').'<i class="fas fa-times float-right ml-2 mt-1"></i>',
-                                    ['controller' => 'Order', 'action' => 'changeStatus', $order->orderID, 'cancel', '_full' => true],
-                                    ['escape' => false, 'class' => 'dropdown-item font-weight-bold text-danger']
-                                ); ?>
+                    <td class="text-center" style="width: 210px">
+                        <?php switch ($order->status) {
+                            case 'in progress': $level = 1; break;
+                            case 'delivering':  $level = 2; break;
+                            default:            $level = 0; break; 
+                        }?>
+                        <?php if($level > 0): ?>
+                            <div class="btn-group">
+                                <button type="button" class="btn custom-btn rounded dropdown-toggle pl-3 pr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Change status
+                                </button>
+                                <div class="dropdown-menu">
+                                    <?= $level < 2 ? $this->Form->postLink(
+                                        __('Delivering').'<i class="fas fa-truck-moving float-right ml-2 mt-1 text-secondary"></i>',
+                                        ['controller' => 'Orders', 'action' => 'changestatus', $supplier->supplierID, $order->orderID, 'delivering', '_full' => true],
+                                        ['escape' => false, 'class' => 'dropdown-item', 'style' => 'width:200px']
+                                    ) : '' ?>
+                                    <?= $level < 3 ? $this->Form->postLink(
+                                        __('Delivered').'<i class="fas fa-check float-right ml-2 mt-1 text-secondary"></i>',
+                                        ['controller' => 'Orders', 'action' => 'changestatus', $supplier->supplierID, $order->orderID, 'delivered', '_full' => true],
+                                        ['escape' => false, 'class' => 'dropdown-item', 'style' => 'width:200px']
+                                    ) : '' ?>
+                                    <div class="dropdown-divider"></div>
+                                    <?= $this->Form->postLink(
+                                        __('Cancel order').'<i class="fas fa-times float-right ml-2 mt-1"></i>',
+                                        ['controller' => 'Orders', 'action' => 'changestatus', $supplier->supplierID, $order->orderID, 'canceled', '_full' => true],
+                                        ['escape' => false, 'class' => 'dropdown-item font-weight-bold text-danger', 'style' => 'width:200px']
+                                    ); ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif;?>
                     </td>
                 </tr>
             <?php endforeach; ?>
