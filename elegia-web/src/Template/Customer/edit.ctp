@@ -64,7 +64,7 @@
                 <div class="col-md-12 row">
                     <div class="col-md-12 m-2 pl-0 input-group">
                         <div class="custom-file">
-                            <?= $this->Form->input('image', [
+                            <?= $this->Form->control('image', [
                                 'type' => 'file', 
                                 'label' => false, 
                                 'class' => 'custom-file-input', 

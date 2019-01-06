@@ -10,7 +10,7 @@ class SearchController extends AppController {
         parent::initialize();
         $this->loadModel('Supplier');
         $this->viewBuilder()->setLayout('header');
-        $this->viewBuilder()->template('index');
+        $this->viewBuilder()->setTemplate('index');
         //$this->Auth->allow(['search']);
     }
 
@@ -21,10 +21,9 @@ class SearchController extends AppController {
     public function index() {
     	$kriteria = $this->request->getQuery('q');
     	$this->paginate = ['limit' => 5];
-    	$query =$kriteria ?
-    	$this->Supplier->find('all', ['conditions' => ['city' => $kriteria]]) :	$this->Supplier->find('all');
+    	$query = $kriteria ? $this->Supplier->find('all', ['conditions' => ['city' => $kriteria]]) : $this->Supplier->find('all');
     	$supplier = $this->paginate($query);
-      $this->set(compact('supplier'));
+        $this->set(compact('supplier'));
     }
 }
 ?>
