@@ -29,7 +29,7 @@
 			<h3 class="montserat-bold text-dark"><?= $customer->name ?></h3>
 		</div>
 		<div class="col-md-12">
-			<span>Kunde seit <?= date('d.F, Y', strtotime($customer->user->created))?></span>
+			<span><?=__('Kunde seit').' '.date('d.F, Y', strtotime($customer->user['created']))?></span>
 		</div>
 		<div class="col-md-12 mt-1">
 			<kbd class="p-2 bg-dark"><?= $customer->user->email ?></kbd>
