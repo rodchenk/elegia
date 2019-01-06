@@ -71,7 +71,7 @@ class OrdersTable extends Table{
             ->notEmpty('amount');
 
         $validator
-            ->scalar('status');
+            ->scalar('status')->requirePresence('amount', 'create');
 
         return $validator;
     }
