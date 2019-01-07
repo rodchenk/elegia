@@ -27,14 +27,12 @@ class ErrorController extends AppController{
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize(){
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
         ]);
-        $this->viewBuilder()->setLayout('header');
-        $user = ['role' => 'anonym'];
-        $this->set('user', $user);//TODO -> where to get the user
+
+        $this->viewBuilder()->setLayout(false);
     }
 
     /**

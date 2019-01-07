@@ -44,3 +44,7 @@ msgstr "Tippe deine Stadt oder PLZ"
 
 msgid "Search"
 msgstr "Suchen"
+
+#	ERROR
+msgid "Page not found"
+msgstr "die Seite nicht gefunden"
