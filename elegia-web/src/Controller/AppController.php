@@ -46,6 +46,8 @@ class AppController extends Controller{
     public function initialize(){
         parent::initialize();
         $this->loadComponents();
+
+        $this->Auth->allow('setLanguage');
         
         $user = $this->Auth->User();
 
@@ -111,5 +113,11 @@ class AppController extends Controller{
         $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
         //$this->loadComponent('Security');
+    }
+
+    public function setLanguage($language = null){
+        //$this->session()->write('Config.Language', 'en_EN');
+        //TODO
+        return $this->redirect($this->referer());
     }
 }

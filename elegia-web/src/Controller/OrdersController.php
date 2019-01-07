@@ -64,8 +64,25 @@ class OrdersController extends AppController{
 
     public function changestatus($userID = null, $orderID = null, $status = 'in progress'){
         $order = $this->Orders->get($orderID);
+
+        if($status === 'delivering'){ /* minus amount from stock when delivering */
+            $amount = $order->amount;
+
+            $this->loadModel('Product');
+            $product = $this->Product->get($order->productID);
+
+            if($product->stock - $amount < 0){
+                $this->Flash->error('No enough products in the Stock');
+                return $this->redirect($this->referer());
+            }
+
+            $product->stock -= $amount;
+            $this->Product->save($product);
+        }
+
         $order->status = $status;
         $order->updated = date('Y-m-d H:i:s');
+        
         if($this->Orders->save($order)){
             $this->Flash->success(__('The status has been changedd.'));
         }else{

@@ -21,8 +21,7 @@ use Cake\Event\Event;
  *
  * Controller used by ExceptionRenderer to render error responses.
  */
-class ErrorController extends AppController
-{
+class ErrorController extends AppController{
     /**
      * Initialization hook method.
      *
@@ -33,6 +32,9 @@ class ErrorController extends AppController
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
         ]);
+        $this->viewBuilder()->setLayout('header');
+        $user = ['role' => 'anonym'];
+        $this->set('user', $user);//TODO -> where to get the user
     }
 
     /**

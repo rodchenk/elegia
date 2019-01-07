@@ -12,12 +12,7 @@
     <?= $this->fetch('script') ?>
     <?= $this->Html->css(['about/all.min', 'about/bootstrap.min', 'elegia/style']) ?>
     <?= $this->Html->script(['jquery.js', 'bootstrap.bundle.min.js']); ?>
-    <script type="text/javascript">
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-
+    <script type="text/javascript">$(function(){$('[data-toggle="tooltip"]').tooltip()})</script>
 </head>
 <body class="bg-light">
     <head>
@@ -29,18 +24,15 @@
                         English
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">
-                            <?= $this->Html->image('icon/ame_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']) ?>
-                            English
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <?= $this->Html->image('icon/ger_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']) ?>
-                            German
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <?= $this->Html->image('icon/ukr_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']) ?>
-                            Ukrainian
-                        </a>
+                        <?= $this->Html->link(
+                            $this->Html->image('icon/ame_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'English',
+                            ['controller' => 'App', 'action' => 'setLanguage', 'en_EN', '_full' => true],
+                            ['class' => 'dropdown-item', 'escape' => false]
+                        ) . $this->Html->link(
+                            $this->Html->image('icon/ger_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'Deutsch',
+                            ['controller' => 'App', 'action' => 'setLanguage', 'de_DE', '_full' => true],
+                            ['class' => 'dropdown-item', 'escape' => false]
+                        ); ?>
                     </div>
                 </div>
             </div>
@@ -246,8 +238,22 @@
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </main>
-    <footer>
-        
+    <!-- TODO FOOTER or remove -->
+    <footer class="d-none container-fluid row mx-auto p-2 text-white">
+        <div class="col-md-7 p-1 text-left">
+            <span class="font-weight-bold text-secondary mr-1">Authors:</span>
+            <span class="text-light mr-1">Mischa</span>
+            <span class="text-light mr-1">Nick</span>
+            <span class="text-light mr-1">Thi</span>
+            <span class="text-light">Ila</span>
+            <span class="text-info ml-4">Copyright 2018</span>
+        </div>
+        <div class="col-md-2 text-right p-1">
+            
+        </div>
+        <div class="col-md-3 text-right">
+            <?= $this->Html->image('about/logo_avacado.png', ['width'=>'120', 'height'=>'40']) ?>
+        </div>
     </footer>
 </body>
 </html>

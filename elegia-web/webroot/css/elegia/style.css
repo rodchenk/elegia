@@ -315,3 +315,11 @@ div.bg-dark>a.dropdown-item:hover{background-color: #21272d;border-right: 2px #F
     transition: all .4s ease-in-out;
     color: white;
 }
+footer{
+	width: 100vw;
+	height: 50px;
+	position: absolute;
+	bottom: 0; left: 0;
+	background-color: #212529;
+	font-size: .8rem;
+}
