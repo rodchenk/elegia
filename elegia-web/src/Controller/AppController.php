@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\I18n;
 
 class AppController extends Controller{
 
@@ -33,10 +34,23 @@ class AppController extends Controller{
 
     /**
      * @author mischa
+     * @property short workaround to set the local -> language
+     */
+    private function configureLocal(){
+        if(isset($_SESSION['language'])){
+            I18n::setLocale($_SESSION['language']);
+        }else{
+            $_SESSION['language'] = 'en_US';
+        }
+    }
+
+    /**
+     * @author mischa
      * @property die alternative Methode zu initialize() ?
      */
     function beforeFilter(Event $event) {
         parent::beforeFilter($event);
+        $this->configureLocal();
     }
 
     /**
@@ -47,8 +61,6 @@ class AppController extends Controller{
         parent::initialize();
         $this->loadComponents();
 
-        $this->Auth->allow('setLanguage');
-        
         $user = $this->Auth->User();
 
         if(empty($user)){
@@ -95,6 +107,7 @@ class AppController extends Controller{
     }
 
     public function loadComponents(){
+
         $this->loadComponent('Auth', [
             'Authenticate'  => [
                 'Form'      => [
@@ -113,11 +126,5 @@ class AppController extends Controller{
         $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
         //$this->loadComponent('Security');
-    }
-
-    public function setLanguage($language = null){
-        //$this->session()->write('Config.Language', 'en_EN');
-        //TODO
-        return $this->redirect($this->referer());
     }
 }

@@ -1,0 +1,46 @@
+#	HEADER
+msgid "About"
+msgstr "Uber uns"
+
+msgid "Start site"
+msgstr "Startseite"
+
+msgid "Our Github"
+msgstr "Unser Github"
+
+msgid "About elegia"
+msgstr "Uber elegia"
+
+msgid "User account"
+msgstr "Benutzerprofil"
+
+msgid "Shopping cart"
+msgstr "Warenkorb"
+
+msgid "Your shop"
+msgstr "Dein Shop"
+
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+msgid "Logout"
+msgstr "Ausloggen"
+
+msgid "Log in"
+msgstr "Einloggen"
+
+msgid "Sign up"
+msgstr "Registrieren"
+
+#	START
+msgid "e.g New York, San Francisco or Los Angeles"
+msgstr "z.B. Berlin, Hamburg, München usw."
+
+msgid "Make your empleyees happy"
+msgstr "Erfreuen Sie Ihre Mitarbeiter"
+
+msgid "Tip your city or zip-code"
+msgstr "Tippe deine Stadt oder PLZ"
+
+msgid "Search"
+msgstr "Suchen"

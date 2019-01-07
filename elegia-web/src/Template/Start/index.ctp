@@ -3,13 +3,25 @@
 		<div class="container mx-auto" style="filter: drop-shadow(0 0 30px #191919);">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<span class="montserat-bold text-white rounded d-inline-block" style="background-color: #0000008a;padding: 12px; font-size: 30px;">Erfreuen Sie Ihre Mitarbeiter</span>
+					<span class="montserat-bold text-white rounded d-inline-block" style="background-color: #0000008a;padding: 12px; font-size: 30px;">
+						<?= __('Make your empleyees happy') ?>
+					</span>
 				</div>
 			</div>
 			<?= $this->Form->create(null, ['url' => ['controller' => 'Search', 'action' => 'index'], 'type' => 'GET']) ?>
 
 				<div class="input-group mb-3" style="margin-bottom: 5px !important; margin-top: 7px;">
-					<input onkeyup="search(this.value)" list="cities" autocomplete="off" autocorrect="off" autocapitalize="off" name="q" spellcheck="false" type="text" class="form-control" placeholder="Tippe deine Stadt oder PLZ" aria-label="Tippe deine Stadt oder PLZ" aria-describedby="basic-addon2" style="padding: 16px">
+					<input onkeyup="search(this.value)" 
+							list="cities" 
+							autocomplete="off" 
+							autocorrect="off" 
+							autocapitalize="off" 
+							name="q" 
+							spellcheck="false" 
+							type="text" 
+							class="form-control" 
+							placeholder="<?= __('Tip your city or zip-code') ?>" 
+							style="padding: 16px">
 
 					<datalist id="cities"></datalist>
 
@@ -38,7 +50,7 @@
 			<?= $this->Form->end() ?>
 			<div class="row">
 				<div class="col-md-6 text-white" style="filter: drop-shadow(0 0 30px #191919);">
-					z.B. Berlin, Hamburg, München usw. 
+					<?= __('e.g New York, San Francisco or Los Angeles') ?> 
 				</div>
 				<div class="col-md-6 text-white text-right">
 					<i class="fab fa-cc-visa fa-3x text-white"></i>

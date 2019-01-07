@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\I18n;
 
 /**
  * Elegia (-web), Lieferservice
@@ -17,7 +18,14 @@ class UserController extends AppController{
      */
     public function initialize(){
         parent::initialize();
-        $this->Auth->allow(['index', 'logout']);
+        $this->Auth->allow(['index', 'logout', 'language']);
+    }
+
+
+    public function language($language = null){
+        //I18n::setLocale($language); 
+        $_SESSION['language'] = $language;
+        return $this->redirect($this->referer());        
     }
 
     /**

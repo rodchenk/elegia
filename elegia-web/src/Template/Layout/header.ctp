@@ -21,16 +21,20 @@
                 <?= $this->Html->image('about/logo_avacado.png', ['width'=>'120', 'height'=>'40']) ?>
                 <div class="btn-group dropdown">
                     <button type="button" class="d-none d-lg-block btn btn-light text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        English
+                        <?php
+                        switch ($_SESSION['language']) {
+                            case 'de_DE':   echo "Deutsch"; break;
+                            default:        echo "English"; break;
+                        }?>
                     </button>
                     <div class="dropdown-menu">
                         <?= $this->Html->link(
                             $this->Html->image('icon/ame_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'English',
-                            ['controller' => 'App', 'action' => 'setLanguage', 'en_EN', '_full' => true],
+                            ['controller' => 'User', 'action' => 'language', 'en_US', '_full' => true],
                             ['class' => 'dropdown-item', 'escape' => false]
                         ) . $this->Html->link(
                             $this->Html->image('icon/ger_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'Deutsch',
-                            ['controller' => 'App', 'action' => 'setLanguage', 'de_DE', '_full' => true],
+                            ['controller' => 'User', 'action' => 'language', 'de_DE', '_full' => true],
                             ['class' => 'dropdown-item', 'escape' => false]
                         ); ?>
                     </div>
@@ -38,21 +42,21 @@
             </div>
             <div class="d-none d-md-block col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Start site">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Start site') ?>">
                         <?= $this->Html->link(
                             __('Start'),
                             ['controller' => 'Start', 'action' => 'index', '_full' => true],
                             ['class' => 'nav-link active text-dark']
                         ); ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Out Github">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Our Github') ?>">
                         <?= $this->Html->link(
                             'Github',
                             'https://github.com/rodchenk/elegia',
                             ['class' => 'nav-link text-dark', 'target' => '_blanc']
                         ); ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="About elegia">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('About elegia') ?>">
                         <?= $this->Html->link(
                             __('About'),
                             ['controller' => 'About', 'action' => 'index', '_full' => true],
@@ -134,14 +138,14 @@
             <?php if ($user->role == 'customer'): ?>
             <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav float-right icon-container mt-2">
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('User account') ?>">
                         <?= $this->Html->link(
                             '<i class="far fa-user fa-lg"></i>',
                             ['controller' => 'Customer', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Shopping cart') ?>">
                         <?= $this->Html->link(
                             '<i class="fas fa-shopping-basket fa-lg"></i>',
                             ['controller' => 'Customer', 'action' => 'cart', $user->userID, '_full' => true],
@@ -149,7 +153,7 @@
                         ); ?>
                         <?= $notification > 0 ? '<span class="icon-counter">'.$notification.'</span>' : '' ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Log out') ?>">
                         <?= $this->Html->link(
                             '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
@@ -161,14 +165,14 @@
           <?php elseif ($user->role == 'supplier'): ?>
             <div class="d-none d-md-block col-md-3 mt-3">
                 <ul class="nav float-right icon-container">
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="User account">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('User account') ?>">
                         <?= $this->Html->link(
                             '<i class="far fa-user fa-lg"></i>',
                             ['controller' => 'Supplier', 'action' => 'view', $user->userID, '_full' => true],
                             ['escape' => false]
                         ); ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Notifications') ?>">
                         <?= $this->Html->link(
                             '<i class="far fa-bell fa-lg"></i>',
                             ['controller' => 'Supplier', 'action' => 'notification', $user->userID, '_full' => true],
@@ -176,7 +180,7 @@
                         ); ?>
                         <?= $notification > 0 ? '<span class="icon-counter">'.$notification.'</span>' : '' ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Log out') ?>">
                         <?= $this->Html->link(
                             '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
@@ -195,7 +199,7 @@
                             ['escape' => false]
                         ); ?>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Notifications">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Notifications') ?>">
                         <?= $this->Html->link(
                             '<i class="far fa-bell fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'notifications', '_full' => true],
@@ -203,7 +207,7 @@
                         ); ?>
                         <span class="icon-counter">5</span>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Log out">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="<?= __('Log out') ?>">
                         <?= $this->Html->link(
                             '<i class="fas fa-sign-out-alt fa-lg"></i>',
                             ['controller' => 'User', 'action' => 'logout', '_full' => true],
@@ -217,14 +221,14 @@
                 <ul class="nav justify-content-center float-right">
                     <li class="nav-item">
                         <?= $this->Html->link(
-                            'Log in',
+                            __('Log in'),
                             ['controller' => 'Login', 'action' => 'index', '_full' => true],
                             ['escape' => false, 'class' => 'nav-link active text-dark']
                         ); ?>
                     </li>
                     <li class="nav-item bg-coral border-radius-100">
                         <?= $this->Html->link(
-                            '<i class="fas fa-sign-in-alt"></i> Sign up',
+                            '<i class="fas fa-sign-in-alt mr-1"></i>'.__('Sign up'),
                             ['controller' => 'Signup', 'action' => 'index', '_full' => true],
                             ['escape' => false, 'class' => 'nav-link text-white']
                         ); ?>
