@@ -16,29 +16,9 @@
 </head>
 <body class="bg-light">
     <head>
-        <div class="container-fluid row position-relative mx-auto" style="z-index: 99">
+        <div class="container-fluid row position-relative mx-auto" style="z-index: 99; font-size: .9rem">
             <div class="col-6 col-sm-6 col-md-3 mt-3">
                 <?= $this->Html->image('about/logo_avacado.png', ['width'=>'120', 'height'=>'40']) ?>
-                <div class="btn-group dropdown">
-                    <button type="button" class="d-none d-lg-block btn btn-light text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php
-                        switch ($_SESSION['language']) {
-                            case 'de_DE':   echo "Deutsch"; break;
-                            default:        echo "English"; break;
-                        }?>
-                    </button>
-                    <div class="dropdown-menu">
-                        <?= $this->Html->link(
-                            $this->Html->image('icon/ame_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'English',
-                            ['controller' => 'User', 'action' => 'language', 'en_US', '_full' => true],
-                            ['class' => 'dropdown-item', 'escape' => false]
-                        ) . $this->Html->link(
-                            $this->Html->image('icon/ger_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'Deutsch',
-                            ['controller' => 'User', 'action' => 'language', 'de_DE', '_full' => true],
-                            ['class' => 'dropdown-item', 'escape' => false]
-                        ); ?>
-                    </div>
-                </div>
             </div>
             <div class="d-none d-md-block col-md-6 mx-auto mt-3 text-center">
                 <ul class="nav justify-content-center link-container">
@@ -62,6 +42,28 @@
                             ['controller' => 'About', 'action' => 'index', '_full' => true],
                             ['class' => 'nav-link text-dark']
                         ); ?>
+                    </li>
+                    <li class="nav-item">
+                        <div class="btn-group dropdown">
+                            <button type="button" class="font-weight-bold d-none d-lg-block btn btn-link text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php
+                                switch ($_SESSION['language']) {
+                                    case 'de_DE':   echo "de"; break;
+                                    default:        echo "en"; break;
+                                }?>
+                            </button>
+                            <div class="dropdown-menu">
+                                <?= $this->Html->link(
+                                    $this->Html->image('icon/ame_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'English',
+                                    ['controller' => 'User', 'action' => 'language', 'en_US', '_full' => true],
+                                    ['class' => 'dropdown-item', 'escape' => false]
+                                ) . $this->Html->link(
+                                    $this->Html->image('icon/ger_flag.png', ['width'=>'35', 'height'=>'20', 'class' => 'mr-2']).'Deutsch',
+                                    ['controller' => 'User', 'action' => 'language', 'de_DE', '_full' => true],
+                                    ['class' => 'dropdown-item', 'escape' => false]
+                                ); ?>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

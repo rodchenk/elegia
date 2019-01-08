@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\I18n\I18n;
+use Cake\Core\Configure;
 
 class AppController extends Controller{
 
@@ -40,7 +41,7 @@ class AppController extends Controller{
         if(isset($_SESSION['language'])){
             I18n::setLocale($_SESSION['language']);
         }else{
-            $_SESSION['language'] = 'en_US';
+            $_SESSION['language'] = Configure::read('App.defaultLocale');
         }
     }
 
