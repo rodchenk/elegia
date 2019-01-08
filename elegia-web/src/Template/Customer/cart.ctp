@@ -27,7 +27,7 @@
 		<?php $sum = 0; ?>
 		<?php if(iterator_count($orders)): ?>
 		<div class="col-md-12">
-			<h4 class="p-2 text-left text-warning">Hier are all products from your shopping cart</h4>
+			<h4 class="p-2 text-left text-warning"><?= __('Hier are all products from your shopping cart') ?></h4>
 		</div>
 		<table class="table table-hover" style="font-size: .9rem">
 			<tbody class="table-centered">

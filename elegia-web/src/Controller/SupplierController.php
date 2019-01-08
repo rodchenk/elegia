@@ -100,8 +100,11 @@ class SupplierController extends AppController{
                 'Orders.status !=' => 'waiting'], 
             'contain' => [
                 'Product', 
-                'Customer']
+                'Customer'],
+            'order' => 'updated DESC'
         ]);
+
+        $this->paginate = ['limit' => 5];
 
         $this->set('supplier', $supplier);
         $this->set('orders', $this->paginate($orders));

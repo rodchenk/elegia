@@ -86,9 +86,11 @@
 								function changePrice(e){var t=e.parentNode.getElementsByTagName("input")[0].value,a=e.parentNode.parentNode.getElementsByTagName("label")[0].getAttribute("data-price");if("+"===e.innerHTML){if(t>99)return;e.parentNode.getElementsByTagName("input")[0].value++}else{if(t<=1)return;e.parentNode.getElementsByTagName("input")[0].value--}e.parentNode.parentNode.getElementsByTagName("label")[0].innerHTML=(a*e.parentNode.getElementsByTagName("input")[0].value).toFixed(2)}
 							</script>
 							<div class="col-md-6 text-right p-0">
+								<?php $disabled = $user->role === 'supplier' ? ['disabled' => 'disabled'] : [] ?>
 								<?= $this->Form->button(
 					                '$<label class="m-0 p-0" data-price="'.$product->price.'">'.$product->price.'</label><i class="fas fa-plus ml-3"></i>',
 					                ['escape' => false, 
+					                $disabled,
 					                'class' => 'btn btn-dark', 
 					                'role' => 'button']
 					            ); ?>

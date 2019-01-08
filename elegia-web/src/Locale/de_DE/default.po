@@ -48,3 +48,16 @@ msgstr "Suchen"
 #	ERROR
 msgid "Page not found"
 msgstr "die Seite nicht gefunden"
+
+#	SHOPPING CART
+msgid "History"
+msgstr "Einkaufsliste"
+
+msgid "Hier are all products from your shopping cart"
+msgstr "Da sind alle deinen Einkaeufe aus dem Warenkorb"
+
+msgid "Edit profile"
+msgstr "Profil bearbeiten"
+
+msgid "Public profile"
+msgstr "Profil"

@@ -20,7 +20,7 @@ class OrdersController extends AppController{
     public function initialize(){
         parent::initialize();
         //$this->viewBuilder()->setLayout('header');
-        $this->Auth->allow();
+        //$this->Auth->allow();
 
         
     }
