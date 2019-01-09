@@ -25,7 +25,7 @@
             <?= $supplier->description ?>
         </div>
         <div class="col-md-12 mt-4 text-right">
-            <a href="#" class="btn active border-radius-100 p-3 pl-4 pr-4 text-white border-0 opacity-block" role="button" aria-pressed="true"><i class="fas fa-heart"></i> Add to favorite</a>
+            <a href="#" class="btn active border-radius-100 p-3 pl-4 pr-4 text-white border-0 opacity-block" role="button" aria-pressed="true"><i class="fas fa-heart"></i> <?= __('Add to favorite')?></a>
         </div>
     </div>
 </div>

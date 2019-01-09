@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-01-07 17:01+0000\n"
+"POT-Creation-Date: 2019-01-09 07:42+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: Controller/CustomerController.php:151
 #: Controller/ProductController.php:111
-#: Controller/SupplierController.php:135
+#: Controller/SupplierController.php:138
 msgid "It seems not to be an image. Please, try again."
 msgstr ""
 
@@ -180,11 +180,11 @@ msgstr ""
 msgid "The user could not be saved. Please, try again "
 msgstr ""
 
-#: Controller/SupplierController.php:144
+#: Controller/SupplierController.php:147
 msgid "The supplier has been saved."
 msgstr ""
 
-#: Controller/SupplierController.php:148
+#: Controller/SupplierController.php:151
 msgid "The supplier could not be saved. Please, try again."
 msgstr ""
 
@@ -359,6 +359,7 @@ msgstr ""
 #: Template/Orders/index.ctp:38
 #: Template/Paymentmethod/index.ctp:30
 #: Template/Product/index.ctp:42
+#: Template/Product/overview.ctp:92
 #: Template/Supplier/index.ctp:32
 #: Template/User/index.ctp:36
 msgid "Edit"
@@ -482,6 +483,8 @@ msgstr ""
 
 #: Template/Category/index.ctp:14
 #: Template/Product/add.ctp:65
+#: Template/Product/edit.ctp:42
+#: Template/Product/overview.ctp:58
 msgid "Category"
 msgstr ""
 
@@ -490,15 +493,21 @@ msgid "Delete Category"
 msgstr ""
 
 #: Template/Category/view.ctp:20
+#: Template/Customer/edit.ctp:35
 #: Template/Customer/view.ctp:20
 #: Template/Paymentmethod/view.ctp:20
+#: Template/Product/add.ctp:57
+#: Template/Product/edit.ctp:10
+#: Template/Product/overview.ctp:57
 #: Template/Product/view.ctp:20
+#: Template/Supplier/edit.ctp:57
 #: Template/Supplier/view.ctp:20
 msgid "Name"
 msgstr ""
 
 #: Template/Category/view.ctp:24
 #: Template/Customer/view.ctp:36
+#: Template/Product/overview.ctp:59
 #: Template/Product/view.ctp:24
 msgid "Description"
 msgstr ""
@@ -522,29 +531,42 @@ msgstr ""
 #: Template/Customer/edit.ctp:5
 #: Template/Customer/history.ctp:5
 msgid "Public profile"
-msgstr "Profil"
+msgstr ""
 
 #: Template/Customer/cart.ctp:10
 #: Template/Customer/customer.ctp:11
 #: Template/Customer/edit.ctp:10
 #: Template/Customer/history.ctp:10
 msgid "Edit profile"
-msgstr "Profil editieren"
+msgstr ""
 
 #: Template/Customer/cart.ctp:15
 #: Template/Customer/customer.ctp:16
 #: Template/Customer/edit.ctp:15
 #: Template/Customer/history.ctp:15
-#: Template/Layout/header.ctp:94
+#: Template/Layout/header.ctp:100;150
 msgid "Shopping cart"
-msgstr "Warenkorb"
+msgstr ""
 
 #: Template/Customer/cart.ctp:20
 #: Template/Customer/customer.ctp:21
 #: Template/Customer/edit.ctp:20
 #: Template/Customer/history.ctp:20
 msgid "History"
-msgstr "Einkaufsliste"
+msgstr ""
+
+#: Template/Customer/cart.ctp:30
+msgid "Hier are all products from your shopping cart"
+msgstr ""
+
+#: Template/Customer/cart.ctp:40
+#: Template/Customer/history.ctp:42
+msgid "Stk."
+msgstr ""
+
+#: Template/Customer/cart.ctp:42
+msgid "Added at"
+msgstr ""
 
 #: Template/Customer/cart.ctp:56
 #: Template/Product/edit.ctp:62
@@ -555,27 +577,70 @@ msgstr ""
 msgid "Are you sure you want to buy?"
 msgstr ""
 
+#: Template/Customer/cart.ctp:80
+msgid "You do not have anything in you cart"
+msgstr ""
+
+#: Template/Customer/cart.ctp:83
+msgid "Go shopping"
+msgstr ""
+
 #: Template/Customer/customer.ctp:32
 msgid "Kunde seit"
 msgstr ""
 
+#: Template/Customer/customer.ctp:51
+msgid "Address"
+msgstr ""
+
 #: Template/Customer/customer.ctp:73
 msgid "Find. Buy. Enjoy."
-msgstr "Finden. Kaufen. Zufrieden sein."
+msgstr ""
 
 #: Template/Customer/customer.ctp:75
 msgid "Let's go"
 msgstr ""
 
-#: Template/Customer/edit.ctp:79
+#: Template/Customer/edit.ctp:41
+#: Template/Customer/view.ctp:24
+#: Template/Geo/view.ctp:20
+#: Template/Search/index.ctp:10
+#: Template/Signup/index.ctp:63
+#: Template/Supplier/edit.ctp:65
+#: Template/Supplier/view.ctp:24
+msgid "City"
+msgstr ""
+
+#: Template/Customer/edit.ctp:49
+#: Template/Customer/view.ctp:28
+msgid "Street"
+msgstr ""
+
+#: Template/Customer/edit.ctp:55
+msgid "House"
+msgstr ""
+
+#: Template/Customer/edit.ctp:75
 #: Template/Product/add.ctp:110
 #: Template/Product/edit.ctp:65
 #: Template/Supplier/edit.ctp:93
 msgid "Save"
 msgstr ""
 
-#: Template/Customer/edit.ctp:89
+#: Template/Customer/edit.ctp:83
+msgid "We keep your data"
+msgstr ""
+
+#: Template/Customer/edit.ctp:85
 msgid "Explore"
+msgstr ""
+
+#: Template/Customer/history.ctp:62
+msgid "No history yet"
+msgstr ""
+
+#: Template/Customer/history.ctp:63
+msgid "Buy something to make me happy"
 msgstr ""
 
 #: Template/Customer/index.ctp:10
@@ -584,6 +649,8 @@ msgid "New Customer"
 msgstr ""
 
 #: Template/Customer/index.ctp:14
+#: Template/Signup/index.ctp:131
+#: Template/Supplier/orders.ctp:59
 msgid "Customer"
 msgstr ""
 
@@ -593,16 +660,6 @@ msgstr ""
 
 #: Template/Customer/view.ctp:11
 msgid "Delete Customer"
-msgstr ""
-
-#: Template/Customer/view.ctp:24
-#: Template/Geo/view.ctp:20
-#: Template/Supplier/view.ctp:24
-msgid "City"
-msgstr ""
-
-#: Template/Customer/view.ctp:28
-msgid "Street"
 msgstr ""
 
 #: Template/Customer/view.ctp:32
@@ -646,11 +703,24 @@ msgstr ""
 
 #: Template/Deliverystatus/view.ctp:20
 #: Template/Orders/view.ctp:20
+#: Template/Supplier/orders.ctp:60
 msgid "Status"
 msgstr ""
 
 #: Template/Deliverystatus/view.ctp:24
 msgid "StatusID"
+msgstr ""
+
+#: Template/Element/supplierHeader.ctp:28
+msgid "Add to favorite"
+msgstr ""
+
+#: Template/Error/missing_controller.ctp:10
+msgid "Page not found"
+msgstr ""
+
+#: Template/Error/missing_controller.ctp:12
+msgid "Go back"
 msgstr ""
 
 #: Template/Geo/add.ctp:10
@@ -707,23 +777,35 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: Template/Layout/header.ctp:43;71
+#: Template/Layout/header.ctp:25
+msgid "Start site"
+msgstr ""
+
+#: Template/Layout/header.ctp:27;77
 msgid "Start"
 msgstr ""
 
-#: Template/Layout/header.ctp:57;81
+#: Template/Layout/header.ctp:32
+msgid "Our Github"
+msgstr ""
+
+#: Template/Layout/header.ctp:39
+msgid "About elegia"
+msgstr ""
+
+#: Template/Layout/header.ctp:41;87
 msgid "About"
 msgstr ""
 
-#: Template/Layout/header.ctp:89
+#: Template/Layout/header.ctp:95;143;170
 msgid "User account"
 msgstr ""
 
-#: Template/Layout/header.ctp:101
+#: Template/Layout/header.ctp:107
 msgid "Your shop"
 msgstr ""
 
-#: Template/Layout/header.ctp:106
+#: Template/Layout/header.ctp:112;177;204
 #: Template/Product/add.ctp:43
 #: Template/Product/overview.ctp:43
 #: Template/Supplier/edit.ctp:43
@@ -733,18 +815,45 @@ msgstr ""
 msgid "Notifications"
 msgstr ""
 
-#: Template/Layout/header.ctp:115
+#: Template/Layout/header.ctp:121
 msgid "Logout"
 msgstr ""
 
-#: Template/Layout/header.ctp:121
+#: Template/Layout/header.ctp:127;226
 #: Template/Login/index.ctp:54
 msgid "Log in"
 msgstr ""
 
-#: Template/Layout/header.ctp:126
+#: Template/Layout/header.ctp:132;233
 #: Template/Login/index.ctp:63
+#: Template/Signup/index.ctp:23
 msgid "Sign up"
+msgstr ""
+
+#: Template/Layout/header.ctp:158;185;212
+msgid "Log out"
+msgstr ""
+
+#: Template/Login/index.ctp:8
+msgid "Log In"
+msgstr ""
+
+#: Template/Login/index.ctp:31
+#: Template/User/view.ctp:24
+msgid "Email"
+msgstr ""
+
+#: Template/Login/index.ctp:43
+#: Template/Signup/index.ctp:106
+msgid "Password"
+msgstr ""
+
+#: Template/Login/index.ctp:48
+msgid "Forgot password"
+msgstr ""
+
+#: Template/Login/index.ctp:61
+msgid "Don't have an account"
 msgstr ""
 
 #: Template/Orders/add.ctp:10
@@ -791,10 +900,14 @@ msgid "ProductID"
 msgstr ""
 
 #: Template/Orders/view.ctp:36
+#: Template/Product/edit.ctp:26
+#: Template/Product/overview.ctp:61
+#: Template/Supplier/orders.ctp:58
 msgid "Amount"
 msgstr ""
 
 #: Template/Orders/view.ctp:40
+#: Template/Supplier/orders.ctp:61
 msgid "Updated"
 msgstr ""
 
@@ -866,8 +979,16 @@ msgstr ""
 msgid "List products"
 msgstr ""
 
+#: Template/Product/add.ctp:73
+#: Template/Product/edit.ctp:34
+msgid "Desc."
+msgstr ""
+
 #: Template/Product/add.ctp:81
+#: Template/Product/edit.ctp:18
+#: Template/Product/overview.ctp:60
 #: Template/Product/view.ctp:44
+#: Template/Supplier/orders.ctp:57
 msgid "Price"
 msgstr ""
 
@@ -886,7 +1007,16 @@ msgid "New Product"
 msgstr ""
 
 #: Template/Product/index.ctp:14
+#: Template/Supplier/orders.ctp:56
 msgid "Product"
+msgstr ""
+
+#: Template/Product/overview.ctp:105
+msgid "Remove"
+msgstr ""
+
+#: Template/Product/overview.ctp:114
+msgid "No products yet"
 msgstr ""
 
 #: Template/Product/overview.ctp:116
@@ -910,12 +1040,28 @@ msgstr ""
 msgid "SupplierID"
 msgstr ""
 
+#: Template/Search/index.ctp:11
+msgid "Type a city"
+msgstr ""
+
+#: Template/Search/index.ctp:14
+msgid "Rating"
+msgstr ""
+
+#: Template/Search/index.ctp:64
+msgid "Sales and discounts"
+msgstr ""
+
+#: Template/Search/index.ctp:67
+msgid "Discount"
+msgstr ""
+
 #: Template/Search/index.ctp:72
 msgid "Click to refresh"
 msgstr ""
 
 #: Template/Search/index.ctp:78
-msgid "Filter zurücksetzen"
+msgid "Reset filter"
 msgstr ""
 
 #: Template/Search/index.ctp:89
@@ -926,12 +1072,57 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
+#: Template/Search/index.ctp:164
+msgid "Nothing found for your request"
+msgstr ""
+
+#: Template/Search/index.ctp:165
+msgid "Please try more general criterias"
+msgstr ""
+
+#: Template/Signup/index.ctp:8
+msgid "Sign up in one click, order fresh products from the best suppliers and make your employees"
+msgstr ""
+
+#: Template/Signup/index.ctp:8
+msgid "happy"
+msgstr ""
+
+#: Template/Signup/index.ctp:122
+msgid "Repeat password"
+msgstr ""
+
+#: Template/Signup/index.ctp:146
+#: Template/Supplier/index.ctp:14
+msgid "Supplier"
+msgstr ""
+
+#: Template/Signup/index.ctp:173
+msgid "I accept"
+msgstr ""
+
+#: Template/Signup/index.ctp:173
+msgid "the Terms and Conditions"
+msgstr ""
+
 #: Template/Signup/index.ctp:179
 msgid "Let's go!"
 msgstr ""
 
-#: Template/Start/index.ctp:18
+#: Template/Start/index.ctp:7
+msgid "Make your empleyees happy"
+msgstr ""
+
+#: Template/Start/index.ctp:23
+msgid "Tip your city or zip-code"
+msgstr ""
+
+#: Template/Start/index.ctp:30
 msgid "Search"
+msgstr ""
+
+#: Template/Start/index.ctp:53
+msgid "e.g New York, San Francisco or Los Angeles"
 msgstr ""
 
 #: Template/Supplier/add.ctp:10
@@ -943,17 +1134,25 @@ msgstr ""
 msgid "Add Supplier"
 msgstr ""
 
+#: Template/Supplier/edit.ctp:73
+msgid "Descr."
+msgstr ""
+
 #: Template/Supplier/index.ctp:10
 #: Template/Supplier/view.ctp:13
 msgid "New Supplier"
 msgstr ""
 
-#: Template/Supplier/index.ctp:14
-msgid "Supplier"
-msgstr ""
-
 #: Template/Supplier/notification.ctp:67
 msgid "Seen"
+msgstr ""
+
+#: Template/Supplier/notification.ctp:79
+msgid "You do not have any notifications"
+msgstr ""
+
+#: Template/Supplier/orders.ctp:101
+msgid "Change status"
 msgstr ""
 
 #: Template/Supplier/orders.ctp:105
@@ -966,6 +1165,26 @@ msgstr ""
 
 #: Template/Supplier/orders.ctp:116
 msgid "Cancel order"
+msgstr ""
+
+#: Template/Supplier/orders.ctp:142
+msgid "Nothing in the table"
+msgstr ""
+
+#: Template/Supplier/supplier.ctp:106
+msgid "The shop is"
+msgstr ""
+
+#: Template/Supplier/supplier.ctp:106
+msgid "empty"
+msgstr ""
+
+#: Template/Supplier/supplier.ctp:106
+msgid "yet"
+msgstr ""
+
+#: Template/Supplier/supplier.ctp:106
+msgid "FIX IT"
 msgstr ""
 
 #: Template/Supplier/view.ctp:10
@@ -1006,10 +1225,6 @@ msgstr ""
 
 #: Template/User/view.ctp:20
 msgid "Pwd Hash"
-msgstr ""
-
-#: Template/User/view.ctp:24
-msgid "Email"
 msgstr ""
 
 #: Template/User/view.ctp:28

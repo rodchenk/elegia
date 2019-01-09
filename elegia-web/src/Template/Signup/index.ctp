@@ -5,7 +5,7 @@
 			<div class="col-md-4"></div>
 			<div class="col-md-8 text-right">
 				<h1 class="text-left text-dark" style="padding: 30px;margin-top: 50px">Hey,</h1>
-				<span class="text-secondary" style="font-size: 1.2em"><i class="fas fa-quote-left"></i> Sign up in one click, order fresh products from the best suppliers and make your employees <kbd class="bg-warning">happy</kbd> <i class="fas fa-quote-right"></i></span>
+				<span class="text-secondary" style="font-size: 1.2em"><i class="fas fa-quote-left"></i> <?= __('Sign up in one click, order fresh products from the best suppliers and make your employees')?> <kbd class="bg-warning"><?= __('happy')?></kbd> <i class="fas fa-quote-right"></i></span>
 			</div>
 		</div>
 		<div class="col-md-12">
@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<span class="d-block" style="padding: 30px;font-size: 1.5em;font-weight: bold;color: #c8495b">
-					Sign up
+					<?= __('Sign up') ?>
 				</span>
 				<div class="custom-header-icons">
 					<i class="fab fa-facebook fa-lg text-secondary" data-toggle="tooltip" data-placement="top" title="Facebook"></i>
@@ -60,7 +60,7 @@
   							'list' => 'cities', 
   							'autocomplete' => 'off', 
   							'required', 
-  							'placeholder' => 'City', 
+  							'placeholder' => __('City'), 
   							'class' => 'form-control', 
   							'label' => false
   						]); ?>
@@ -103,7 +103,7 @@
   							'autocomplete' => 'off', 
   							'required', 
   							'type' => 'password',
-  							'placeholder' => 'Password', 
+  							'placeholder' => __('Password'), 
   							'class' => 'form-control', 
   							'label' => false
   						]); ?>
@@ -119,7 +119,7 @@
   							'autocomplete' => 'off', 
   							'required', 
   							'type' => 'password',
-  							'placeholder' => 'Repeat password', 
+  							'placeholder' => __('Repeat password'), 
   							'class' => 'form-control', 
   							'label' => false
   						]); ?>
@@ -128,7 +128,7 @@
 				<div class="col-md-12 mt-5">
 					<div class="row" style="margin-right: 1px; margin-left: 1px;">
 						<div class="col text-right">
-							<label class="switch-text-left d-inline-block selected-text-in-switch" id="switch-customer" for="switch-checkbox-signup">Customer</label>
+							<label class="switch-text-left d-inline-block selected-text-in-switch" id="switch-customer" for="switch-checkbox-signup"><?= __('Customer')?></label>
 						</div>
 						<div class="col text-center mt-1">
 							<label class="switch d-inline-block" style="background-color: #c2c7cc" for="switch-checkbox-signup">
@@ -143,7 +143,7 @@
 							</label>
 						</div>
 						<div class="col text-left">
-							<label class="switch-text-right d-inline-block" id="switch-supplier" for="switch-checkbox-signup">Supplier</label>	
+							<label class="switch-text-right d-inline-block" id="switch-supplier" for="switch-checkbox-signup"><?= __('Supplier') ?></label>	
 						</div>
 					</div>
 				</div>
@@ -170,7 +170,7 @@
   							'id' => 'term-and-condition-checkbox',
   							'label' => false
   						]); ?>
-						<label class="ml-3 custom-control-label" for="term-and-condition-checkbox">I accept <a href="#">the Terms and Conditions</a></label>
+						<label class="ml-3 custom-control-label" for="term-and-condition-checkbox"><?= __('I accept')?> <a href="#"><?= __('the Terms and Conditions') ?></a></label>
 					</div>
 				</div>
 				<div class="col-md-12 mt-3 mt-5 mb-3">

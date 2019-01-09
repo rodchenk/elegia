@@ -32,14 +32,6 @@ class SupplierController extends AppController{
 
         return parent::isAuthorized($user);
     }
-    // /**
-    //  * @property unused 
-    //  * @return \Cake\Http\Response|void
-    //  */
-    // public function index(){
-    //     $supplier = $this->paginate($this->Supplier);
-    //     $this->set(compact('supplier'));
-    // }
 
     /**
      * @author mischa
@@ -97,12 +89,13 @@ class SupplierController extends AppController{
         $orders = $this->Orders->find('all',[
             'conditions' => [
                 'Product.supplierID' => $id,
-                'Orders.status !=' => 'waiting'], 
+                'Orders.status !=' => 'not bought' //TODO -> AND Orders.status != 'waiting'
+            ],
             'contain' => [
                 'Product', 
                 'Customer'],
             'order' => 'updated DESC'
-        ]);
+        ]);/* status changed, see diff */
 
         $this->paginate = ['limit' => 5];
 

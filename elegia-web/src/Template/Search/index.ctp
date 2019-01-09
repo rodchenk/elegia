@@ -7,11 +7,11 @@
 			'type' => 'get'
 		]) ?>
 			<div class="col-md-12 mb-3 mt-2">
-				<span class="font-weight-bold">City:</span>
-  				<input type="text" class="form-control mt-1 mb-2 ml-1" name="q" placeholder="Type your City" style="text-transform: capitalize;" value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
+				<span class="font-weight-bold"><?= __('City')?>:</span>
+  				<input type="text" class="form-control mt-1 mb-2 ml-1" name="q" placeholder="<?= __('Type a city')?>" style="text-transform: capitalize;" value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
 			</div>
 			<div class="col-md-12 mb-3 text-dark">
-				<span class="font-weight-bold">Rating:</span>
+				<span class="font-weight-bold"><?= __('Rating')?>:</span>
 				<div class="col-md-12 ml-1 mt-1 mb-2 pb-2text-warning starability-checkmark">
 					<input type="radio"
 							id="rate1"
@@ -61,10 +61,10 @@
 				</div>
 			</div>
 			<div class="col-md-12 mb-3 aktion-label">
-				<span class="font-weight-bold d-block">Aktionen und Rabatte:</span>
+				<span class="font-weight-bold d-block"><?= __('Sales and discounts') ?>:</span>
   				<input type="checkbox" name="discount" id="discount" <?= isset($_GET['discount']) ? 'checked' : '' ?>>
   				<label class="mt-1 pb-2 pt-2 pl-4 pr-4 border-radius-100" for="discount">
-  					<i class="fas fa-tag"></i> Aktion
+  					<i class="fas fa-tag"></i> <?= __('Discount') ?>
   				</label>
 			</div>
 			<hr class="d-sm-none d-md-block col-md-8">
@@ -75,7 +75,7 @@
 			</div>
 			<div class="col-md-12 mb-2 text-center">
 				<?= $this->Html->link(
-					'<i class="fas fa-undo-alt"></i>'.' '.__('Filter zurücksetzen'),
+					'<i class="fas fa-undo-alt"></i>'.' '.__('Reset filter'),
 					['action' => 'index', 'q' => isset($_GET['q']) ? $_GET['q'] : '', '_full' => true],
 					['class' => 'btn btn-link text-dark',
 					'escape' => false
@@ -161,8 +161,8 @@
 			</div>
 		<?php else: ?>
 			<div class="col-md-9 mx-auto text-left">
-				<span style="font-size: 2rem" class="d-block text-dark">Nothing found for your request :(</span>
-				<span class="d-block mb-5 text-left"><kbd class="bg-orange">Please try more general ciretias</kbd></span>
+				<span style="font-size: 2rem" class="d-block text-dark"><?= __('Nothing found for your request')?> :(</span>
+				<span class="d-block mb-5 text-left"><kbd class="bg-orange"><?= __('Please try more general criterias')?></kbd></span>
 				<?= $this->Html->image('no_results_2.png', ['class'=>'img-fluid']) ?>
 			</div>
 		<?php endif; ?>

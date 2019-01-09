@@ -1,63 +1,1504 @@
-#	HEADER
-msgid "About"
-msgstr "Uber uns"
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-01-09 07:42+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-msgid "Start site"
-msgstr "Startseite"
+#: Controller/BasketController.php:55;79
+msgid "The basket has been saved."
+msgstr "Warenkorb wurde aktualisiert"
 
-msgid "Our Github"
-msgstr "Unser Github"
+#: Controller/BasketController.php:59;83
+msgid "The basket could not be saved. Please, try again."
+msgstr "Der Warenkorb wurde nicht aktualisiert. Versuchen Sie noch mal"
 
-msgid "About elegia"
-msgstr "Uber elegia"
+#: Controller/CategoryController.php:102
+msgid "The category could not be deleted. Please, try again."
+msgstr ""
 
-msgid "User account"
-msgstr "Benutzerprofil"
+#: Controller/CustomerController.php:151
+#: Controller/ProductController.php:111
+#: Controller/SupplierController.php:138
+msgid "It seems not to be an image. Please, try again."
+msgstr "Das ist kein Bild. Versuchen Sie noch mal"
 
+#: Controller/CustomerController.php:157
+msgid "The customer has been saved."
+msgstr ""
+
+#: Controller/CustomerController.php:161
+msgid "The customer could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CustomerController.php:178
+msgid "The customer has been deleted."
+msgstr ""
+
+#: Controller/CustomerController.php:180
+msgid "The customer could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/DeliverystatusController.php:55;79
+msgid "The deliverystatus has been saved."
+msgstr ""
+
+#: Controller/DeliverystatusController.php:59;83
+msgid "The deliverystatus could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/DeliverystatusController.php:100
+msgid "The deliverystatus has been deleted."
+msgstr ""
+
+#: Controller/DeliverystatusController.php:102
+msgid "The deliverystatus could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GeoController.php:55;79
+msgid "The geo has been saved."
+msgstr ""
+
+#: Controller/GeoController.php:59;83
+msgid "The geo could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GeoController.php:100
+msgid "The geo has been deleted."
+msgstr ""
+
+#: Controller/GeoController.php:102
+msgid "The geo could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LoginController.php:35
+msgid "Username or password is incorrect"
+msgstr ""
+
+#: Controller/LoginController.php:38
+msgid "Your request could not be checked"
+msgstr "Ihre Anfrage ist fehlgeschlagen"
+
+#: Controller/OrdersController.php:87
+msgid "The status has been changedd."
+msgstr "Status wurde aktualisiert"
+
+#: Controller/OrdersController.php:89
+msgid "The status could not be changed. Please, try again."
+msgstr "Statusanderung ist fehlgeschlagen"
+
+#: Controller/OrdersController.php:126
+msgid "The order has been saved."
+msgstr "Die Bestellung wurde gespeichert"
+
+#: Controller/OrdersController.php:130
+msgid "The order could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/OrdersController.php:148
+msgid "The order has been deleted."
+msgstr ""
+
+#: Controller/OrdersController.php:150
+msgid "The order could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PaymentmethodController.php:55;79
+msgid "The paymentmethod has been saved."
+msgstr ""
+
+#: Controller/PaymentmethodController.php:59;83
+msgid "The paymentmethod could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PaymentmethodController.php:100
+msgid "The paymentmethod has been deleted."
+msgstr ""
+
+#: Controller/PaymentmethodController.php:102
+msgid "The paymentmethod could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ProductController.php:120;149
+msgid "The product has been saved."
+msgstr "Die Ware wurde aktualisiert/hinzugefügt"
+
+#: Controller/ProductController.php:123;153
+msgid "The product could not be saved. Please, try again."
+msgstr "Die Ware koennte nicht gespeichert werden"
+
+#: Controller/ProductController.php:172
+msgid "The product has been deleted."
+msgstr "Die ware wurde geloescht"
+
+#: Controller/ProductController.php:174
+msgid "The product could not be deleted. Please, try again."
+msgstr "Die ware koennte nicht geloescht werden"
+
+#: Controller/SignupController.php:65
+msgid "The passwords doesnt match. Please, try again"
+msgstr "Die Passwoerter stimmet nicht überein"
+
+#: Controller/SignupController.php:87
+msgid "Please fill all required fields"
+msgstr "Befüllen Sie alle Pflichtfelder"
+
+#: Controller/SignupController.php:120;138;144
+msgid "The user has been saved"
+msgstr "Der Benutzer ist angelegt"
+
+#: Controller/SignupController.php:122;140;146
+msgid "The user could not be saved. Please, try again "
+msgstr "Der Benutzer koennte nicht gespeichert werden"
+
+#: Controller/SupplierController.php:147
+msgid "The supplier has been saved."
+msgstr ""
+
+#: Controller/SupplierController.php:151
+msgid "The supplier could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UserController.php:71;87
+msgid "The user has been saved."
+msgstr "Der Benutzer wurde angelegt"
+
+#: Controller/UserController.php:75;91
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UserController.php:108
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UserController.php:110
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Basket/add.ctp:9
+#: Template/Basket/edit.ctp:9
+#: Template/Basket/index.ctp:9;21
+#: Template/Basket/view.ctp:9
+#: Template/Category/add.ctp:9
+#: Template/Category/edit.ctp:9
+#: Template/Category/index.ctp:9;21
+#: Template/Category/view.ctp:9
+#: Template/Customer/add.ctp:9
+#: Template/Customer/index.ctp:9;25
+#: Template/Customer/view.ctp:9
+#: Template/Deliverystatus/add.ctp:9
+#: Template/Deliverystatus/edit.ctp:9
+#: Template/Deliverystatus/index.ctp:9;20
+#: Template/Deliverystatus/view.ctp:9
+#: Template/Geo/add.ctp:9
+#: Template/Geo/edit.ctp:9
+#: Template/Geo/index.ctp:9;23
+#: Template/Geo/view.ctp:9
+#: Template/Orders/add.ctp:9
+#: Template/Orders/edit.ctp:9
+#: Template/Orders/index.ctp:9;24
+#: Template/Orders/view.ctp:9
+#: Template/Paymentmethod/add.ctp:9
+#: Template/Paymentmethod/edit.ctp:9
+#: Template/Paymentmethod/index.ctp:9;20
+#: Template/Paymentmethod/view.ctp:9
+#: Template/Product/index.ctp:9;26
+#: Template/Product/view.ctp:9
+#: Template/Supplier/add.ctp:9
+#: Template/Supplier/index.ctp:9;21
+#: Template/Supplier/view.ctp:9
+#: Template/User/add.ctp:9
+#: Template/User/edit.ctp:9
+#: Template/User/index.ctp:9;23
+#: Template/User/view.ctp:9
+msgid "Actions"
+msgstr "Aktivitaet"
+
+#: Template/Basket/add.ctp:10
+#: Template/Basket/edit.ctp:16
+#: Template/Basket/view.ctp:12
+msgid "List Basket"
+msgstr ""
+
+#: Template/Basket/add.ctp:16
+msgid "Add Basket"
+msgstr ""
+
+#: Template/Basket/add.ctp:21
+#: Template/Basket/edit.ctp:27
+#: Template/Category/add.ctp:22
+#: Template/Category/edit.ctp:28
+#: Template/Customer/add.ctp:26
+#: Template/Deliverystatus/add.ctp:21
+#: Template/Deliverystatus/edit.ctp:27
+#: Template/Geo/add.ctp:24
+#: Template/Geo/edit.ctp:30
+#: Template/Orders/add.ctp:24
+#: Template/Orders/edit.ctp:30
+#: Template/Paymentmethod/add.ctp:21
+#: Template/Paymentmethod/edit.ctp:27
+#: Template/Supplier/add.ctp:22
+#: Template/User/add.ctp:23
+#: Template/User/edit.ctp:29
+#: View/Helper/FormHelper.php:1988
+msgid "Submit"
+msgstr "Speichern"
+
+#: Template/Basket/edit.ctp:11
+#: Template/Basket/index.ctp:33
+#: Template/Category/edit.ctp:11
+#: Template/Category/index.ctp:33
+#: Template/Customer/index.ctp:41
+#: Template/Deliverystatus/edit.ctp:11
+#: Template/Deliverystatus/index.ctp:31
+#: Template/Geo/edit.ctp:11
+#: Template/Geo/index.ctp:37
+#: Template/Orders/edit.ctp:11
+#: Template/Orders/index.ctp:39
+#: Template/Paymentmethod/edit.ctp:11
+#: Template/Paymentmethod/index.ctp:31
+#: Template/Product/index.ctp:43
+#: Template/Supplier/index.ctp:33
+#: Template/User/edit.ctp:11
+#: Template/User/index.ctp:37
+msgid "Delete"
+msgstr "Loeschen"
+
+#: Template/Basket/edit.ctp:13
+#: Template/Basket/index.ctp:33
+#: Template/Basket/view.ctp:11
+#: Template/Category/edit.ctp:13
+#: Template/Category/index.ctp:33
+#: Template/Category/view.ctp:11
+#: Template/Customer/index.ctp:41
+#: Template/Customer/view.ctp:11
+#: Template/Deliverystatus/edit.ctp:13
+#: Template/Deliverystatus/index.ctp:31
+#: Template/Deliverystatus/view.ctp:11
+#: Template/Geo/edit.ctp:13
+#: Template/Geo/index.ctp:37
+#: Template/Geo/view.ctp:11
+#: Template/Orders/edit.ctp:13
+#: Template/Orders/index.ctp:39
+#: Template/Orders/view.ctp:11
+#: Template/Paymentmethod/edit.ctp:13
+#: Template/Paymentmethod/index.ctp:31
+#: Template/Paymentmethod/view.ctp:11
+#: Template/Product/index.ctp:43
+#: Template/Product/view.ctp:11
+#: Template/Supplier/index.ctp:33
+#: Template/Supplier/view.ctp:11
+#: Template/User/edit.ctp:13
+#: Template/User/index.ctp:37
+#: Template/User/view.ctp:11
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Wollen Sie # {0} loeschen?"
+
+#: Template/Basket/edit.ctp:22
+#: Template/Basket/view.ctp:10
+msgid "Edit Basket"
+msgstr ""
+
+#: Template/Basket/index.ctp:10
+#: Template/Basket/view.ctp:13
+msgid "New Basket"
+msgstr ""
+
+#: Template/Basket/index.ctp:14
+msgid "Basket"
+msgstr ""
+
+#: Template/Basket/index.ctp:31
+#: Template/Category/index.ctp:31
+#: Template/Customer/index.ctp:39
+#: Template/Deliverystatus/index.ctp:29
+#: Template/Geo/index.ctp:35
+#: Template/Orders/index.ctp:37
+#: Template/Paymentmethod/index.ctp:29
+#: Template/Product/index.ctp:41
+#: Template/Supplier/index.ctp:31
+#: Template/User/index.ctp:35
+#: View/Helper/PaginatorHelper.php:1212
+msgid "View"
+msgstr "Anschauen"
+
+#: Template/Basket/index.ctp:32
+#: Template/Category/index.ctp:32
+#: Template/Customer/index.ctp:40
+#: Template/Deliverystatus/index.ctp:30
+#: Template/Geo/index.ctp:36
+#: Template/Orders/index.ctp:38
+#: Template/Paymentmethod/index.ctp:30
+#: Template/Product/index.ctp:42
+#: Template/Product/overview.ctp:92
+#: Template/Supplier/index.ctp:32
+#: Template/User/index.ctp:36
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: Template/Basket/index.ctp:41
+#: Template/Category/index.ctp:41
+#: Template/Customer/index.ctp:49
+#: Template/Deliverystatus/index.ctp:39
+#: Template/Geo/index.ctp:45
+#: Template/Orders/index.ctp:47
+#: Template/Paymentmethod/index.ctp:39
+#: Template/Product/index.ctp:51
+#: Template/Product/overview.ctp:125
+#: Template/Search/index.ctp:154
+#: Template/Supplier/index.ctp:41
+#: Template/Supplier/orders.ctp:131
+#: Template/User/index.ctp:45
+msgid "first"
+msgstr "erste Seite"
+
+#: Template/Basket/index.ctp:42
+#: Template/Category/index.ctp:42
+#: Template/Customer/index.ctp:50
+#: Template/Deliverystatus/index.ctp:40
+#: Template/Geo/index.ctp:46
+#: Template/Orders/index.ctp:48
+#: Template/Paymentmethod/index.ctp:40
+#: Template/Product/index.ctp:52
+#: Template/Product/overview.ctp:126
+#: Template/Search/index.ctp:155
+#: Template/Supplier/index.ctp:42
+#: Template/Supplier/orders.ctp:132
+#: Template/User/index.ctp:46
+msgid "previous"
+msgstr "vorherige Seite"
+
+#: Template/Basket/index.ctp:44
+#: Template/Category/index.ctp:44
+#: Template/Customer/index.ctp:52
+#: Template/Deliverystatus/index.ctp:42
+#: Template/Geo/index.ctp:48
+#: Template/Orders/index.ctp:50
+#: Template/Paymentmethod/index.ctp:42
+#: Template/Product/index.ctp:54
+#: Template/Product/overview.ctp:128
+#: Template/Search/index.ctp:157
+#: Template/Supplier/index.ctp:44
+#: Template/Supplier/orders.ctp:134
+#: Template/User/index.ctp:48
+msgid "next"
+msgstr "nachste Seite"
+
+#: Template/Basket/index.ctp:45
+#: Template/Category/index.ctp:45
+#: Template/Customer/index.ctp:53
+#: Template/Deliverystatus/index.ctp:43
+#: Template/Geo/index.ctp:49
+#: Template/Orders/index.ctp:51
+#: Template/Paymentmethod/index.ctp:43
+#: Template/Product/index.ctp:55
+#: Template/Product/overview.ctp:129
+#: Template/Search/index.ctp:158
+#: Template/Supplier/index.ctp:45
+#: Template/Supplier/orders.ctp:135
+#: Template/User/index.ctp:49
+msgid "last"
+msgstr "letzte Seite"
+
+#: Template/Basket/index.ctp:47
+#: Template/Category/index.ctp:47
+#: Template/Customer/index.ctp:55
+#: Template/Deliverystatus/index.ctp:45
+#: Template/Geo/index.ctp:51
+#: Template/Orders/index.ctp:53
+#: Template/Paymentmethod/index.ctp:45
+#: Template/Product/index.ctp:57
+#: Template/Supplier/index.ctp:47
+#: Template/User/index.ctp:51
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Seite {{page}} von {{pages}}, angezeigt {{current}} Ergebnisse fon insgesamt {{count}}"
+
+#: Template/Basket/view.ctp:11
+msgid "Delete Basket"
+msgstr ""
+
+#: Template/Basket/view.ctp:20
+msgid "BasketID"
+msgstr ""
+
+#: Template/Basket/view.ctp:24
+#: Template/Customer/view.ctp:44
+#: Template/Orders/view.ctp:28
+msgid "CustomerID"
+msgstr ""
+
+#: Template/Basket/view.ctp:28
+#: Template/User/view.ctp:36
+msgid "Created"
+msgstr "Erstellt"
+
+#: Template/Category/add.ctp:10
+#: Template/Category/edit.ctp:16
+#: Template/Category/view.ctp:12
+msgid "List Category"
+msgstr ""
+
+#: Template/Category/add.ctp:16
+msgid "Add Category"
+msgstr ""
+
+#: Template/Category/edit.ctp:22
+#: Template/Category/view.ctp:10
+msgid "Edit Category"
+msgstr ""
+
+#: Template/Category/index.ctp:10
+#: Template/Category/view.ctp:13
+msgid "New Category"
+msgstr ""
+
+#: Template/Category/index.ctp:14
+#: Template/Product/add.ctp:65
+#: Template/Product/edit.ctp:42
+#: Template/Product/overview.ctp:58
+msgid "Category"
+msgstr ""
+
+#: Template/Category/view.ctp:11
+msgid "Delete Category"
+msgstr ""
+
+#: Template/Category/view.ctp:20
+#: Template/Customer/edit.ctp:35
+#: Template/Customer/view.ctp:20
+#: Template/Paymentmethod/view.ctp:20
+#: Template/Product/add.ctp:57
+#: Template/Product/edit.ctp:10
+#: Template/Product/overview.ctp:57
+#: Template/Product/view.ctp:20
+#: Template/Supplier/edit.ctp:57
+#: Template/Supplier/view.ctp:20
+msgid "Name"
+msgstr "Name"
+
+#: Template/Category/view.ctp:24
+#: Template/Customer/view.ctp:36
+#: Template/Product/overview.ctp:59
+#: Template/Product/view.ctp:24
+msgid "Description"
+msgstr "Beschreibung"
+
+#: Template/Category/view.ctp:28
+#: Template/Product/view.ctp:36
+msgid "CategoryID"
+msgstr ""
+
+#: Template/Customer/add.ctp:10
+#: Template/Customer/view.ctp:12
+msgid "List Customer"
+msgstr ""
+
+#: Template/Customer/add.ctp:16
+msgid "Add Customer"
+msgstr ""
+
+#: Template/Customer/cart.ctp:5
+#: Template/Customer/customer.ctp:6
+#: Template/Customer/edit.ctp:5
+#: Template/Customer/history.ctp:5
+msgid "Public profile"
+msgstr "Profil"
+
+#: Template/Customer/cart.ctp:10
+#: Template/Customer/customer.ctp:11
+#: Template/Customer/edit.ctp:10
+#: Template/Customer/history.ctp:10
+msgid "Edit profile"
+msgstr "Bearbeiten"
+
+#: Template/Customer/cart.ctp:15
+#: Template/Customer/customer.ctp:16
+#: Template/Customer/edit.ctp:15
+#: Template/Customer/history.ctp:15
+#: Template/Layout/header.ctp:100;150
 msgid "Shopping cart"
 msgstr "Warenkorb"
 
-msgid "Your shop"
-msgstr "Dein Shop"
-
-msgid "Notifications"
-msgstr "Benachrichtigungen"
-
-msgid "Logout"
-msgstr "Ausloggen"
-
-msgid "Log in"
-msgstr "Einloggen"
-
-msgid "Sign up"
-msgstr "Registrieren"
-
-#	START
-msgid "e.g New York, San Francisco or Los Angeles"
-msgstr "z.B. Berlin, Hamburg, München usw."
-
-msgid "Make your empleyees happy"
-msgstr "Erfreuen Sie Ihre Mitarbeiter"
-
-msgid "Tip your city or zip-code"
-msgstr "Tippe deine Stadt oder PLZ"
-
-msgid "Search"
-msgstr "Suchen"
-
-#	ERROR
-msgid "Page not found"
-msgstr "die Seite nicht gefunden"
-
-#	SHOPPING CART
+#: Template/Customer/cart.ctp:20
+#: Template/Customer/customer.ctp:21
+#: Template/Customer/edit.ctp:20
+#: Template/Customer/history.ctp:20
 msgid "History"
 msgstr "Einkaufsliste"
 
+#: Template/Customer/cart.ctp:30
 msgid "Hier are all products from your shopping cart"
-msgstr "Da sind alle deinen Einkaeufe aus dem Warenkorb"
+msgstr "Da sind alle deinen Waren aus dem Warenkorb"
 
-msgid "Edit profile"
-msgstr "Profil bearbeiten"
+#: Template/Customer/cart.ctp:40
+#: Template/Customer/history.ctp:42
+msgid "Stk."
+msgstr "Stk."
 
-msgid "Public profile"
+#: Template/Customer/cart.ctp:42
+msgid "Added at"
+msgstr "Hinzugefügt am"
+
+#: Template/Customer/cart.ctp:56
+#: Template/Product/edit.ctp:62
+msgid "Are you sure you want to delete"
+msgstr "Wollen Sie es loeschen"
+
+#: Template/Customer/cart.ctp:73
+msgid "Are you sure you want to buy?"
+msgstr "Wollen Sie es kaufen?"
+
+#: Template/Customer/cart.ctp:80
+msgid "You do not have anything in you cart"
+msgstr "Ihr Warenkorb ist momentan leer"
+
+#: Template/Customer/cart.ctp:83
+msgid "Go shopping"
+msgstr "Einkaufen"
+
+#: Template/Customer/customer.ctp:32
+msgid "Kunde seit"
+msgstr "Kunde seit"
+
+msgid "City"
+msgstr "Stadt"
+
+#: Template/Customer/customer.ctp:51
+msgid "Address"
+msgstr "Adresse"
+
+#: Template/Customer/customer.ctp:73
+msgid "Find. Buy. Enjoy."
+msgstr "Finden. Kaufen. Geniessen"
+
+#: Template/Customer/customer.ctp:75
+msgid "Let's go"
+msgstr "Los"
+
+#: Template/Customer/edit.ctp:41
+#: Template/Customer/view.ctp:24
+#: Template/Geo/view.ctp:20
+#: Template/Search/index.ctp:10
+#: Template/Signup/index.ctp:63
+#: Template/Supplier/edit.ctp:65
+#: Template/Supplier/view.ctp:24
+msgid "City"
+msgstr "Stadt"
+
+#: Template/Customer/edit.ctp:49
+#: Template/Customer/view.ctp:28
+msgid "Street"
+msgstr "Strasse"
+
+#: Template/Customer/edit.ctp:55
+msgid "House"
+msgstr "Hausnr."
+
+#: Template/Customer/edit.ctp:75
+#: Template/Product/add.ctp:110
+#: Template/Product/edit.ctp:65
+#: Template/Supplier/edit.ctp:93
+msgid "Save"
+msgstr "Speichern"
+
+#: Template/Customer/edit.ctp:83
+msgid "We keep your data"
+msgstr "Wir halte Ihre Daten"
+
+#: Template/Customer/edit.ctp:85
+msgid "Explore"
+msgstr "Erfahren"
+
+#: Template/Customer/history.ctp:62
+msgid "No history yet"
+msgstr "Die Liste ist leer"
+
+msgid "Buy for"
+msgstr "Kaufen fuer"
+
+msgid "Remove"
+msgstr "Loeschen"
+
+#: Template/Customer/history.ctp:63
+msgid "Buy something to make me happy"
+msgstr "Kaufe etwas um uns froh zu machen"
+
+#: Template/Customer/index.ctp:10
+#: Template/Customer/view.ctp:13
+msgid "New Customer"
+msgstr ""
+
+#: Template/Customer/index.ctp:14
+#: Template/Signup/index.ctp:131
+#: Template/Supplier/orders.ctp:59
+msgid "Customer"
+msgstr "Kunde"
+
+#: Template/Customer/view.ctp:10
+msgid "Edit Customer"
+msgstr "Kunde bearbeiten"
+
+#: Template/Customer/view.ctp:11
+msgid "Delete Customer"
+msgstr ""
+
+#: Template/Customer/view.ctp:32
+msgid "House Nr"
+msgstr "Housenr."
+
+#: Template/Customer/view.ctp:40
+#: Template/Product/add.ctp:97
+#: Template/Product/view.ctp:28
+#: Template/Supplier/edit.ctp:80
+msgid "Image"
+msgstr "Bild"
+
+#: Template/Deliverystatus/add.ctp:10
+#: Template/Deliverystatus/edit.ctp:16
+#: Template/Deliverystatus/view.ctp:12
+msgid "List Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/add.ctp:16
+msgid "Add Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/edit.ctp:22
+#: Template/Deliverystatus/view.ctp:10
+msgid "Edit Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/index.ctp:10
+#: Template/Deliverystatus/view.ctp:13
+msgid "New Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/index.ctp:14
+msgid "Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/view.ctp:11
+msgid "Delete Deliverystatus"
+msgstr ""
+
+#: Template/Deliverystatus/view.ctp:20
+#: Template/Orders/view.ctp:20
+#: Template/Supplier/orders.ctp:60
+msgid "Status"
+msgstr "Status"
+
+#: Template/Deliverystatus/view.ctp:24
+msgid "StatusID"
+msgstr ""
+
+#: Template/Element/supplierHeader.ctp:28
+msgid "Add to favorite"
+msgstr "In Favorite hinzufügen"
+
+#: Template/Error/missing_controller.ctp:10
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: Template/Error/missing_controller.ctp:12
+msgid "Go back"
+msgstr "Zurück"
+
+#: Template/Geo/add.ctp:10
+#: Template/Geo/edit.ctp:16
+#: Template/Geo/view.ctp:12
+msgid "List Geo"
+msgstr ""
+
+#: Template/Geo/add.ctp:16
+msgid "Add Geo"
+msgstr ""
+
+#: Template/Geo/edit.ctp:22
+#: Template/Geo/view.ctp:10
+msgid "Edit Geo"
+msgstr ""
+
+#: Template/Geo/index.ctp:10
+#: Template/Geo/view.ctp:13
+msgid "New Geo"
+msgstr ""
+
+#: Template/Geo/index.ctp:14
+msgid "Geo"
+msgstr ""
+
+#: Template/Geo/view.ctp:11
+msgid "Delete Geo"
+msgstr ""
+
+#: Template/Geo/view.ctp:24
+msgid "Landkreis"
+msgstr ""
+
+#: Template/Geo/view.ctp:28
+msgid "Bundesland"
+msgstr ""
+
+#: Template/Geo/view.ctp:32
+msgid "Id"
+msgstr ""
+
+#: Template/Geo/view.ctp:36
+msgid "Zip"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+#: Template/Error/error400.ctp:36
+#: Template/Error/error500.ctp:41
+msgid "Error"
+msgstr "Fehler"
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr "Zurück"
+
+#: Template/Layout/header.ctp:25
+msgid "Start site"
+msgstr "Startseite"
+
+#: Template/Layout/header.ctp:27;77
+msgid "Start"
+msgstr "Start"
+
+#: Template/Layout/header.ctp:32
+msgid "Our Github"
+msgstr "Unser Github"
+
+#: Template/Layout/header.ctp:39
+msgid "About elegia"
+msgstr "Uber elegia"
+
+#: Template/Layout/header.ctp:41;87
+msgid "About"
+msgstr "Uber uns"
+
+#: Template/Layout/header.ctp:95;143;170
+msgid "User account"
 msgstr "Profil"
+
+#: Template/Layout/header.ctp:107
+msgid "Your shop"
+msgstr "Dein Shop"
+
+#: Template/Layout/header.ctp:112;177;204
+#: Template/Product/add.ctp:43
+#: Template/Product/overview.ctp:43
+#: Template/Supplier/edit.ctp:43
+#: Template/Supplier/notification.ctp:43
+#: Template/Supplier/orders.ctp:43
+#: Template/Supplier/supplier.ctp:43
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#: Template/Layout/header.ctp:121
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: Template/Layout/header.ctp:127;226
+#: Template/Login/index.ctp:54
+msgid "Log in"
+msgstr "Anmelden"
+
+#: Template/Layout/header.ctp:132;233
+#: Template/Login/index.ctp:63
+#: Template/Signup/index.ctp:23
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: Template/Layout/header.ctp:158;185;212
+msgid "Log out"
+msgstr "Ausloggen"
+
+#: Template/Login/index.ctp:8
+msgid "Log In"
+msgstr "Anmelden"
+
+#: Template/Login/index.ctp:31
+#: Template/User/view.ctp:24
+msgid "Email"
+msgstr "E-Mail"
+
+#: Template/Login/index.ctp:43
+#: Template/Signup/index.ctp:106
+msgid "Password"
+msgstr "Passwort"
+
+#: Template/Login/index.ctp:48
+msgid "Forgot password"
+msgstr "Passwort vergessen"
+
+#: Template/Login/index.ctp:61
+msgid "Don't have an account"
+msgstr "Kein Profil"
+
+#: Template/Orders/add.ctp:10
+#: Template/Orders/edit.ctp:16
+#: Template/Orders/view.ctp:12
+msgid "List Orders"
+msgstr "Bestellliste"
+
+#: Template/Orders/add.ctp:16
+msgid "Add Order"
+msgstr "Bestellung erstellen"
+
+#: Template/Orders/edit.ctp:22
+#: Template/Orders/view.ctp:10
+msgid "Edit Order"
+msgstr "Bestellung bearbeiten"
+
+#: Template/Orders/index.ctp:10
+#: Template/Orders/view.ctp:13
+msgid "New Order"
+msgstr ""
+
+#: Template/Orders/index.ctp:14
+#: Template/Product/add.ctp:36
+#: Template/Product/overview.ctp:36
+#: Template/Supplier/edit.ctp:36
+#: Template/Supplier/notification.ctp:36
+#: Template/Supplier/orders.ctp:36
+#: Template/Supplier/supplier.ctp:36
+msgid "Orders"
+msgstr "Bestellungen"
+
+#: Template/Orders/view.ctp:11
+msgid "Delete Order"
+msgstr ""
+
+#: Template/Orders/view.ctp:24
+msgid "OrderID"
+msgstr ""
+
+#: Template/Orders/view.ctp:32
+#: Template/Product/view.ctp:32
+msgid "ProductID"
+msgstr ""
+
+#: Template/Orders/view.ctp:36
+#: Template/Product/edit.ctp:26
+#: Template/Product/overview.ctp:61
+#: Template/Supplier/orders.ctp:58
+msgid "Amount"
+msgstr "Anzahl"
+
+#: Template/Orders/view.ctp:40
+#: Template/Supplier/orders.ctp:61
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#: Template/Paymentmethod/add.ctp:10
+#: Template/Paymentmethod/edit.ctp:16
+#: Template/Paymentmethod/view.ctp:12
+msgid "List Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/add.ctp:16
+msgid "Add Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/edit.ctp:22
+#: Template/Paymentmethod/view.ctp:10
+msgid "Edit Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/index.ctp:10
+#: Template/Paymentmethod/view.ctp:13
+msgid "New Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/index.ctp:14
+msgid "Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/view.ctp:11
+msgid "Delete Paymentmethod"
+msgstr ""
+
+#: Template/Paymentmethod/view.ctp:24
+msgid "PaymentID"
+msgstr ""
+
+#: Template/Product/add.ctp:8
+#: Template/Product/overview.ctp:8
+#: Template/Supplier/edit.ctp:8
+#: Template/Supplier/notification.ctp:8
+#: Template/Supplier/orders.ctp:8
+#: Template/Supplier/supplier.ctp:8
+msgid "Shop"
+msgstr "Shop"
+
+#: Template/Product/add.ctp:15
+#: Template/Product/overview.ctp:15
+#: Template/Supplier/edit.ctp:15
+#: Template/Supplier/notification.ctp:15
+#: Template/Supplier/orders.ctp:15
+#: Template/Supplier/supplier.ctp:15
+msgid "Edit info"
+msgstr "Bearbeiten"
+
+#: Template/Product/add.ctp:22
+#: Template/Product/overview.ctp:22
+#: Template/Supplier/edit.ctp:22
+#: Template/Supplier/notification.ctp:22
+#: Template/Supplier/orders.ctp:22
+#: Template/Supplier/supplier.ctp:22
+msgid "Add product"
+msgstr "Ware erstellen"
+
+#: Template/Product/add.ctp:29
+#: Template/Product/overview.ctp:29
+#: Template/Supplier/edit.ctp:29
+#: Template/Supplier/notification.ctp:29
+#: Template/Supplier/orders.ctp:29
+#: Template/Supplier/supplier.ctp:29
+msgid "List products"
+msgstr "Warenlist"
+
+#: Template/Product/add.ctp:73
+#: Template/Product/edit.ctp:34
+msgid "Desc."
+msgstr "Besch."
+
+#: Template/Product/add.ctp:81
+#: Template/Product/edit.ctp:18
+#: Template/Product/overview.ctp:60
+#: Template/Product/view.ctp:44
+#: Template/Supplier/orders.ctp:57
+msgid "Price"
+msgstr "Preis"
+
+#: Template/Product/add.ctp:89
+#: Template/Product/view.ctp:48
+msgid "Stock"
+msgstr "Lager"
+
+#: Template/Product/edit.ctp:52
+msgid "Cancel"
+msgstr "Abbrech."
+
+#: Template/Product/index.ctp:10
+#: Template/Product/view.ctp:13
+msgid "New Product"
+msgstr "Neue Ware"
+
+#: Template/Product/index.ctp:14
+#: Template/Supplier/orders.ctp:56
+msgid "Product"
+msgstr "Ware"
+
+#: Template/Product/overview.ctp:105
+msgid "Remove"
+msgstr "Loeschen"
+
+#: Template/Product/overview.ctp:114
+msgid "No products yet"
+msgstr "Keine Waren verfügbar"
+
+#: Template/Product/overview.ctp:116
+msgid "Add"
+msgstr "Erstellen"
+
+#: Template/Product/view.ctp:10
+msgid "Edit Product"
+msgstr "Bearbeiten"
+
+#: Template/Product/view.ctp:11
+msgid "Delete Product"
+msgstr "Loeschen"
+
+#: Template/Product/view.ctp:12
+msgid "List Product"
+msgstr "Warenlist"
+
+#: Template/Product/view.ctp:40
+#: Template/Supplier/view.ctp:28
+msgid "SupplierID"
+msgstr ""
+
+#: Template/Search/index.ctp:11
+msgid "Type a city"
+msgstr "Tippe die Stadt"
+
+#: Template/Search/index.ctp:14
+msgid "Rating"
+msgstr "Raiting"
+
+#: Template/Search/index.ctp:64
+msgid "Sales and discounts"
+msgstr "Aktionen und Rabatte"
+
+#: Template/Search/index.ctp:67
+msgid "Discount"
+msgstr "Rabatt"
+
+#: Template/Search/index.ctp:72
+msgid "Click to refresh"
+msgstr "Aktualisieren"
+
+#: Template/Search/index.ctp:78
+msgid "Reset filter"
+msgstr "Filter zurücksetzen"
+
+#: Template/Search/index.ctp:89
+msgid "Showing {{current}} record(s) out of {{count}} total"
+msgstr "Angezeigt {{current}} Ergebnisse von insgesamt {{count}}"
+
+#: Template/Search/index.ctp:132
+msgid "Go"
+msgstr "Los"
+
+#: Template/Search/index.ctp:164
+msgid "Nothing found for your request"
+msgstr "Kein Ergebnis gefunden"
+
+#: Template/Search/index.ctp:165
+msgid "Please try more general criterias"
+msgstr "Please try more general criterias"
+
+#: Template/Signup/index.ctp:8
+msgid "Sign up in one click, order fresh products from the best suppliers and make your employees"
+msgstr "Registrieren Sie in ein Klick, bestellen Sie frische Waren bei den besten Lieferanten und erfreuen Sie Ihre"
+
+#: Template/Signup/index.ctp:8
+msgid "happy"
+msgstr "Mitarbeiter"
+
+#: Template/Signup/index.ctp:122
+msgid "Repeat password"
+msgstr "Password wiederholen"
+
+#: Template/Signup/index.ctp:146
+#: Template/Supplier/index.ctp:14
+msgid "Supplier"
+msgstr "Lieferant"
+
+#: Template/Signup/index.ctp:173
+msgid "I accept"
+msgstr "Ich akzeptiere"
+
+#: Template/Signup/index.ctp:173
+msgid "the Terms and Conditions"
+msgstr "die AGB"
+
+#: Template/Signup/index.ctp:179
+msgid "Let's go!"
+msgstr "Los!"
+
+#: Template/Start/index.ctp:7
+msgid "Make your empleyees happy"
+msgstr "Erfreuen Sie Ihre Mitarbeiter"
+
+#: Template/Start/index.ctp:23
+msgid "Tip your city or zip-code"
+msgstr "Tippe Deine Stadt oder PLZ"
+
+#: Template/Start/index.ctp:30
+msgid "Search"
+msgstr "Suchen"
+
+#: Template/Start/index.ctp:53
+msgid "e.g New York, San Francisco or Los Angeles"
+msgstr "z.B. Berlin, Hamburg oder München"
+
+#: Template/Supplier/add.ctp:10
+#: Template/Supplier/view.ctp:12
+msgid "List Supplier"
+msgstr ""
+
+#: Template/Supplier/add.ctp:16
+msgid "Add Supplier"
+msgstr ""
+
+#: Template/Supplier/edit.ctp:73
+msgid "Descr."
+msgstr "Beschr."
+
+#: Template/Supplier/index.ctp:10
+#: Template/Supplier/view.ctp:13
+msgid "New Supplier"
+msgstr ""
+
+#: Template/Supplier/notification.ctp:67
+msgid "Seen"
+msgstr "Merken"
+
+#: Template/Supplier/notification.ctp:79
+msgid "You do not have any notifications"
+msgstr "Sie haben keine Benachrichtigungen"
+
+#: Template/Supplier/orders.ctp:101
+msgid "Change status"
+msgstr "Stats aendern"
+
+#: Template/Supplier/orders.ctp:105
+msgid "Delivering"
+msgstr "Wird geliefert"
+
+#: Template/Supplier/orders.ctp:110
+msgid "Delivered"
+msgstr "Wurde gelifert"
+
+#: Template/Supplier/orders.ctp:116
+msgid "Cancel order"
+msgstr "Bestellung ablehnen"
+
+#: Template/Supplier/orders.ctp:142
+msgid "Nothing in the table"
+msgstr "Die Tabelle ist leer"
+
+#: Template/Supplier/supplier.ctp:106
+msgid "The shop is"
+msgstr "Der Shop ist"
+
+#: Template/Supplier/supplier.ctp:106
+msgid "empty"
+msgstr "leer"
+
+#: Template/Supplier/supplier.ctp:106
+msgid "yet"
+msgstr "noch"
+
+#: Template/Supplier/supplier.ctp:106
+msgid "FIX IT"
+msgstr "OK"
+
+#: Template/Supplier/view.ctp:10
+msgid "Edit Supplier"
+msgstr ""
+
+#: Template/Supplier/view.ctp:11
+msgid "Delete Supplier"
+msgstr ""
+
+#: Template/User/add.ctp:10
+#: Template/User/edit.ctp:16
+#: Template/User/view.ctp:12
+msgid "List User"
+msgstr ""
+
+#: Template/User/add.ctp:16
+msgid "Add User"
+msgstr ""
+
+#: Template/User/edit.ctp:22
+#: Template/User/view.ctp:10
+msgid "Edit User"
+msgstr ""
+
+#: Template/User/index.ctp:10
+#: Template/User/view.ctp:13
+msgid "New User"
+msgstr ""
+
+#: Template/User/index.ctp:14
+msgid "User"
+msgstr ""
+
+#: Template/User/view.ctp:11
+msgid "Delete User"
+msgstr ""
+
+#: Template/User/view.ctp:20
+msgid "Pwd Hash"
+msgstr ""
+
+#: Template/User/view.ctp:28
+msgid "Role"
+msgstr "Rolle"
+
+#: Template/User/view.ctp:32
+msgid "UserID"
+msgstr ""
+
+#: Template/Error/error400.ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr "The requested address {0} was not found on this server."
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
+msgstr "An Internal Error Has Occurred"
+
+#: Controller/Component/AuthComponent.php:500
+msgid "You are not authorized to access that location."
+msgstr "Sie sind nicht authorisiert"
+
+#: Controller/Component/CsrfComponent.php:162
+#: Http/Middleware/CsrfProtectionMiddleware.php:191
+msgid "Missing CSRF token cookie"
+msgstr "Missing CSRF token cookie"
+
+#: Controller/Component/CsrfComponent.php:166
+#: Http/Middleware/CsrfProtectionMiddleware.php:195
+msgid "CSRF token mismatch."
+msgstr "CSRF token mismatch."
+
+#: Error/ExceptionRenderer.php:262
+msgid "Not Found"
+msgstr "Nicht gefunden"
+
+#: Error/ExceptionRenderer.php:264
+msgid "An Internal Error Has Occurred."
+msgstr "An Internal Error Has Occurred"
+
+#: Http/Response.php:2620
+msgid "The requested file contains `..` and will not be read."
+msgstr "The requested file contains `..` and will not be read."
+
+#: Http/Response.php:2641
+msgid "The requested file was not found"
+msgstr "The requested file was not found"
+
+#: I18n/Number.php:90
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: I18n/Number.php:92
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: I18n/Number.php:94
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: I18n/Number.php:96
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: I18n/Number.php:88
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} from now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} after"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} before"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:114
+msgid "just now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:151
+msgid "about a second ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:152
+msgid "about a minute ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:153
+msgid "about an hour ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:154;332
+msgid "about a day ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:155;333
+msgid "about a week ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:156;334
+msgid "about a month ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:157;335
+msgid "about a year ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:168
+msgid "in about a second"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:169
+msgid "in about a minute"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:170
+msgid "in about an hour"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:171;346
+msgid "in about a day"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:172;347
+msgid "in about a week"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:173;348
+msgid "in about a month"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:174;349
+msgid "in about a year"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:304
+msgid "today"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:370
+msgid "%s ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:371
+msgid "on %s"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:47;126;316
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:51;129;319
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:57;132;322
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:59;135;325
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:64;138
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:68;141
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:72;144
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ORM/RulesChecker.php:57
+msgid "This value is already in use"
+msgstr ""
+
+#: ORM/RulesChecker.php:104
+msgid "This value does not exist"
+msgstr ""
+
+#: ORM/RulesChecker.php:128
+msgid "The count does not match {0}{1}"
+msgstr ""
+
+#: Utility/Text.php:917
+msgid "and"
+msgstr ""
+
+#: Validation/Validator.php:111
+msgid "This field is required"
+msgstr ""
+
+#: Validation/Validator.php:112
+msgid "This field cannot be left empty"
+msgstr ""
+
+#: Validation/Validator.php:2054
+msgid "The provided value is invalid"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1099
+msgid "Edit {0}"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1101
+msgid "New {0}"
+msgstr ""
+
+#: View/Helper/HtmlHelper.php:815
+msgid "Home"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:540
+msgid "January"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:541
+msgid "February"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:542
+msgid "March"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:543
+msgid "April"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:544
+msgid "May"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:545
+msgid "June"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:546
+msgid "July"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:547
+msgid "August"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:548
+msgid "September"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:549
+msgid "October"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:550
+msgid "November"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:551
+msgid "December"
+msgstr ""
+

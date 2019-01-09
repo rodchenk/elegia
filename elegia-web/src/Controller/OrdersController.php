@@ -37,14 +37,18 @@ class OrdersController extends AppController{
         }
 
         if($this->request->getParam('action') == 'delete'){
-            return $user['userID'] == $this->request->getParam('1');
+            return $user['userID'] == $this->request->getParam('pass.1');//hier error, returns false
         }
 
         if($this->request->getParam('action') == 'buy'){
-            return $user['userID'] == $this->request->getParam('0');
+            return $user['userID'] == $this->request->getParam('pass.0');
         }
 
-        return parent::isAuthorized;
+        if($this->request->getParam('action') == 'changestatus'){
+            return true; //TODO
+        }
+
+        return parent::isAuthorized($user);
     }
 
     /**

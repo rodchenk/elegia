@@ -38,7 +38,7 @@
 			<div class="col-md-12 pl-0">
 				<div class="input-group mb-3">
 						<div class="input-group-prepend">
-						<span class="input-group-text text-white bg-danger border-danger" id="basic-addon3" style="width: 120px"><i class="fas fa-city mr-3"></i>City</span>
+						<span class="input-group-text text-white bg-danger border-danger" id="basic-addon3" style="width: 120px"><i class="fas fa-city mr-3"></i><?= __('City') ?></span>
 						</div>
 						<input type="text" class="form-control bg-white" value="<?= $customer->city ?>" readonly>
 						<input type="text" class="form-control bg-white col-md-3 text-center" value="<?= $plz==null?'':$plz->zip ?>" readonly>
@@ -48,7 +48,7 @@
 			<div class="col-md-12 pl-0">
 				<div class="input-group mb-3">
 						<div class="input-group-prepend">
-						<span class="input-group-text text-white bg-danger border-danger" id="basic-addon3" style="width: 120px"><i class="fas fa-home mr-3"></i></i>Address</span>
+						<span class="input-group-text text-white bg-danger border-danger" id="basic-addon3" style="width: 120px"><i class="fas fa-home mr-3"></i></i><?= __('Address') ?></span>
 						</div>
 						<input type="text" class="form-control bg-white col-md-10" value="<?= $customer->street ?>" readonly>
 						<input type="text" class="form-control bg-white col-md-2 text-center" value="<?= $customer->house_nr ?>" readonly>

@@ -76,7 +76,7 @@
         </div>
     <?php else: ?>
         <div class="container-fluid mx-auto pt-3 bg-white text-center">
-            <h4 class="text-dark p-3">You do not have any notifications</h4>
+            <h4 class="text-dark p-3"><?= __('You do not have any notifications') ?></h4>
             <?= $this->Html->image('notif.jpg', ['class'=>'img-fluid ']) ?>
         </div>
     <?php endif; ?>

@@ -39,7 +39,7 @@
                                 €<?= $order->Product['price'] ?>
                             </td>
                             <td class="border-0">
-                                <?= $order->amount ?> Stk.
+                                <?= $order->amount.' '.__('Stk.') ?>
                             </td>
                             <td class="border-0 text-right">
                                 <?php switch ($order->status) {
@@ -59,8 +59,8 @@
         <?php else: ?>
             <div class="col-md-12 text-light">
                 <?= $this->Html->image('empty_cart.png', ['class'=>'p-2 img-fluid d-block mx-auto mt-4', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
-                <h3 class="text-center mb-0" style="color: #ee446d">No history yet :(</h3>
-                <h5 class="text-center">Buy something to make me happy</h5>
+                <h3 class="text-center mb-0" style="color: #ee446d"><?= __('No history yet')?> :(</h3>
+                <h5 class="text-center"><?= __('Buy something to make me happy')?></h5>
             </div>
         <?php endif; ?>
     </div>

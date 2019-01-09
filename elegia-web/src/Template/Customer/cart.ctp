@@ -37,9 +37,9 @@
 							<?= $this->Html->image('upload/p/'.$order->Product['image'], ['class'=>'p-2 img-fluid ', 'style' => 'object-fit: scale-down;max-height: 80px']) ?>
 						</td>
 						<td class="border-0"><?= $order->Product['name'] ?>, <?= $order->Product['description'] ?></td>
-						<td class="border-0"><?= $order->amount ?> Stk.</td>
+						<td class="border-0"><?= $order->amount ?> <?= __('Stk.')?></td>
 						<td class="border-0">€<?= $order->Product['price'] ?></td>
-						<td class="border-0">Added at <span class="text-info"><?= date( 'd. F H:i', strtotime($order->updated)); ?></span></td>
+						<td class="border-0"><?= __('Added at')?> <span class="text-info"><?= date( 'd. F H:i', strtotime($order->updated)); ?></span></td>
 						<td class="border-0 text-right" style="width: 80px">
 							<?= $this->Form->postLink(
 	                            '<i class="fas fa-times fa-lg m-3"></i>',
@@ -52,7 +52,7 @@
 	                            'class' => 'text-danger', 
 	                            'data-toggle' => 'tooltip', 
 	                            'data-placement' => 'top', 
-	                            'title' => 'Remove',
+	                            'title' => __('Remove'),
 	                        	'confirm' => __('Are you sure you want to delete')]
 	                        ); ?>
 						</td>
@@ -63,7 +63,7 @@
 		</table>
 		<div class="col-md-12 text-right">
 			<?= $this->Form->postLink(
-                'Buy for <b>€<span>'.$sum.'</span></b>',
+                __('Buy for').' <b>€<span>'.$sum.'</span></b>',
                 ['controller' => 'Orders', 
                 'action' => 'buy', 
                 $customer->customerID,
@@ -77,10 +77,10 @@
 			<div class="col-md-12 text-center">
 				<?= $this->Html->image('empty_cart.png', ['class'=>'p-2 img-fluid', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
 				<h4 class="p-2 text-center text-info">
-					You do not have anything in you cart
+					<?= __('You do not have anything in you cart')?>
 				</h4>
 				<?= $this->Html->link(
-	                'Go shopping',
+	                __('Go shopping'),
 	                ['controller' => 'Search', 
 	                'action' => 'index'],[
 	                 '_full' => true, 

@@ -32,13 +32,13 @@
                 <div class="col-md-12 row">
                     <div class="col-md-6 p-2 input-group">
                         <div class="input-group-prepend">
-                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-signature mr-2"></i>Name</span>
+                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-signature mr-2"></i><?= __('Name')?></span>
                         </div>
                         <?= $this->Form->control('name', ['label' => false, 'class' => 'form-control']) ?>
                     </div>
                     <div class="col-md-6 p-2 input-group">
                         <div class="input-group-prepend">
-                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-city mr-2"></i>City</span>
+                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-city mr-2"></i><?= __('City')?></span>
                         </div>
                         <?= $this->Form->control('city', ['label' => false, 'class' => 'form-control']) ?>
                     </div>
@@ -46,21 +46,17 @@
                 <div class="col-md-12 row">
                     <div class="col-md-6 p-2 input-group">
                         <div class="input-group-prepend">
-                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-road mr-2"></i>Street</span>
+                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-road mr-2"></i><?= __('Street')?></span>
                         </div>
                         <?= $this->Form->control('street', ['label' => false, 'class' => 'form-control']) ?>
                     </div>
                     <div class="col-md-6 p-2 input-group">
                         <div class="input-group-prepend">
-                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-home mr-2"></i>House</span>
+                            <span class="border-0 input-group-text bg-danger text-white col-static-100" id="inputGroup-sizing-default"><i class="fas fa-home mr-2"></i><?= __('House')?></span>
                         </div>
                         <?= $this->Form->control('house_nr', ['label' => false, 'class' => 'form-control']) ?>
                     </div>
                 </div>
-
-                <!-- <div class="col-md-12 p-2">
-                    <?= $this->Form->control('description', ['label' => false]) ?>
-                </div> -->
                 <div class="col-md-12 row">
                     <div class="col-md-12 m-2 pl-0 input-group">
                         <div class="custom-file">
@@ -84,7 +80,7 @@
     </div>
 </div>
 <div class="col-md-12 text-center">
-    <h4 class="text-dark">We keep your data <b class="text-info">safe</b>
+    <h4 class="text-dark"><?= __('We keep your data')?> <b class="text-info"><?= ('safe')?></b>
         <?= $this->Html->link(
             __('Explore'),
             ['controller' => 'About', 'action' => 'index', '_full' => true],

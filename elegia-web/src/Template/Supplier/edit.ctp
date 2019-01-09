@@ -54,7 +54,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-signature mr-2"></i>Name
+                        <i class="fas fa-signature mr-2"></i><?= __('Name') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('name', ['label' => false, 'class' => 'form-control']) ?>
@@ -62,7 +62,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-home mr-2"></i>City
+                        <i class="fas fa-home mr-2"></i><?= __('City') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('city', ['label' => false, 'class' => 'form-control']) ?>
@@ -70,7 +70,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-pen mr-2"></i></i>Descr.
+                        <i class="fas fa-pen mr-2"></i></i><?= __('Descr.') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('description', ['label' => false, 'class' => 'form-control']) ?>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="custom-file">
                     <label class="custom-file-label" for="image"></label>
-                    <?= $this->Form->input('image', [
+                    <?= $this->Form->control('image', [
                         'type' => 'file', 
                         'label' => false, 
                         'class' => 'custom-file-input',

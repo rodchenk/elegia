@@ -103,7 +103,7 @@
 			<?php endforeach; ?>
 		<?php else: ?>
 		<div class="col-md-12 mx-auto text-center">
-			<h4 class="text-secondary">:( The shop is <span class="text-danger font-weight-bold">empty</span> yet <button class="ml-2 btn btn-danger">FIX IT</button></h4>
+			<h4 class="text-secondary">:( <?= __('The shop is')?> <span class="text-danger font-weight-bold"><?= __('empty') ?></span> <?= __('yet')?> <button class="ml-2 btn btn-danger"><?= __('FIX IT')?></button></h4>
 			<?= $this->Html->image('empty_shop4.png', ['class'=>'p-2 img-fluid d-block mx-auto mt-4', 'style' => 'object-fit: scale-down;max-height: 250px']) ?>
 		</div>
 		<?php endif; ?>

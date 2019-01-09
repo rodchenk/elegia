@@ -53,12 +53,12 @@
         <thead>
             <tr>
                 <th class="border-0" scope="col"></th>
-                <th class="border-0" scope="col">Product</th>
-                <th class="border-0" scope="col">Price</th>
-                <th class="border-0" scope="col">Amount</th>
-                <th class="border-0" scope="col">Customer</th>
-                <th class="border-0" scope="col">Status</th>
-                <th class="border-0" scope="col">Updated</th>
+                <th class="border-0" scope="col"><?= __('Product') ?></th>
+                <th class="border-0" scope="col"><?= __('Price') ?></th>
+                <th class="border-0" scope="col"><?= __('Amount') ?></th>
+                <th class="border-0" scope="col"><?= __('Customer') ?></th>
+                <th class="border-0" scope="col"><?= __('Status') ?></th>
+                <th class="border-0" scope="col"><?= __('Updated') ?></th>
                 <th class="border-0" scope="col"></th>
             </tr>
         </thead>
@@ -98,7 +98,7 @@
                         <?php if($level > 0): ?>
                             <div class="btn-group">
                                 <button type="button" class="btn custom-btn rounded dropdown-toggle pl-3 pr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Change status
+                                    <?= __('Change status') ?>
                                 </button>
                                 <div class="dropdown-menu">
                                     <?= $level < 2 ? $this->Form->postLink(
@@ -139,7 +139,7 @@
 </div>
 <?php else: ?>
     <div class="container-fluid mx-auto mt-3 text-center">
-        <h2 class="text-secondary p-3">Nothing in the table</h2>
+        <h2 class="text-secondary p-3"><?= __('Nothing in the table') ?></h2>
         <?= $this->Html->image('empty_shop1.png', ['class'=>'img-fluid ', 'style' => 'object-fit: scale-down;max-height: 180px']) ?>
     </div>
 <?php endif; ?>

@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-md-12 bg-coral text-center" style="height: 150px;background: linear-gradient(to right bottom, #f8d772, #f16f55)">
 						<span class="text-white d-block" style="padding: 30px;font-size: 1.5em">
-							Log In
+							<?= __('Log In') ?>
 						</span>
 						<div>
 							<i class="fab fa-facebook fa-lg text-white" style="padding: 10px"></i>
@@ -28,7 +28,7 @@
 								'class' => 'form-control',
 								'label' => false
 							]); ?>
-								<label style="z-index: 100;position: absolute;">E-Mail</label>
+								<label style="z-index: 100;position: absolute;"><?= __('Email')?></label>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3 login-form">
@@ -40,12 +40,12 @@
 								'class' => 'form-control',
 								'label' => false
 							]); ?>
-								<label style="z-index: 100;position: absolute;">Password</label>
+								<label style="z-index: 100;position: absolute;"><?= __('Password')?></label>
 						</div>
 					</div>
 					<div class="col-md-12 mt-1">
 						<div class="col-md-12 text-right">
-							<a href="#">Passwort vergessen?</a>
+							<a href="#"><?= __('Forgot password')?>?</a>
 						</div>
 					</div>
 					<div class="col-md-12 mt-3 mt-5 mb-3">
@@ -58,7 +58,7 @@
 							</div>
 							<div class="col-md-9 mt-1 text-right">
 								<span>
-									Don't have an account?<br>
+									<?= __("Don't have an account")?>?<br>
 									<?= $this->Html->link(
 										__('Sign up'),
 										['controller' => 'Signup', 'action' => 'index', '_full' => true],

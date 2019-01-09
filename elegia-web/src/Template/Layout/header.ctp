@@ -45,7 +45,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="btn-group dropdown">
-                            <button type="button" class="font-weight-bold d-none d-lg-block btn btn-link text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="font-weight-bold d-none d-lg-block btn btn-link text-dark dropdown-toggle pt-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
                                 switch ($_SESSION['language']) {
                                     case 'de_DE':   echo "de"; break;

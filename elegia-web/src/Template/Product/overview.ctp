@@ -54,11 +54,11 @@
 			<tr class="">
 				<th scope="col"></th>
 				<th scope="col"><a>Image</a></th>
-				<th scope="col"><?= $this->Paginator->sort('name', 			['label' => 'Name']) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
-				<th scope="col"><?= $this->Paginator->sort('categoryID', 	['label' => 'Category']) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
-				<th scope="col"><?= $this->Paginator->sort('description', 	['label' => 'Description']) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
-				<th scope="col"><?= $this->Paginator->sort('price', 		['label' => 'Price']) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
-				<th scope="col"><?= $this->Paginator->sort('stock', 		['label' => 'Amount']) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
+				<th scope="col"><?= $this->Paginator->sort('name', 			['label' => __('Name')]) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
+				<th scope="col"><?= $this->Paginator->sort('categoryID', 	['label' => __('Category')]) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
+				<th scope="col"><?= $this->Paginator->sort('description', 	['label' => __('Description')]) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
+				<th scope="col"><?= $this->Paginator->sort('price', 		['label' => __('Price')]) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
+				<th scope="col"><?= $this->Paginator->sort('stock', 		['label' => __('Amount')]) ?><i class="fas fa-sort ml-1 fa-sm text-secondary"></i></th>
 				<th scope="col" class="text-center"></th>
 			</tr>
 		</thead>
@@ -89,7 +89,7 @@
 				                'class' => 'btn text-warning',  
 				                'data-toggle' => 'tooltip', 
 				                'data-placement' => 'top', 
-				                'title' => 'Edit']
+				                'title' => __('Edit')]
 				            ); ?>
 				            <?= $this->Form->postLink(
 				                '<i class="fas fa-times fa-lg m-3"></i>',
@@ -102,7 +102,7 @@
 				                'class' => 'btn text-danger',  
 				                'data-toggle' => 'tooltip', 
 				                'data-placement' => 'top', 
-				                'title' => 'Remove']
+				                'title' => __('Remove')]
 				            ); ?>
 						</td>
 					</tr>
@@ -111,7 +111,7 @@
 		<?php else: $flag = true; endif; ?>
 	</table>
 	<?php if(sizeof($products) <= 0): ?>
-		<div class="text-center"><span class="text-center text-secondary montserat-bold" style="font-size: 2rem">No products yet :( </span>
+		<div class="text-center"><span class="text-center text-secondary montserat-bold" style="font-size: 2rem"><?= __('No products yet')?> :( </span>
 			<?= $this->Html->link(
                 __('Add').'<i class="fas fa-plus ml-2"></i>',
                 ['controller' => 'Product', 'action' => 'add', $supplier->supplierID, '_full' => true],

@@ -7,7 +7,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-signature mr-2"></i>Name
+                        <i class="fas fa-signature mr-2"></i><?= __('Name') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('name', ['label' => false, 'class' => 'form-control']) ?>
@@ -15,7 +15,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-dollar-sign mr-2"></i>Price
+                        <i class="fas fa-dollar-sign mr-2"></i><?= __('Price') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('price', ['label' => false, 'class' => 'form-control']) ?>
@@ -23,7 +23,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-ellipsis-h mr-2"></i>Amount
+                        <i class="fas fa-ellipsis-h mr-2"></i><?= __('Amount') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('stock', ['label' => false, 'class' => 'form-control']) ?>
@@ -31,7 +31,7 @@
             <div class="col-md-6 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-pen mr-2"></i>Desc.
+                        <i class="fas fa-pen mr-2"></i><?= __('Desc.') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('description', ['label' => false, 'class' => 'form-control']) ?>
@@ -39,7 +39,7 @@
             <div class="col-md-12 mt-2 input-group">
                 <div class="input-group-prepend">
                     <span class="border-0 input-group-text bg-secondary text-white col-static-100">
-                        <i class="fas fa-bars mr-2"></i>Category
+                        <i class="fas fa-bars mr-2"></i><?= __('Category') ?>
                     </span>
                 </div>
                 <?= $this->Form->control('category', [
