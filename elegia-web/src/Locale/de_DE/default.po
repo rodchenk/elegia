@@ -1,12 +1,12 @@
-# Copyright 2018 elegia <rodchenk@th-brandenburg.de>
-#
+# Copyright 2019 elegia <rodchenk@th-brandenburg.de>
+# Github @rodchenk
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2019-01-09 07:42+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
-"Last-Translator: NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Last-Translator: Mischa <rodchenk@th-brandenburg.de>\n"
+"Language-Team: Deutsch <rodchenk@th-brandenburg.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
