@@ -80,7 +80,7 @@
     </div>
 </div>
 <div class="col-md-12 text-center">
-    <h4 class="text-dark"><?= __('We keep your data')?> <b class="text-info"><?= ('safe')?></b>
+    <h4 class="text-dark"><?= __('We keep your data')?> <b class="text-info"><?= __('safe')?></b>
         <?= $this->Html->link(
             __('Explore'),
             ['controller' => 'About', 'action' => 'index', '_full' => true],

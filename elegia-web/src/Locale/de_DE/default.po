@@ -30,6 +30,9 @@ msgstr "Benutzername oder Password ist falsch"
 msgid "Your request could not be checked"
 msgstr "Ihre Anfrage ist fehlgeschlagen"
 
+msgid "safe"
+msgstr "sicher"
+
 #: Controller/OrdersController.php:87
 msgid "The status has been changedd."
 msgstr "Status wurde aktualisiert"

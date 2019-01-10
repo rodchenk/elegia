@@ -37,7 +37,7 @@
 						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1"><i class="fas fa-signature"></i></span>
   						</div>
-				  		<?= $this->Form->input('name', [
+				  		<?= $this->Form->control('name', [
 				  			'name' => 'user_name', 
 				  			'autocomplete' => 'off', 
 				  			'required', 
@@ -54,7 +54,7 @@
     						<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
   						</div>
   						<datalist id="cities"></datalist>
-  						<?= $this->Form->input('city', [
+  						<?= $this->Form->control('city', [
   							'name' => 'user_city', 
   							'onkeyup' => 'search(this.value)', 
   							'list' => 'cities', 
@@ -83,7 +83,7 @@
 						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1"><i class="far fa-envelope-open"></i></span>
   						</div>
-				  		<?= $this->Form->input('email', [
+				  		<?= $this->Form->control('email', [
   							'name' => 'user_email',  
   							'autocomplete' => 'off', 
   							'required', 
@@ -98,7 +98,7 @@
 						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
   						</div>
-				  		<?= $this->Form->input('password', [
+				  		<?= $this->Form->control('password', [
   							'name' => 'user_password',  
   							'autocomplete' => 'off', 
   							'required', 
@@ -114,7 +114,7 @@
 						<div class="input-group-prepend">
     						<span class="input-group-text" id="basic-addon1"><i class="fas fa-glasses"></i></span>
   						</div>
-				  		<?= $this->Form->input('password_repeat', [
+				  		<?= $this->Form->control('password_repeat', [
   							'name' => 'user_password_repeat',  
   							'autocomplete' => 'off', 
   							'required', 
@@ -132,7 +132,7 @@
 						</div>
 						<div class="col text-center mt-1">
 							<label class="switch d-inline-block" style="background-color: #c2c7cc" for="switch-checkbox-signup">
-								<?= $this->Form->input('city', [
+								<?= $this->Form->control('city', [
 		  							'name' => 'user_role',
 		  							'type' => 'checkbox',
 		  							'id' => 'switch-checkbox-signup',
@@ -163,7 +163,7 @@
 				</script>
 				<div class="col-md-12 mt-4">
 					<div style="margin-left: 20px" class="custom-control custom-checkbox mr-sm-2">
-						<?= $this->Form->input('city', [
+						<?= $this->Form->control('city', [
   							'name' => 'user_accepts_terms',
   							'class' => 'custom-control-input',
   							'type' => 'checkbox',

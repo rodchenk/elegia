@@ -10,7 +10,6 @@ class SignupController extends AppController {
 
     public function initialize(){
         parent::initialize();
-        //$this->loadComponent('RequestHandler');
         $this->Auth->allow(['search', 'index', 'add']);
     }
 
@@ -41,9 +40,9 @@ class SignupController extends AppController {
     }
 
     public function index() {
-        $this->viewBuilder()->layout('header');
+        $this->viewBuilder()->setLayout('header');
         $this->set(compact('user'));
-        $this->viewBuilder()->template('index');
+        $this->viewBuilder()->setTemplate('index');
     }
 
     /*
@@ -97,7 +96,7 @@ class SignupController extends AppController {
 			);
 
 			$user = $this->User->patchEntity($user, $data);
-      $saved_user = $this->User->save($user);
+      		$saved_user = $this->User->save($user);
 
 			if ($saved_user){
                 $id = $saved_user->userID;
