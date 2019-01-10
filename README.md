@@ -3,27 +3,17 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding
 
 **Technologie**
 
-    PHP -> CakePHP   
-    JS -> jQuery, Bootstrap
-    DB -> MySQL
-    CSS -> Bootstrap, Fontawesome
+    CakePHP   
+    jQuery
+    MySQL
+    Bootstrap, Fontawesome
     
-**Funktionalitäten von Kunde**
+**Usage**
 
-    Suchen
-    Anmelden/Regisitrieren
-    Ware aussuchen
-    Ware in Korb hinzufügen
-    Korb bestellen und bezahlen
-    Lieferstatus beobachten
+    $ git clone https://github.com/rodchenk/elegia.git
+    $ cd elegia-web/ | composer update
+    $ cp config/app.default.php config/app.php
  
-**Funktionalitäten von Lieferanten**
-
-    Anmelden/Regisitrieren
-    Ware hinzufügen
-    Ware aktualisieren
-    Lagerbestand aktuell halten
-    Liste von Bestellungen anschauen
 # Start site
 ![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen0.PNG?raw=true "Start")
 # Shop view
