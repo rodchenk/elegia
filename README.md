@@ -3,10 +3,7 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding. Wir haben
 
 **Technologie**
 
-    CakePHP   
-    jQuery
-    MySQL
-    Bootstrap, Fontawesome
+    CakePHP, jQuery, MySQL, Bootstrap, Fontawesome, Photoshop
     
 **Usage**
 
