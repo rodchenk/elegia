@@ -1,7 +1,5 @@
-# LANGUAGE translation of CakePHP Application
-# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Copyright 2018 elegia <rodchenk@th-brandenburg.de>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
@@ -14,17 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/BasketController.php:55;79
-msgid "The basket has been saved."
-msgstr "Warenkorb wurde aktualisiert"
-
 #: Controller/BasketController.php:59;83
 msgid "The basket could not be saved. Please, try again."
 msgstr "Der Warenkorb wurde nicht aktualisiert. Versuchen Sie noch mal"
-
-#: Controller/CategoryController.php:102
-msgid "The category could not be deleted. Please, try again."
-msgstr ""
 
 #: Controller/CustomerController.php:151
 #: Controller/ProductController.php:111
@@ -32,57 +22,9 @@ msgstr ""
 msgid "It seems not to be an image. Please, try again."
 msgstr "Das ist kein Bild. Versuchen Sie noch mal"
 
-#: Controller/CustomerController.php:157
-msgid "The customer has been saved."
-msgstr ""
-
-#: Controller/CustomerController.php:161
-msgid "The customer could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/CustomerController.php:178
-msgid "The customer has been deleted."
-msgstr ""
-
-#: Controller/CustomerController.php:180
-msgid "The customer could not be deleted. Please, try again."
-msgstr ""
-
-#: Controller/DeliverystatusController.php:55;79
-msgid "The deliverystatus has been saved."
-msgstr ""
-
-#: Controller/DeliverystatusController.php:59;83
-msgid "The deliverystatus could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/DeliverystatusController.php:100
-msgid "The deliverystatus has been deleted."
-msgstr ""
-
-#: Controller/DeliverystatusController.php:102
-msgid "The deliverystatus could not be deleted. Please, try again."
-msgstr ""
-
-#: Controller/GeoController.php:55;79
-msgid "The geo has been saved."
-msgstr ""
-
-#: Controller/GeoController.php:59;83
-msgid "The geo could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/GeoController.php:100
-msgid "The geo has been deleted."
-msgstr ""
-
-#: Controller/GeoController.php:102
-msgid "The geo could not be deleted. Please, try again."
-msgstr ""
-
 #: Controller/LoginController.php:35
 msgid "Username or password is incorrect"
-msgstr ""
+msgstr "Benutzername oder Password ist falsch"
 
 #: Controller/LoginController.php:38
 msgid "Your request could not be checked"
@@ -102,31 +44,11 @@ msgstr "Die Bestellung wurde gespeichert"
 
 #: Controller/OrdersController.php:130
 msgid "The order could not be saved. Please, try again."
-msgstr ""
+msgstr "Die Bestellung könnte nicht gespeichert werden"
 
 #: Controller/OrdersController.php:148
 msgid "The order has been deleted."
-msgstr ""
-
-#: Controller/OrdersController.php:150
-msgid "The order could not be deleted. Please, try again."
-msgstr ""
-
-#: Controller/PaymentmethodController.php:55;79
-msgid "The paymentmethod has been saved."
-msgstr ""
-
-#: Controller/PaymentmethodController.php:59;83
-msgid "The paymentmethod could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/PaymentmethodController.php:100
-msgid "The paymentmethod has been deleted."
-msgstr ""
-
-#: Controller/PaymentmethodController.php:102
-msgid "The paymentmethod could not be deleted. Please, try again."
-msgstr ""
+msgstr "Die Bestellung wurde gelöscht"
 
 #: Controller/ProductController.php:120;149
 msgid "The product has been saved."
@@ -134,19 +56,19 @@ msgstr "Die Ware wurde aktualisiert/hinzugefügt"
 
 #: Controller/ProductController.php:123;153
 msgid "The product could not be saved. Please, try again."
-msgstr "Die Ware koennte nicht gespeichert werden"
+msgstr "Die Ware könnte nicht gespeichert werden"
 
 #: Controller/ProductController.php:172
 msgid "The product has been deleted."
-msgstr "Die ware wurde geloescht"
+msgstr "Die ware wurde gelöscht"
 
 #: Controller/ProductController.php:174
 msgid "The product could not be deleted. Please, try again."
-msgstr "Die ware koennte nicht geloescht werden"
+msgstr "Die ware könnte nicht gelöscht werden"
 
 #: Controller/SignupController.php:65
 msgid "The passwords doesnt match. Please, try again"
-msgstr "Die Passwoerter stimmet nicht überein"
+msgstr "Die Passwörter stimmen nicht überein"
 
 #: Controller/SignupController.php:87
 msgid "Please fill all required fields"
@@ -154,35 +76,15 @@ msgstr "Befüllen Sie alle Pflichtfelder"
 
 #: Controller/SignupController.php:120;138;144
 msgid "The user has been saved"
-msgstr "Der Benutzer ist angelegt"
+msgstr "Der Benutzer wurde angelegt"
 
 #: Controller/SignupController.php:122;140;146
 msgid "The user could not be saved. Please, try again "
-msgstr "Der Benutzer koennte nicht gespeichert werden"
-
-#: Controller/SupplierController.php:147
-msgid "The supplier has been saved."
-msgstr ""
-
-#: Controller/SupplierController.php:151
-msgid "The supplier could not be saved. Please, try again."
-msgstr ""
+msgstr "Der Benutzer könnte nicht gespeichert werden"
 
 #: Controller/UserController.php:71;87
 msgid "The user has been saved."
 msgstr "Der Benutzer wurde angelegt"
-
-#: Controller/UserController.php:75;91
-msgid "The user could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/UserController.php:108
-msgid "The user has been deleted."
-msgstr ""
-
-#: Controller/UserController.php:110
-msgid "The user could not be deleted. Please, try again."
-msgstr ""
 
 #: Template/Basket/add.ctp:9
 #: Template/Basket/edit.ctp:9
@@ -221,17 +123,7 @@ msgstr ""
 #: Template/User/index.ctp:9;23
 #: Template/User/view.ctp:9
 msgid "Actions"
-msgstr "Aktivitaet"
-
-#: Template/Basket/add.ctp:10
-#: Template/Basket/edit.ctp:16
-#: Template/Basket/view.ctp:12
-msgid "List Basket"
-msgstr ""
-
-#: Template/Basket/add.ctp:16
-msgid "Add Basket"
-msgstr ""
+msgstr "Aktivität"
 
 #: Template/Basket/add.ctp:21
 #: Template/Basket/edit.ctp:27
@@ -271,7 +163,7 @@ msgstr "Speichern"
 #: Template/User/edit.ctp:11
 #: Template/User/index.ctp:37
 msgid "Delete"
-msgstr "Loeschen"
+msgstr "Löschen"
 
 #: Template/Basket/edit.ctp:13
 #: Template/Basket/index.ctp:33
@@ -301,21 +193,7 @@ msgstr "Loeschen"
 #: Template/User/index.ctp:37
 #: Template/User/view.ctp:11
 msgid "Are you sure you want to delete # {0}?"
-msgstr "Wollen Sie # {0} loeschen?"
-
-#: Template/Basket/edit.ctp:22
-#: Template/Basket/view.ctp:10
-msgid "Edit Basket"
-msgstr ""
-
-#: Template/Basket/index.ctp:10
-#: Template/Basket/view.ctp:13
-msgid "New Basket"
-msgstr ""
-
-#: Template/Basket/index.ctp:14
-msgid "Basket"
-msgstr ""
+msgstr "Wollen Sie # {0} löschen?"
 
 #: Template/Basket/index.ctp:31
 #: Template/Category/index.ctp:31
@@ -391,7 +269,7 @@ msgstr "vorherige Seite"
 #: Template/Supplier/orders.ctp:134
 #: Template/User/index.ctp:48
 msgid "next"
-msgstr "nachste Seite"
+msgstr "nächste Seite"
 
 #: Template/Basket/index.ctp:45
 #: Template/Category/index.ctp:45
@@ -420,57 +298,12 @@ msgstr "letzte Seite"
 #: Template/Supplier/index.ctp:47
 #: Template/User/index.ctp:51
 msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
-msgstr "Seite {{page}} von {{pages}}, angezeigt {{current}} Ergebnisse fon insgesamt {{count}}"
-
-#: Template/Basket/view.ctp:11
-msgid "Delete Basket"
-msgstr ""
-
-#: Template/Basket/view.ctp:20
-msgid "BasketID"
-msgstr ""
-
-#: Template/Basket/view.ctp:24
-#: Template/Customer/view.ctp:44
-#: Template/Orders/view.ctp:28
-msgid "CustomerID"
-msgstr ""
+msgstr "Seite {{page}} von {{pages}}, angezeigt {{current}} Ergebnisse von insgesamt {{count}}"
 
 #: Template/Basket/view.ctp:28
 #: Template/User/view.ctp:36
 msgid "Created"
 msgstr "Erstellt"
-
-#: Template/Category/add.ctp:10
-#: Template/Category/edit.ctp:16
-#: Template/Category/view.ctp:12
-msgid "List Category"
-msgstr ""
-
-#: Template/Category/add.ctp:16
-msgid "Add Category"
-msgstr ""
-
-#: Template/Category/edit.ctp:22
-#: Template/Category/view.ctp:10
-msgid "Edit Category"
-msgstr ""
-
-#: Template/Category/index.ctp:10
-#: Template/Category/view.ctp:13
-msgid "New Category"
-msgstr ""
-
-#: Template/Category/index.ctp:14
-#: Template/Product/add.ctp:65
-#: Template/Product/edit.ctp:42
-#: Template/Product/overview.ctp:58
-msgid "Category"
-msgstr ""
-
-#: Template/Category/view.ctp:11
-msgid "Delete Category"
-msgstr ""
 
 #: Template/Category/view.ctp:20
 #: Template/Customer/edit.ctp:35
@@ -491,20 +324,6 @@ msgstr "Name"
 #: Template/Product/view.ctp:24
 msgid "Description"
 msgstr "Beschreibung"
-
-#: Template/Category/view.ctp:28
-#: Template/Product/view.ctp:36
-msgid "CategoryID"
-msgstr ""
-
-#: Template/Customer/add.ctp:10
-#: Template/Customer/view.ctp:12
-msgid "List Customer"
-msgstr ""
-
-#: Template/Customer/add.ctp:16
-msgid "Add Customer"
-msgstr ""
 
 #: Template/Customer/cart.ctp:5
 #: Template/Customer/customer.ctp:6
@@ -551,7 +370,7 @@ msgstr "Hinzugefügt am"
 #: Template/Customer/cart.ctp:56
 #: Template/Product/edit.ctp:62
 msgid "Are you sure you want to delete"
-msgstr "Wollen Sie es loeschen"
+msgstr "Wollen Sie es löschen"
 
 #: Template/Customer/cart.ctp:73
 msgid "Are you sure you want to buy?"
@@ -578,7 +397,7 @@ msgstr "Adresse"
 
 #: Template/Customer/customer.ctp:73
 msgid "Find. Buy. Enjoy."
-msgstr "Finden. Kaufen. Geniessen"
+msgstr "Finden. Kaufen. Genießen"
 
 #: Template/Customer/customer.ctp:75
 msgid "Let's go"
@@ -612,11 +431,11 @@ msgstr "Speichern"
 
 #: Template/Customer/edit.ctp:83
 msgid "We keep your data"
-msgstr "Wir halte Ihre Daten"
+msgstr "Wir halten Ihre Daten"
 
 #: Template/Customer/edit.ctp:85
 msgid "Explore"
-msgstr "Erfahren"
+msgstr "Untersuchen"
 
 #: Template/Customer/history.ctp:62
 msgid "No history yet"
@@ -626,16 +445,11 @@ msgid "Buy for"
 msgstr "Kaufen fuer"
 
 msgid "Remove"
-msgstr "Loeschen"
+msgstr "Löschen"
 
 #: Template/Customer/history.ctp:63
 msgid "Buy something to make me happy"
 msgstr "Kaufe etwas um uns froh zu machen"
-
-#: Template/Customer/index.ctp:10
-#: Template/Customer/view.ctp:13
-msgid "New Customer"
-msgstr ""
 
 #: Template/Customer/index.ctp:14
 #: Template/Signup/index.ctp:131
@@ -646,10 +460,6 @@ msgstr "Kunde"
 #: Template/Customer/view.ctp:10
 msgid "Edit Customer"
 msgstr "Kunde bearbeiten"
-
-#: Template/Customer/view.ctp:11
-msgid "Delete Customer"
-msgstr ""
 
 #: Template/Customer/view.ctp:32
 msgid "House Nr"
@@ -662,43 +472,11 @@ msgstr "Housenr."
 msgid "Image"
 msgstr "Bild"
 
-#: Template/Deliverystatus/add.ctp:10
-#: Template/Deliverystatus/edit.ctp:16
-#: Template/Deliverystatus/view.ctp:12
-msgid "List Deliverystatus"
-msgstr ""
-
-#: Template/Deliverystatus/add.ctp:16
-msgid "Add Deliverystatus"
-msgstr ""
-
-#: Template/Deliverystatus/edit.ctp:22
-#: Template/Deliverystatus/view.ctp:10
-msgid "Edit Deliverystatus"
-msgstr ""
-
-#: Template/Deliverystatus/index.ctp:10
-#: Template/Deliverystatus/view.ctp:13
-msgid "New Deliverystatus"
-msgstr ""
-
-#: Template/Deliverystatus/index.ctp:14
-msgid "Deliverystatus"
-msgstr ""
-
-#: Template/Deliverystatus/view.ctp:11
-msgid "Delete Deliverystatus"
-msgstr ""
-
 #: Template/Deliverystatus/view.ctp:20
 #: Template/Orders/view.ctp:20
 #: Template/Supplier/orders.ctp:60
 msgid "Status"
 msgstr "Status"
-
-#: Template/Deliverystatus/view.ctp:24
-msgid "StatusID"
-msgstr ""
 
 #: Template/Element/supplierHeader.ctp:28
 msgid "Add to favorite"
@@ -711,50 +489,6 @@ msgstr "Seite nicht gefunden"
 #: Template/Error/missing_controller.ctp:12
 msgid "Go back"
 msgstr "Zurück"
-
-#: Template/Geo/add.ctp:10
-#: Template/Geo/edit.ctp:16
-#: Template/Geo/view.ctp:12
-msgid "List Geo"
-msgstr ""
-
-#: Template/Geo/add.ctp:16
-msgid "Add Geo"
-msgstr ""
-
-#: Template/Geo/edit.ctp:22
-#: Template/Geo/view.ctp:10
-msgid "Edit Geo"
-msgstr ""
-
-#: Template/Geo/index.ctp:10
-#: Template/Geo/view.ctp:13
-msgid "New Geo"
-msgstr ""
-
-#: Template/Geo/index.ctp:14
-msgid "Geo"
-msgstr ""
-
-#: Template/Geo/view.ctp:11
-msgid "Delete Geo"
-msgstr ""
-
-#: Template/Geo/view.ctp:24
-msgid "Landkreis"
-msgstr ""
-
-#: Template/Geo/view.ctp:28
-msgid "Bundesland"
-msgstr ""
-
-#: Template/Geo/view.ctp:32
-msgid "Id"
-msgstr ""
-
-#: Template/Geo/view.ctp:36
-msgid "Zip"
-msgstr ""
 
 #: Template/Layout/error.ctp:35
 #: Template/Error/error400.ctp:36
@@ -780,19 +514,19 @@ msgstr "Unser Github"
 
 #: Template/Layout/header.ctp:39
 msgid "About elegia"
-msgstr "Uber elegia"
+msgstr "über elegia"
 
 #: Template/Layout/header.ctp:41;87
 msgid "About"
-msgstr "Uber uns"
+msgstr "über uns"
 
 #: Template/Layout/header.ctp:95;143;170
 msgid "User account"
-msgstr "Profil"
+msgstr "Mein Profil"
 
 #: Template/Layout/header.ctp:107
 msgid "Your shop"
-msgstr "Dein Shop"
+msgstr "Mein Shop"
 
 #: Template/Layout/header.ctp:112;177;204
 #: Template/Product/add.ctp:43
@@ -860,11 +594,6 @@ msgstr "Bestellung erstellen"
 msgid "Edit Order"
 msgstr "Bestellung bearbeiten"
 
-#: Template/Orders/index.ctp:10
-#: Template/Orders/view.ctp:13
-msgid "New Order"
-msgstr ""
-
 #: Template/Orders/index.ctp:14
 #: Template/Product/add.ctp:36
 #: Template/Product/overview.ctp:36
@@ -874,19 +603,6 @@ msgstr ""
 #: Template/Supplier/supplier.ctp:36
 msgid "Orders"
 msgstr "Bestellungen"
-
-#: Template/Orders/view.ctp:11
-msgid "Delete Order"
-msgstr ""
-
-#: Template/Orders/view.ctp:24
-msgid "OrderID"
-msgstr ""
-
-#: Template/Orders/view.ctp:32
-#: Template/Product/view.ctp:32
-msgid "ProductID"
-msgstr ""
 
 #: Template/Orders/view.ctp:36
 #: Template/Product/edit.ctp:26
@@ -899,38 +615,6 @@ msgstr "Anzahl"
 #: Template/Supplier/orders.ctp:61
 msgid "Updated"
 msgstr "Aktualisiert"
-
-#: Template/Paymentmethod/add.ctp:10
-#: Template/Paymentmethod/edit.ctp:16
-#: Template/Paymentmethod/view.ctp:12
-msgid "List Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/add.ctp:16
-msgid "Add Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/edit.ctp:22
-#: Template/Paymentmethod/view.ctp:10
-msgid "Edit Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/index.ctp:10
-#: Template/Paymentmethod/view.ctp:13
-msgid "New Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/index.ctp:14
-msgid "Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/view.ctp:11
-msgid "Delete Paymentmethod"
-msgstr ""
-
-#: Template/Paymentmethod/view.ctp:24
-msgid "PaymentID"
-msgstr ""
 
 #: Template/Product/add.ctp:8
 #: Template/Product/overview.ctp:8
@@ -1002,7 +686,7 @@ msgstr "Ware"
 
 #: Template/Product/overview.ctp:105
 msgid "Remove"
-msgstr "Loeschen"
+msgstr "Löschen"
 
 #: Template/Product/overview.ctp:114
 msgid "No products yet"
@@ -1018,16 +702,11 @@ msgstr "Bearbeiten"
 
 #: Template/Product/view.ctp:11
 msgid "Delete Product"
-msgstr "Loeschen"
+msgstr "Löschen"
 
 #: Template/Product/view.ctp:12
 msgid "List Product"
 msgstr "Warenlist"
-
-#: Template/Product/view.ctp:40
-#: Template/Supplier/view.ctp:28
-msgid "SupplierID"
-msgstr ""
 
 #: Template/Search/index.ctp:11
 msgid "Type a city"
@@ -1114,23 +793,9 @@ msgstr "Suchen"
 msgid "e.g New York, San Francisco or Los Angeles"
 msgstr "z.B. Berlin, Hamburg oder München"
 
-#: Template/Supplier/add.ctp:10
-#: Template/Supplier/view.ctp:12
-msgid "List Supplier"
-msgstr ""
-
-#: Template/Supplier/add.ctp:16
-msgid "Add Supplier"
-msgstr ""
-
 #: Template/Supplier/edit.ctp:73
 msgid "Descr."
 msgstr "Beschr."
-
-#: Template/Supplier/index.ctp:10
-#: Template/Supplier/view.ctp:13
-msgid "New Supplier"
-msgstr ""
 
 #: Template/Supplier/notification.ctp:67
 msgid "Seen"
@@ -1176,53 +841,9 @@ msgstr "noch"
 msgid "FIX IT"
 msgstr "OK"
 
-#: Template/Supplier/view.ctp:10
-msgid "Edit Supplier"
-msgstr ""
-
-#: Template/Supplier/view.ctp:11
-msgid "Delete Supplier"
-msgstr ""
-
-#: Template/User/add.ctp:10
-#: Template/User/edit.ctp:16
-#: Template/User/view.ctp:12
-msgid "List User"
-msgstr ""
-
-#: Template/User/add.ctp:16
-msgid "Add User"
-msgstr ""
-
-#: Template/User/edit.ctp:22
-#: Template/User/view.ctp:10
-msgid "Edit User"
-msgstr ""
-
-#: Template/User/index.ctp:10
-#: Template/User/view.ctp:13
-msgid "New User"
-msgstr ""
-
-#: Template/User/index.ctp:14
-msgid "User"
-msgstr ""
-
-#: Template/User/view.ctp:11
-msgid "Delete User"
-msgstr ""
-
-#: Template/User/view.ctp:20
-msgid "Pwd Hash"
-msgstr ""
-
 #: Template/User/view.ctp:28
 msgid "Role"
 msgstr "Rolle"
-
-#: Template/User/view.ctp:32
-msgid "UserID"
-msgstr ""
 
 #: Template/Error/error400.ctp:37
 msgid "The requested address {0} was not found on this server."
@@ -1444,61 +1065,60 @@ msgstr ""
 
 #: View/Helper/FormHelper.php:1099
 msgid "Edit {0}"
-msgstr ""
+msgstr "Bearbeiten {0}"
 
 #: View/Helper/FormHelper.php:1101
 msgid "New {0}"
-msgstr ""
+msgstr "Das neue {{0}}"
 
 #: View/Helper/HtmlHelper.php:815
 msgid "Home"
-msgstr ""
+msgstr "Haus"
 
 #: View/Widget/DateTimeWidget.php:540
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 #: View/Widget/DateTimeWidget.php:541
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: View/Widget/DateTimeWidget.php:542
 msgid "March"
-msgstr ""
+msgstr "März"
 
 #: View/Widget/DateTimeWidget.php:543
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #: View/Widget/DateTimeWidget.php:544
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: View/Widget/DateTimeWidget.php:545
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: View/Widget/DateTimeWidget.php:546
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: View/Widget/DateTimeWidget.php:547
 msgid "August"
-msgstr ""
+msgstr "August"
 
 #: View/Widget/DateTimeWidget.php:548
 msgid "September"
-msgstr ""
+msgstr "Septemer"
 
 #: View/Widget/DateTimeWidget.php:549
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: View/Widget/DateTimeWidget.php:550
 msgid "November"
-msgstr ""
+msgstr "November"
 
 #: View/Widget/DateTimeWidget.php:551
 msgid "December"
-msgstr ""
-
+msgstr "Dezember"
