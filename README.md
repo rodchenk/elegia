@@ -25,4 +25,6 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding
     Lagerbestand aktuell halten
     Liste von Bestellungen anschauen
 
-![Alt text](http://www.pngmart.com/files/7/Web-Design-PNG-Picture.png?raw=true "Architecture")
+![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen0.PNG?raw=true "Start")
+![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen1.PNG?raw=true "Shop")
+![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen2.PNG?raw=true "Shop")
