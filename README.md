@@ -24,5 +24,5 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding
     Ware aktualisieren
     Lagerbestand aktuell halten
     Liste von Bestellungen anschauen
-    
+
 ![Alt text](http://www.pngmart.com/files/7/Web-Design-PNG-Picture.png?raw=true "Architecture")
