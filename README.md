@@ -1,4 +1,4 @@
-# Elegia [Intro](https://rodchenk.github.io/elegia/)
+# [Elegia](https://rodchenk.github.io/elegia/)
 Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding. Wir haben ein Lieferservise entwickelt, wo die Lieferanten ihre Waren anbieten und die Kunden einkaufen.
 
 **Technologie**
