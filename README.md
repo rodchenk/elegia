@@ -16,5 +16,5 @@ Project im Rahmen von Veranstaltung für Frameworks bei Prof. Höding. Wir haben
 ![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen0.PNG?raw=true "Start")
 # Shop view
 ![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen1.PNG?raw=true "Shop")
-# Shop tracking
+# Order tracking
 ![Alt text](https://github.com/rodchenk/elegia/blob/master/tmp/screen/elegia_screen2.PNG?raw=true "Shop")
